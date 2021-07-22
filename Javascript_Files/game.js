@@ -1,15 +1,19 @@
 import loadImage from "./loadFunctions.js";
+import spriteSheet from "./spritesheetClass.js";
+
+
 
 const canvas = document.getElementById("gameScreen");
 const context = canvas.getContext("2d");
 
 
-context.fillRect(0, 0, 800, 400)
 
 loadImage("/Spritesheet_Images/world.png")
     .then(image => {
-        context.drawImage(image, 0, 0)
+        const worldSprite = new spriteSheet(image, 16, 16);
+        worldSprite.saveTheSprite('ground', 0, 0);
+        worldSprite.drawTheSprite('ground', context, 0, 0);
     })
-    .catch(() => {
-        console.log('image could not be loaded')
+    .catch((error) => {
+        console.log('Image could not be loaded because of this error ', error)
     })
