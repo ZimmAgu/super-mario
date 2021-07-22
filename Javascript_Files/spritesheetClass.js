@@ -8,18 +8,19 @@ class spriteSheet  {
         this.image = image;
         this.spriteWidth = spriteWidth;
         this.spriteHeight = spriteHeight;
+        this.world = new Map();
     }
 
-    saveTheSprite (name, xPostion, yPosition) {     // Saves the current sprite so we don't have to recut it from the spritesheet every time we want to use it 
-        const sprite = document.createElement("canvas");
-
+    saveTheSprite (spriteName, xPostion, yPosition) {     // Saves the current sprite so we don't have to recut it from the spritesheet every time we want to use it 
+       
+        const sprite = document.createElement("canvas"); // This new canvas is created so the image doesn't actually show up on screen when it is saved
 
         spriteContext = sprite.getContext("2d");
         
         spriteContext.drawImage(
             this.image,
-            x * this.spriteWidth,
-            x * this.spriteHeight,
+            xPostion * this.spriteWidth,
+            yPosition * this.spriteHeight,
             spriteWidth,
             spriteHeight,
             0,
@@ -27,5 +28,16 @@ class spriteSheet  {
             spriteWidth,
             spriteHeight
         );
+
+        this.world.set(spriteName, spriteContext) // Once the sprite to be saved is drawn, it is saved to a Map object
+    }
+
+
+    drawTheSprite (spriteName, spriteContext, xPostion, yPosition) { // This will actually draw the sprite to the screen when called
+        const sprite = this.world.get(spriteName);
+        spriteContext.drawImage(sprite, xPostion, yPosition);
     }
 }
+
+
+export default spriteSheet;
