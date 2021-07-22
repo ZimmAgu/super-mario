@@ -35,7 +35,7 @@ class spriteSheet  {
 
     drawTheSprite (spriteName, spriteContext, xPostion, yPosition) { // This will actually draw the sprite to the screen when called
         const sprite = this.world.get(spriteName);
-        spriteContext.drawImage(sprite, 0, 0);
+        spriteContext.drawImage(sprite, xPostion, yPosition);
     }
 }
 
