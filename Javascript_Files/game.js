@@ -18,7 +18,7 @@ loadImage("/Spritesheet_Images/world.png")
 
         for (let screenColumns = 0; screenColumns < 50; screenColumns++) {          // This for loop represents the width of the canvas
             for (let screenRows = 0; screenRows < 25; screenRows++) {               //This for loop represents the height of the canvas
-                worldSprite.drawTheSprite('sky', context, screenColumns * 16, screenRows * 16);
+                worldSprite.drawTexture('sky', context, screenColumns, screenRows)
             }
         }
         

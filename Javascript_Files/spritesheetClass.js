@@ -37,6 +37,11 @@ class spriteSheet  {
         const sprite = this.world.get(spriteName);
         spriteContext.drawImage(sprite, xPostion, yPosition);
     }
+
+
+    drawTexture (spriteName, spriteContext, widthMultiple, heightMultiple) {
+        this.drawTheSprite(spriteName, spriteContext, widthMultiple * this.spriteWidth, heightMultiple * this.spriteHeight);
+    }
 }
 
 
