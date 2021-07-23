@@ -1,3 +1,4 @@
+"use strict";
 /*
     This file is responsible for loading all of the things 
     that require functionality to be processed
@@ -39,6 +40,15 @@ function loadBackgroundSprites () {     // Saves the sprites for the backgrounds
             worldSprite.saveTheSprite('sky', 3, 23);
 
             return worldSprite;
+        })
+}
+
+
+
+function loadMarioSprite () {
+    return loadImage("/Spritesheet_Images/characters.png")
+        .then(image => {
+            const marioSprite = new spriteSheet(image, 15, 20);
         })
 }
 

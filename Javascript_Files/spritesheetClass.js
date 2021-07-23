@@ -1,3 +1,4 @@
+"use strict";
 /*
     This class is created so I don't need to redefine 
     an image, height, width, and draw function every

@@ -1,3 +1,4 @@
+"use strict";
 import drawBackground from "./drawBackground.js";
 import {loadLevel, loadBackgroundSprites} from "./loadFunctions.js";
 
