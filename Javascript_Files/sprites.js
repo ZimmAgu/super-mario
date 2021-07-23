@@ -8,8 +8,8 @@ function loadBackgroundSprites () {     // Saves the sprites for the backgrounds
         .then(image => {
             const worldSprite = new spriteSheet(image, 16, 16);
 
-            worldSprite.saveTheSprite('ground', 0, 0, 16, 16);
-            worldSprite.saveTheSprite('sky', 48, 368, 16, 16);
+            worldSprite.saveTheSprite('ground', 0, 0, 32, 32);
+            worldSprite.saveTheSprite('sky', 48, 368, 33, 33);
 
             return worldSprite;
         })
@@ -22,7 +22,7 @@ function loadMarioSprite () {
         .then(image => {
             const marioSprite = new spriteSheet(image, 15, 20);
 
-            marioSprite.saveTheSprite('Normal Idle Mario', 275.25, 41, 16, 21.3)
+            marioSprite.saveTheSprite('Normal Idle Mario', 275, 42, 33, 44)
 
             return marioSprite
         })

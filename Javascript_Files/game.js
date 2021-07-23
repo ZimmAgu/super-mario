@@ -14,5 +14,10 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
 ]).then(([backgroundSprites, level, marioSprite]) => {   // The image parameter is what is returned from the loadBackgroundSprites() function. The level parameter is what is returned from the loadLevel() function
     drawBackground(level, context, backgroundSprites)
     
-    marioSprite.drawTheSprite('Normal Idle Mario', context, 64, 348)
+    const positionOfMario = {
+        x: 64,
+        y: 294
+    }
+
+    marioSprite.drawTheSprite('Normal Idle Mario', context, positionOfMario.x, positionOfMario.y)
 })
