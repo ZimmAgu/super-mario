@@ -9,7 +9,7 @@ function loadBackgroundSprites () {     // Saves the sprites for the backgrounds
             const worldSprite = new spriteSheet(image, 16, 16);
 
             worldSprite.saveTheSprite('ground', 0, 0, 32, 32);
-            worldSprite.saveTheSprite('sky', 48, 368, 33, 33);
+            worldSprite.saveTheSprite('sky', 48, 368, 34, 34);
 
             return worldSprite;
         })

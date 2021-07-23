@@ -1,7 +1,7 @@
 "use strict";
 import drawBackground from "./drawBackground.js";
 import {loadLevel} from "./loadFunctions.js";
-import { loadBackgroundSprites, loadMarioSprite} from "./sprites.js"
+import { loadBackgroundSprites, loadMarioSprite} from "./loadSprites.js"
 
 const canvas = document.getElementById("gameScreen");
 const context = canvas.getContext("2d");
@@ -16,8 +16,15 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
     
     const positionOfMario = {
         x: 64,
-        y: 294
+        y: 0
     }
 
-    marioSprite.drawTheSprite('Normal Idle Mario', context, positionOfMario.x, positionOfMario.y)
+    function updateMario () {
+        marioSprite.drawTheSprite('Normal Idle Mario', context, positionOfMario.x, positionOfMario.y);
+        positionOfMario.x +=2;
+        positionOfMario.y +=2;
+        requestAnimationFrame(updateMario)
+    }
+
+    updateMario()
 })
