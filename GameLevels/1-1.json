@@ -2,7 +2,9 @@
     "backgrounds" : [
         {
             "name" : "sky",
-            "dimensions": [0, 25, 23, 25]
+            "dimensions": [
+                [0, 25, 23, 25]
+            ]
         }
     ]
 }

@@ -1,4 +1,4 @@
-import {loadImage} from "./loadFunctions.js";
+import {loadImage, loadLevel} from "./loadFunctions.js";
 import spriteSheet from "./spritesheetClass.js";
 
 
@@ -14,6 +14,11 @@ loadImage("/Spritesheet_Images/world.png")
 
         worldSprite.saveTheSprite('ground', 0, 0);
         worldSprite.saveTheSprite('sky', 3, 23)
+
+        loadLevel ('1-1')
+            .then(response => {
+                console.log(response)
+            })
         
 
         for (let screenColumns = 0; screenColumns < 50; screenColumns++) {          // This for loop represents the width of the canvas

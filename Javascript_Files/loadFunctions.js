@@ -18,9 +18,9 @@ function loadImage (spritesheetURL) { // Will be used to load the spritesheets s
     })
 } 
 
-function loadLevelTexture (levelName) {
+function loadLevel (levelName) {
     return fetch(`/GameLevels/${levelName}.json`)       // Loads the current levels from the requested JSON file in the GameLevels folder. The level is determined the parameter
-                .then(response  => {response.json()})
+                .then(response  => response.json())
 }
 
-export {loadImage, loadLevelTexture};
+export {loadImage, loadLevel};
