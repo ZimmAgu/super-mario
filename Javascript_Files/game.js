@@ -1,8 +1,7 @@
 "use strict";
 import drawBackground from "./drawBackground.js";
-import {loadLevel, loadBackgroundSprites, loadMarioSprite} from "./loadFunctions.js";
-import spriteSheet from "./spritesheetClass.js";
-
+import {loadLevel} from "./loadFunctions.js";
+import { loadBackgroundSprites, loadMarioSprite} from "./savedSprites.js"
 
 const canvas = document.getElementById("gameScreen");
 const context = canvas.getContext("2d");

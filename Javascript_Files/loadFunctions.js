@@ -3,7 +3,6 @@
     This file is responsible for loading all of the things 
     that require functionality to be processed
 */
-import spriteSheet from "./spritesheetClass.js";
 
 function loadImage (spritesheetURL) { // Will be used to load the spritesheets so they can then be drawn to the screen
     return new Promise(resolve => {
@@ -29,31 +28,4 @@ function loadLevel (levelName) {    // Loads the current levels from the request
 }
 
 
-
-
-function loadBackgroundSprites () {     // Saves the sprites for the backgrounds of all of the levels
-    return loadImage("/Spritesheet_Images/world.png")
-        .then(image => {
-            const worldSprite = new spriteSheet(image, 16, 16);
-
-            worldSprite.saveTheSprite('ground', 0, 0);
-            worldSprite.saveTheSprite('sky', 3, 23);
-
-            return worldSprite;
-        })
-}
-
-
-
-function loadMarioSprite () {
-    return loadImage("/Spritesheet_Images/characters.png")
-        .then(image => {
-            const marioSprite = new spriteSheet(image, 15, 20);
-
-            marioSprite.saveTheSprite('Normal Idle Mario', 18.35, 2.05)
-
-            return marioSprite
-        })
-}
-
-export {loadImage, loadLevel, loadBackgroundSprites, loadMarioSprite};
+export {loadImage, loadLevel};
