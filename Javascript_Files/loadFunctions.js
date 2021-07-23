@@ -49,7 +49,11 @@ function loadMarioSprite () {
     return loadImage("/Spritesheet_Images/characters.png")
         .then(image => {
             const marioSprite = new spriteSheet(image, 15, 20);
+
+            marioSprite.saveTheSprite('Normal Idle Mario', 18.35, 2.05)
+
+            return marioSprite
         })
 }
 
-export {loadImage, loadLevel, loadBackgroundSprites};
+export {loadImage, loadLevel, loadBackgroundSprites, loadMarioSprite};
