@@ -1,6 +1,5 @@
 import drawBackground from "./drawBackground.js";
-import {loadImage, loadLevel} from "./loadFunctions.js";
-import spriteSheet from "./spritesheetClass.js";
+import {loadImage, loadLevel, loadBackgroundSprites} from "./loadFunctions.js";
 
 
 
@@ -8,22 +7,9 @@ const canvas = document.getElementById("gameScreen");
 const context = canvas.getContext("2d");
 
 
-
-loadImage("/Spritesheet_Images/world.png")
-    .then(image => {
-        const worldSprite = new spriteSheet(image, 16, 16);
-
-        worldSprite.saveTheSprite('ground', 0, 0);
-        worldSprite.saveTheSprite('sky', 3, 23)
-
-        loadLevel ('1-1')
-            .then(level => {
-                console.log(level)
-                level.backgrounds.forEach(levelBackground => {
-                    drawBackground(levelBackground, context, worldSprite)
-                })
-            })
-    })
-    .catch((error) => {
-        console.log('Image could not be loaded because of this error ', error)
-    })
+Promise.all([   // Will make the Spritesheet and world textures load at the same time instead of one after another
+    loadBackgroundSprites(),
+    loadLevel('1-1')
+]).then(([image, level]) => {   // The image parameter is what is returned from the loadBackgroundSprites() function. The level parameter is what is returned from the loadLevel() function
+    drawBackground(level, context, image)
+})
