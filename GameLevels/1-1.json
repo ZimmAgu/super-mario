@@ -1,0 +1,8 @@
+{
+    "backgrounds" : [
+        {
+            "name" : "sky",
+            "dimensions": [0, 25, 23, 25]
+        }
+    ]
+}

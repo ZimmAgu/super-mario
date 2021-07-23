@@ -1,4 +1,4 @@
-import loadImage from "./loadFunctions.js";
+import {loadImage} from "./loadFunctions.js";
 import spriteSheet from "./spritesheetClass.js";
 
 

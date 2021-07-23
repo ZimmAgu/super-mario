@@ -1,3 +1,9 @@
+/*
+    This file is responsible for loading all of the things 
+    that require functionality to be processed
+*/
+
+
 function loadImage (spritesheetURL) { // Will be used to load the spritesheets so they can then be drawn to the screen
     return new Promise(resolve => {
 
@@ -12,4 +18,9 @@ function loadImage (spritesheetURL) { // Will be used to load the spritesheets s
     })
 } 
 
-export default loadImage;
+function loadLevelTexture (levelName) {
+    return fetch(`/GameLevels/${levelName}.json`)       // Loads the current levels from the requested JSON file in the GameLevels folder. The level is determined the parameter
+                .then(response  => {response.json()})
+}
+
+export {loadImage, loadLevelTexture};
