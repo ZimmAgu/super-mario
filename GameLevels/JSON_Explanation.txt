@@ -1,0 +1,30 @@
+Level 1-1 JSON File explanation:
+
+The dimensions are formatted as shown below
+[columnStart, columnEnd, rowStart, RowEnd]
+
+The columns go from left to right
+The rows go from top to bottom
+
+
+The size of the dimensions depend on 
+    the size of the canvas 
+    the size of the sprites
+    the size of the SCREENSIZE variable defined in drawBackground.js
+
+
+Example:
+Lets say you cut a 16x16 sprite out from the sprite sheet
+    Lets also assume the canvas has a size of 800x400
+
+800/16 = 50 so columnEnd would be 50
+400/16 = 25 so rowEnd would be 25
+SPRITE_RATIO would start at 1 by default
+
+
+If you want to double the size of the sprite whithout stretching them
+    set the sprite size to 32x32
+    set SPRITE_RATIO to 2
+
+800/32 = 25 so columnEnd would be 25
+400/32 = 12.5 so rowEnd would be 12.5
