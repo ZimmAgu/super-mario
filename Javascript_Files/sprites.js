@@ -22,7 +22,7 @@ function loadMarioSprite () {
         .then(image => {
             const marioSprite = new spriteSheet(image, 15, 20);
 
-            marioSprite.saveTheSprite('Normal Idle Mario', 275.25, 41, 30, 40)
+            marioSprite.saveTheSprite('Normal Idle Mario', 275.25, 41, 16, 21.3)
 
             return marioSprite
         })

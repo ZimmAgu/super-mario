@@ -12,7 +12,7 @@ class spriteSheet  {
         this.world = new Map();
     }
 
-    saveTheSprite (spriteName, xPostion, yPosition) {     // Saves the current sprite so we don't have to recut it from the spritesheet every time we want to use it 
+    saveTheSprite (spriteName, xPostion, yPosition, onScreenWidth, onScreenHeight) {     // Saves the current sprite so we don't have to recut it from the spritesheet every time we want to use it 
        
         const sprite = document.createElement("canvas"); // This new canvas is created so the image doesn't actually show up on screen when it is saved
 
@@ -30,8 +30,8 @@ class spriteSheet  {
             0,                      // The draw functions will determine where the sprite is placed on the canvas
             0,                  
 
-            this.spriteWidth,       // How wide the sprite looks on screen
-            this.spriteHeight       // How tall the sprite looks on screen
+            onScreenWidth,       // How wide the sprite looks on screen
+            onScreenHeight       // How tall the sprite looks on screen
         );
 
         this.world.set(spriteName, sprite); // Once the sprite to be saved is drawn, it is saved to a Map object
