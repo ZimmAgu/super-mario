@@ -19,23 +19,10 @@ loadImage("/Spritesheet_Images/world.png")
         loadLevel ('1-1')
             .then(level => {
                 console.log(level)
-                drawBackground(level.backgrounds[0], context, worldSprite)
+                level.backgrounds.forEach(levelBackground => {
+                    drawBackground(levelBackground, context, worldSprite)
+                })
             })
-        
-
-        // for (let screenColumns = 0; screenColumns < 50; screenColumns++) {          // This for loop represents the width of the canvas
-        //     for (let screenRows = 0; screenRows < 25; screenRows++) {               //This for loop represents the height of the canvas
-        //         worldSprite.drawTexture('sky', context, screenColumns, screenRows)
-        //     }
-        // }
-
-
-        // for (let screenColumns = 0; screenColumns < 50; screenColumns++) {          // This for loop represents the width of the canvas
-        //     for (let screenRows = 23; screenRows < 25; screenRows++) {               //This for loop represents the height of the canvas
-        //         worldSprite.drawTexture('ground', context, screenColumns, screenRows)
-        //     }
-        // }
-        
     })
     .catch((error) => {
         console.log('Image could not be loaded because of this error ', error)

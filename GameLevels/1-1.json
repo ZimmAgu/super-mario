@@ -5,6 +5,12 @@
             "dimensions": [
                 [0, 50, 0, 25]
             ]
+        }, 
+        {
+            "name" : "ground",
+            "dimensions": [
+                [0, 50, 23, 25]
+            ]
         }
     ]
 }
