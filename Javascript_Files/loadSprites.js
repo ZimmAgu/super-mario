@@ -3,8 +3,10 @@
 import spriteSheet from "./Classes/spritesheetClass.js";
 import {loadImage} from "./loadFunctions.js";
 
-function drawSpriteLayer (sprite, spriteName, context, positionX, positionY) {
-    return sprite.drawTheSprite(spriteName, context, positionX, positionY);
+function drawSpriteLayer (sprite, spriteName, context, position) {
+    return () => {
+        sprite.drawTheSprite(spriteName, context, position.x, position.y);
+    }
 }
 
 

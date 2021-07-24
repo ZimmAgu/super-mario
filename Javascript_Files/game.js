@@ -22,10 +22,12 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
         x: 64,
         y: 0
     }
+
+    const mario = drawSpriteLayer(marioSprite, 'Normal Idle Mario', context, positionOfMario)
+    layer.imageLayers.push(mario);
     
     function updateMario () {
         layer.drawTheLayer(context);
-        drawSpriteLayer(marioSprite, 'Normal Idle Mario', context, positionOfMario.x, positionOfMario.y)
         positionOfMario.x +=2;
         positionOfMario.y +=2;
         requestAnimationFrame(updateMario);
