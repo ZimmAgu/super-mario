@@ -3,6 +3,11 @@
 import spriteSheet from "./Classes/spritesheetClass.js";
 import {loadImage} from "./loadFunctions.js";
 
+function drawSpriteLayer (sprite, spriteName, context, positionX, positionY) {
+    return sprite.drawTheSprite(spriteName, context, positionX, positionY);
+}
+
+
 function loadBackgroundSprites () {     // Saves the sprites for the backgrounds of all of the levels
     return loadImage("/Spritesheet_Images/world.png")
         .then(image => {
@@ -29,4 +34,4 @@ function loadMarioSprite () {
 }
 
 
-export {loadBackgroundSprites, loadMarioSprite}
+export {drawSpriteLayer,loadBackgroundSprites, loadMarioSprite}

@@ -1,8 +1,8 @@
 "use strict";
 import layeredImages from "./Classes/layerTheImages.js"
 import drawBackground from "./drawBackground.js";
-import {loadLevel} from "./loadFunctions.js";
-import { loadBackgroundSprites, loadMarioSprite} from "./loadSprites.js"
+import { loadLevel } from "./loadFunctions.js";
+import { drawSpriteLayer, loadBackgroundSprites, loadMarioSprite} from "./loadSprites.js"
 
 const canvas = document.getElementById("gameScreen");
 const context = canvas.getContext("2d");
@@ -25,7 +25,7 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
     
     function updateMario () {
         layer.drawTheLayer(context);
-        marioSprite.drawTheSprite('Normal Idle Mario', context, positionOfMario.x, positionOfMario.y);
+        drawSpriteLayer(marioSprite, 'Normal Idle Mario', context, positionOfMario.x, positionOfMario.y)
         positionOfMario.x +=2;
         positionOfMario.y +=2;
         requestAnimationFrame(updateMario);
