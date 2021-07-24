@@ -1,0 +1,1 @@
+// The responsibility of this class is just to draw all of the image layers in a specific order

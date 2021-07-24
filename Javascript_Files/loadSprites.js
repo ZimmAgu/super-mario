@@ -1,6 +1,6 @@
 "use strict";
 
-import spriteSheet from "./spritesheetClass.js";
+import spriteSheet from "./Classes/spritesheetClass.js";
 import {loadImage} from "./loadFunctions.js";
 
 function loadBackgroundSprites () {     // Saves the sprites for the backgrounds of all of the levels
