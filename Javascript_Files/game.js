@@ -1,7 +1,7 @@
 "use strict";
 // Class Imports
 import layeredImages from "./Classes/layerTheImages.js"
-import vector from "./Classes/vector.js";
+import onScreenObject from "./Classes/onScreenObjects.js";
 
 //Javascript File imports
 import drawBackground from "./drawBackground.js";
@@ -24,15 +24,20 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
 
 
     const GRAVITY = 0.05;
+
+    const marioPhysics = new onScreenObject(); 
+    marioPhysics.position.setVector(64, 295);   // Sets the position of mario
+    const positionOfMario = marioPhysics.position;
+
+    marioPhysics.velocity.setVector(2, -5); // Sets the velocity that mario moves at
+    const velocityOfMario = marioPhysics.velocity;
+
     
-    const positionOfMario = new vector(64, 200);
-    console.log(positionOfMario)
-
-    const velocityOfMario = new vector(2, -2);
 
 
-    const mario = drawSpriteLayer(marioSprite, 'Normal Idle Mario', context, positionOfMario)
-    layer.imageLayers.push(mario);  // Adds mario to the array of layers
+
+    const marioDrawing = drawSpriteLayer(marioSprite, 'Normal Idle Mario', context, positionOfMario)
+    layer.imageLayers.push(marioDrawing);  // Adds mario to the array of layers
     
     function updateMario () {
         layer.drawTheLayer(context);
