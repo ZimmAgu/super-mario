@@ -19,7 +19,7 @@ function createMario () {
 
             // console.log(positionOfMario);
             mario.vectorUpdate = (elapsedTime) => {
-                mario.updateVector(positionOfMario, velocityOfMario, GRAVITY, elapsedTime);
+                return mario.updateVector(positionOfMario, velocityOfMario, GRAVITY, elapsedTime);
             } //Stores the vector update function in a function that is more easy to read
 
             mario.drawMario = (context) => {
