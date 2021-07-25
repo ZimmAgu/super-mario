@@ -1,5 +1,9 @@
 "use strict";
+// Class Imports
 import layeredImages from "./Classes/layerTheImages.js"
+import vector from "./Classes/vector.js";
+
+//Javascript File imports
 import drawBackground from "./drawBackground.js";
 import { loadLevel } from "./loadFunctions.js";
 import { drawSpriteLayer, loadBackgroundSprites, loadMarioSprite} from "./loadSprites.js"
@@ -16,20 +20,25 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
     const layer = new layeredImages();
 
     const backgroundLayer = drawBackground(level, context, backgroundSprites);
-    layer.imageLayers.push(backgroundLayer);
+    layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
 
-    const positionOfMario = {
-        x: 64,
-        y: 0
-    }
+
+    const GRAVITY = 0.05;
+    
+    const positionOfMario = new vector(64, 200);
+    console.log(positionOfMario)
+
+    const velocityOfMario = new vector(2, -2);
+
 
     const mario = drawSpriteLayer(marioSprite, 'Normal Idle Mario', context, positionOfMario)
-    layer.imageLayers.push(mario);
+    layer.imageLayers.push(mario);  // Adds mario to the array of layers
     
     function updateMario () {
         layer.drawTheLayer(context);
-        positionOfMario.x +=2;
-        positionOfMario.y +=2;
+        positionOfMario.x += velocityOfMario.x;
+        positionOfMario.y += velocityOfMario.y;
+        velocityOfMario.y += GRAVITY;
         requestAnimationFrame(updateMario);
     }
 
