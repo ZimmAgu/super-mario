@@ -6,6 +6,12 @@ class onScreenObject {
         this.position = new vector(0, 0);   // The current positions of marion
         this.velocity = new vector(0, 0);   // How fast mario is moving in the x & y direction
     }
+
+    updateVector (position, velocity, gravity) {
+        position.x += velocity.x;
+        position.y += velocity.y;
+        velocity.y += gravity;
+    }
 }
 
 export default onScreenObject;
