@@ -28,18 +28,25 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
     const marioDrawing = mario.drawMario(context); // Draws mario to the screen
     layer.imageLayers.push(marioDrawing);  // Adds mario to the array of layers
     
-    let refreshRate = 0;
+    let refreshRate = 1/60;
+    let accumulatedTime = 0;
     let previousTime = 0;
 
 
     function updateMario (currentTime) {
-        refreshRate = (currentTime - previousTime) / 1000; // the refresh rate is not converted to seconds, the mario position values produced become too big for the game to handle
-        console.log('Mario position: ', mario.position);
-        console.log('Refresh Rate: ', refreshRate);
-        layer.drawTheLayer(context);
-        mario.vectorUpdate(refreshRate); // Updates marios position & velocity
-        requestAnimationFrame(updateMario);
-        // setTimeout(updateMario, 1000/140, performance.now());
+        accumulatedTime += (currentTime - previousTime) / 1000; // Adds up the elapsed time (in seconds) over time
+
+        while (accumulatedTime > refreshRate) {
+            console.log('Mario position: ', mario.position);
+            console.log('Refresh Rate: ', refreshRate);
+            layer.drawTheLayer(context);
+            mario.vectorUpdate(refreshRate); // Updates marios position & velocity
+
+            accumulatedTime -= refreshRate; // This ensures the marios position is updated at the same rate regardless of the frame rate of the user's computer
+        }
+        
+        // requestAnimationFrame(updateMario);
+        setTimeout(updateMario, 1000/60, performance.now());
 
         previousTime = currentTime;
     }

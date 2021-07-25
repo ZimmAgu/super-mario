@@ -14,7 +14,7 @@ function createMario () {
             mario.position.setVector(64, 295);   // Sets the position of mario
             const positionOfMario = mario.position;
 
-            mario.velocity.setVector(400, -600); // Sets the velocity that mario moves at
+            mario.velocity.setVector(400, -800); // Sets the velocity that mario moves at
             const velocityOfMario = mario.velocity;
 
             // console.log(positionOfMario);
