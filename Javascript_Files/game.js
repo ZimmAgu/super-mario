@@ -21,19 +21,29 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
     const layer = new layeredImages();
 
     const backgroundLayer = drawBackground(level, context, backgroundSprites);
-    layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
+    // layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
 
 
 
-    const marioDrawing = mario.drawMario(context);
+    const marioDrawing = mario.drawMario(context); // Draws mario to the screen
     layer.imageLayers.push(marioDrawing);  // Adds mario to the array of layers
     
-    function updateMario () {
+    let refreshRate = 0;
+    let previousTime = 0;
+
+
+    function updateMario (currentTime) {
+        refreshRate = (currentTime - previousTime) / 1000; // the refresh rate is not converted to seconds, the mario position values produced become too big for the game to handle
+        console.log('Mario position: ', mario.position);
+        console.log('Refresh Rate: ', refreshRate);
         layer.drawTheLayer(context);
-        mario.vectorUpdate(); // Updates marios position & velocity
+        mario.vectorUpdate(refreshRate); // Updates marios position & velocity
         requestAnimationFrame(updateMario);
+        // setTimeout(updateMario, 1000/140, performance.now());
+
+        previousTime = currentTime;
     }
 
-    updateMario()
+    updateMario(0);
     
 })

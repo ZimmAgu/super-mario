@@ -9,18 +9,17 @@ function createMario () {
         .then(marioSprite => {
             const mario = new onScreenObject(); 
 
-            const GRAVITY = 0.05;
+            const GRAVITY = 30;
 
             mario.position.setVector(64, 295);   // Sets the position of mario
             const positionOfMario = mario.position;
 
-            mario.velocity.setVector(2, -5); // Sets the velocity that mario moves at
+            mario.velocity.setVector(400, -600); // Sets the velocity that mario moves at
             const velocityOfMario = mario.velocity;
 
             // console.log(positionOfMario);
-            mario.vectorUpdate = () => {
-                console.log(positionOfMario);
-                mario.updateVector(positionOfMario, velocityOfMario, GRAVITY);
+            mario.vectorUpdate = (elapsedTime) => {
+                mario.updateVector(positionOfMario, velocityOfMario, GRAVITY, elapsedTime);
             } //Stores the vector update function in a function that is more easy to read
 
             mario.drawMario = (context) => {
