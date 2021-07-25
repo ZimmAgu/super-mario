@@ -10,7 +10,7 @@ class onScreenObject {
     updateVector (position, velocity, gravity, elsapedTime) {
         position.x += (velocity.x * elsapedTime);
         position.y += (velocity.y * elsapedTime);
-        velocity.y += gravity;
+        velocity.y += (gravity * elsapedTime);
     }
 }
 

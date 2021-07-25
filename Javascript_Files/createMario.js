@@ -9,7 +9,7 @@ function createMario () {
         .then(marioSprite => {
             const mario = new onScreenObject(); 
 
-            const GRAVITY = 30;
+            const GRAVITY = 2000;
 
             mario.position.setVector(64, 295);   // Sets the position of mario
             const positionOfMario = mario.position;

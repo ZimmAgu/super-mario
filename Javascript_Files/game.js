@@ -21,17 +21,13 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
     const layer = new layeredImages();
 
     const backgroundLayer = drawBackground(level, context, backgroundSprites);
-    layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
+    // layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
 
 
 
     const marioDrawing = mario.drawMario(context); // Draws mario to the screen
     layer.imageLayers.push(marioDrawing);  // Adds mario to the array of layers
-    
-    //  let refreshRate = 1/60;
-    // let accumulatedTime = 0;
-    // let previousTime = 0;
-
+ 
     const marioTimer = new Timer(1/60);
 
     marioTimer.updateMario = (refreshRate) => {
@@ -39,31 +35,5 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
         mario.vectorUpdate(refreshRate);
     }
 
-
-
     marioTimer.startTimer();
-
-
-    // function updateMario (currentTime) {
-    //     accumulatedTime += (currentTime - previousTime) / 1000; // Adds up the elapsed time (in seconds) over time
-        
-        
-    //     while (accumulatedTime > refreshRate) {
-    //         layer.drawTheLayer(context);
-
-    //         console.log('Mario position: ', mario.position);
-    //         console.log('Refresh Rate: ', refreshRate);
-    //         mario.vectorUpdate(refreshRate); // Updates marios position & velocity
-
-    //         accumulatedTime -= refreshRate; // This ensures the marios position is updated at the same rate regardless of the frame rate of the user's computer
-    //     }
-        
-    //     requestAnimationFrame(updateMario);
-    //     setTimeout(updateMario, 1000/20, performance.now());
-
-    //     previousTime = currentTime;
-    // }
-
-    // updateMario(0);
-    
 })
