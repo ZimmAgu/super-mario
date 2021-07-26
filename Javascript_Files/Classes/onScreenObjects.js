@@ -7,7 +7,7 @@ class onScreenObject {
         this.velocity = new vector(0, 0);   // How fast mario is moving in the x & y direction
     }
 
-    updateVector (position, velocity, gravity, elsapedTime) {
+    updateVector (position, velocity, gravity, elsapedTime) { // Position determines where mario is, velocity determines how fast mario gets there
         position.x += (velocity.x * elsapedTime);
         position.y += (velocity.y * elsapedTime);
         velocity.y += (gravity * elsapedTime);

@@ -12,10 +12,9 @@ class Timer {
                 this.updateMario(refreshRate);
                 accumulatedTime -= refreshRate; // This ensures the marios position is updated at the same rate regardless of the frame rate of the user's computer
             }
-            this.requestAnimation();
-            previousTime = currentTime;
 
-            
+            previousTime = currentTime;
+            this.requestAnimation();
         }
     }
 
