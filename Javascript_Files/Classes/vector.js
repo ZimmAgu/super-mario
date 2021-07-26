@@ -1,6 +1,6 @@
 "use strict";
 
-class vector {  // This class is resposible for controlling the position & speed of mario
+class Vector {  // This class is resposible for controlling the position & speed of mario
     constructor (xPosition, yPosition) {
         this.setVector(xPosition, yPosition)
     }
@@ -12,4 +12,4 @@ class vector {  // This class is resposible for controlling the position & speed
 }
 
 
-export default vector
+export default Vector

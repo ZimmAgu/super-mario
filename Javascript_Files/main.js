@@ -1,7 +1,7 @@
 "use strict";
 // Class Imports
-import keyboardEvent from "./Classes/keyboardEvents.js";
-import layeredImages from "./Classes/layerTheImages.js"
+import KeyboardEvent from "./Classes/keyboardEvents.js";
+import LayeredImages from "./Classes/layerTheImages.js"
 import Timer from "./Classes/timer.js";
 
 //Javascript File imports
@@ -13,20 +13,16 @@ import { loadBackgroundSprites } from "./loadSprites.js"
 const canvas = document.getElementById("gameScreen");
 const context = canvas.getContext("2d");
 
-const zim = new keyboardEvent();
+const layer = new LayeredImages();
+const zim = new KeyboardEvent();
 
-zim.addKeyMap(32, keystate => {
-    console.log(keystate);
-});
 
-zim.keyboardEventListener(window)
 
 Promise.all([   // Will make the Spritesheet and world textures load at the same time instead of one after another
     loadBackgroundSprites(),
     loadLevel('1-1'),
     createMario()
 ]).then(([backgroundSprites, level, mario]) => {   // The image parameter is what is returned from the loadBackgroundSprites() function. The level parameter is what is returned from the loadLevel() function
-    const layer = new layeredImages();
 
     const backgroundLayer = drawBackground(level, context, backgroundSprites);
     // layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
@@ -34,6 +30,14 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
     const marioDrawing = mario.drawMario(context); // Draws mario to the screen
     layer.imageLayers.push(marioDrawing);  // Adds mario to the array of layers
  
+    const SPACEBAR = 32;
+    zim.addKeyMap(SPACEBAR, keystate => {
+        console.log(keystate);
+    });
+
+    zim.keyboardEventListener(window)
+
+
     const marioTimer = new Timer(1/60);
 
     marioTimer.updateMario = (refreshRate) => {

@@ -1,6 +1,6 @@
 // The responsibility of this class is just to draw all of the image layers in a specific order
 "use strict";
-class layeredImages {
+class LayeredImages {
     constructor () {
         this.imageLayers = []    // The drawnlayers will be pushed to this array
     }
@@ -12,4 +12,4 @@ class layeredImages {
     }
 }
 
-export default layeredImages;
+export default LayeredImages;

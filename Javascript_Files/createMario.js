@@ -1,13 +1,13 @@
 "use strict";
 import { loadMarioSprite } from "./loadSprites.js"
-import onScreenObject from "./Classes/onScreenObjects.js";
+import OnScreenObject from "./Classes/onScreenObjects.js";
 import { drawSpriteLayer } from "./loadSprites.js"
 
 
 function createMario () {
     return loadMarioSprite()
         .then(marioSprite => {
-            const mario = new onScreenObject(); 
+            const mario = new OnScreenObject(); 
 
             const GRAVITY = 2000;
 

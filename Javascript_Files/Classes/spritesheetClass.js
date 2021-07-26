@@ -4,7 +4,7 @@
     an image, height, width, and draw function every
     time I want to draw a new image
 */
-class spriteSheet  {
+class SpriteSheet  {
     constructor (image, spriteWidth, spriteHeight) {  // Defines which animation we want to extract from the sprite sheet  
         this.image = image;
         this.spriteWidth = spriteWidth;
@@ -50,4 +50,4 @@ class spriteSheet  {
 }
 
 
-export default spriteSheet;
+export default SpriteSheet;

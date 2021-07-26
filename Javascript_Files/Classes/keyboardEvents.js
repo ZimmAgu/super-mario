@@ -1,5 +1,5 @@
 "use strict";
-class keyboardEvent {
+class KeyboardEvent {
     constructor () {
         this.keyStates = new Map();     // Current state of a given key
         this.keyMap = new Map();        // Callback functions for key code
@@ -39,4 +39,4 @@ class keyboardEvent {
 }
 
 
-export default keyboardEvent;
+export default KeyboardEvent;

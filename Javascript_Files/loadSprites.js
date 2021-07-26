@@ -1,6 +1,6 @@
 "use strict";
 
-import spriteSheet from "./Classes/spritesheetClass.js";
+import SpriteSheet from "./Classes/spritesheetClass.js";
 import {loadImage} from "./loadFunctions.js";
 
 function drawSpriteLayer (sprite, spriteName, context, position) {
@@ -13,7 +13,7 @@ function drawSpriteLayer (sprite, spriteName, context, position) {
 function loadBackgroundSprites () {     // Saves the sprites for the backgrounds of all of the levels
     return loadImage("/Spritesheet_Images/world.png")
         .then(image => {
-            const worldSprite = new spriteSheet(image, 16, 16);
+            const worldSprite = new SpriteSheet(image, 16, 16);
 
             worldSprite.saveTheSprite('ground', 0, 0, 32, 32);
             worldSprite.saveTheSprite('sky', 48, 368, 34, 34);
@@ -27,7 +27,7 @@ function loadBackgroundSprites () {     // Saves the sprites for the backgrounds
 function loadMarioSprite () {
     return loadImage("/Spritesheet_Images/characters.png")
         .then(image => {
-            const marioSprite = new spriteSheet(image, 15, 20);
+            const marioSprite = new SpriteSheet(image, 15, 20);
 
             marioSprite.saveTheSprite('Normal Idle Mario', 275, 42, 32, 42.6)
 
