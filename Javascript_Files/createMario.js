@@ -19,7 +19,7 @@ function createMario () {
             mario.addTrait(new vectorUpdate());
             mario.addTrait(new Jump());         
 
-            mario.position.setVector(64, 295);   // Sets the position of mario
+            mario.position.setVector(64, 100);   // Sets the position of mario
             const positionOfMario = mario.position;
 
             mario.drawMario = (context) => {

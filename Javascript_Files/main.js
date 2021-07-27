@@ -47,7 +47,6 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
 
     marioTimer.updateMario = (refreshRate) => {
         layer.drawTheLayer(context);
-        // mario.vectorUpdate(refreshRate);
         mario.updateTrait(refreshRate);
     }
 
