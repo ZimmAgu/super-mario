@@ -14,7 +14,7 @@ const canvas = document.getElementById("gameScreen");
 const context = canvas.getContext("2d");
 
 const layer = new LayeredImages();
-const zim = new KeyboardEvent();
+const keyboard = new KeyboardEvent();
 
 
 
@@ -31,11 +31,16 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
     layer.imageLayers.push(marioDrawing);  // Adds mario to the array of layers
  
     const SPACEBAR = 32;
-    zim.addKeyMap(SPACEBAR, keystate => {
-        console.log(keystate);
+    keyboard.addKeyMap(SPACEBAR, keystate => {
+        console.log(keystate)
+        if (keystate) {
+            mario.jump.start();
+        } else {
+            mario.jump.cancel();
+        }
     });
 
-    zim.keyboardEventListener(window)
+    keyboard.keyboardEventListener(window)
 
 
     const marioTimer = new Timer(1/60);
@@ -43,6 +48,7 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
     marioTimer.updateMario = (refreshRate) => {
         layer.drawTheLayer(context);
         mario.vectorUpdate(refreshRate);
+        mario.updateTrait(refreshRate);
     }
 
     marioTimer.startTimer();
