@@ -40,7 +40,6 @@ function loadLevel (levelName) {    // Loads the current levels from the request
         const backgroundLayer = drawBackground(levelSpecifications, backgroundSprites);
         currentLevel.layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
     
-        console.log(drawSpriteLayer(), currentLevel.objects)
         const marioDrawing = drawSpriteLayer(currentLevel.objects); // Draws mario to the screen
         currentLevel.layer.imageLayers.push(marioDrawing);  // Adds mario to the array of layers
 

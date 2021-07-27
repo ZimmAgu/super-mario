@@ -23,7 +23,6 @@ class Jump extends Trait {
 
     updateTrait (object, elapsedTime) { // Holds all of the functionality of a jump
         if (this.engageTime > 0) {
-            console.log('truuuuu')
             object.velocity.y = -this.jumpVelocity
             this.engageTime -= elapsedTime;
         }
