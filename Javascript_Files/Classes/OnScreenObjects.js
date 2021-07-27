@@ -9,13 +9,6 @@ class OnScreenObject {
         this.traits = []; // Each on screen object will have an array where all of their traits are stored                
     }
 
-    updateVector (position, velocity, gravity, elsapedTime) { // Position determines where mario is, velocity determines how fast mario gets there
-        position.x += (velocity.x * elsapedTime);
-        position.y += (velocity.y * elsapedTime);
-        velocity.y += (gravity * elsapedTime);
-    }
-
-
     addTrait (currentTrait) {
         this.traits.push(currentTrait);
         this[currentTrait.traitName] = currentTrait;

@@ -25,7 +25,7 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
 ]).then(([backgroundSprites, level, mario]) => {   // The image parameter is what is returned from the loadBackgroundSprites() function. The level parameter is what is returned from the loadLevel() function
 
     const backgroundLayer = drawBackground(level, context, backgroundSprites);
-    // layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
+    layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
 
     const marioDrawing = mario.drawMario(context); // Draws mario to the screen
     layer.imageLayers.push(marioDrawing);  // Adds mario to the array of layers
@@ -34,9 +34,9 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
     keyboard.addKeyMap(SPACEBAR, keystate => {
         console.log(keystate)
         if (keystate) {
-            mario.jump.start();
+            mario.jump.startJump();
         } else {
-            mario.jump.cancel();
+            mario.jump.cancelJump();
         }
     });
 
@@ -47,7 +47,7 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
 
     marioTimer.updateMario = (refreshRate) => {
         layer.drawTheLayer(context);
-        mario.vectorUpdate(refreshRate);
+        // mario.vectorUpdate(refreshRate);
         mario.updateTrait(refreshRate);
     }
 
