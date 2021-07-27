@@ -11,7 +11,7 @@ class Matrix {
         this.grid[column][row] = value; // A value is places in the specific row
     }
 
-    getMatrix(column, row) {
+    getMatrix (column, row) {
         const matrixColumn = this.grid[column];
 
         if (matrixColumn) {             // If the current column has a matrix

@@ -1,5 +1,5 @@
 "use strict";
-import {BrickCollider} from "./CollisionControl.js";
+import BrickCollider from "./BrickCollider.js";
 import LayeredImages from "./layerTheImages.js";
 import Matrix from "./Matrix.js";
 
