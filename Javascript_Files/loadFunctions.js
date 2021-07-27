@@ -45,7 +45,6 @@ function loadLevel (levelName) {    // Loads the current levels from the request
         const marioDrawing = drawSpriteLayer(currentLevel.objects); // Draws mario to the screen
         currentLevel.layer.imageLayers.push(marioDrawing);  // Adds mario to the array of layers
 
-        console.table(currentLevel.bricks.grid);
         return currentLevel;
     })
 }

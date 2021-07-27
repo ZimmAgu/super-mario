@@ -14,10 +14,7 @@ function drawBackground (gameLevel, allSprites) {    // Combines the background 
             allSprites.drawTexture(brick.name, backgroundLayerContext, onScreenColumnSize, onScreenRowSize);
         })
     })
-    console.log(allSprites)
-    // gameLevel.backgrounds.forEach(levelBackground => {
-    //     drawBackgroundImages(levelBackground, backgroundLayerContext, allSprites)
-    // })
+  
 
     return (regularContext) => {
         regularContext.drawImage(backgroundLayer, 0, 0)
