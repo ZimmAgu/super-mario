@@ -15,7 +15,7 @@ function drawBackgroundImages (background, spriteContext, currentSprite) {      
 
 
 
-function drawBackground (gameLevel, regularContext, allSprites) {    // Combines the background images together into one single background
+function drawBackground (gameLevel, allSprites) {    // Combines the background images together into one single background
     const backgroundLayer = document.createElement("canvas");  // A new canvas is specifically for the background so I have more control over the size of the background instead of just locking it in the html file 
     backgroundLayer.width = 800;
     backgroundLayer.height = 400;
@@ -25,11 +25,20 @@ function drawBackground (gameLevel, regularContext, allSprites) {    // Combines
         drawBackgroundImages(levelBackground, backgroundLayerContext, allSprites)
     })
 
-    return () => {
+    return (regularContext) => {
         regularContext.drawImage(backgroundLayer, 0, 0)
     }
 }
 
 
+function drawSpriteLayer (objects) {
+    return (context) => {
+        objects.forEach(object => {
+            object.drawObject(context);  
+        })
+    }
+}
 
-export default drawBackground;
+
+
+export { drawBackground, drawSpriteLayer }

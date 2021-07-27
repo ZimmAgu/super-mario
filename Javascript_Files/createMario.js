@@ -8,7 +8,6 @@ import OnScreenObject from "./Classes/onScreenObjects.js";
 
 // Javascript File Imports
 import { loadMarioSprite } from "./loadSprites.js"
-import { drawSpriteLayer } from "./loadSprites.js"
 
 
 const GRAVITY = 2000;
@@ -22,8 +21,8 @@ function createMario () {
             mario.position.setVector(64, 100);   // Sets the position of mario
             const positionOfMario = mario.position;
 
-            mario.drawMario = (context) => {
-                return drawSpriteLayer(marioSprite, 'Normal Idle Mario', context, positionOfMario);
+            mario.drawObject = (context) => {
+                marioSprite.drawTheSprite('Normal Idle Mario', context, positionOfMario.x, positionOfMario.y);
             }
 
             return mario;
