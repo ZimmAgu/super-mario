@@ -37,13 +37,34 @@ function loadLevel (levelName) {    // Loads the current levels from the request
     .then(([levelSpecifications, backgroundSprites]) => {
         const currentLevel = new Level();
 
+        // console.log(levelSpecifications)
+        loadTheBricks(currentLevel, levelSpecifications.backgrounds)
+
         const backgroundLayer = drawBackground(levelSpecifications, backgroundSprites);
         currentLevel.layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
     
         const marioDrawing = drawSpriteLayer(currentLevel.objects); // Draws mario to the screen
         currentLevel.layer.imageLayers.push(marioDrawing);  // Adds mario to the array of layers
 
+        console.table(currentLevel.bricks.grid);
         return currentLevel;
+    })
+}
+
+
+
+
+function loadTheBricks (level, backgrounds) {
+    backgrounds.forEach(background => {
+        background.dimensions.forEach( ([colStart, colEnd, rowStart, rowEnd]) => {              // The array stuffed in the parameter is where the dimensions from the levels JSON files will be stored
+            for (let screenColumns = colStart; screenColumns < colEnd; screenColumns++) {       // This for loop represents how wide the sprite will be drawn on the canvase
+                for (let screenRows = rowStart; screenRows < rowEnd; screenRows++) {            // This loop represents how tall the sprite will be drawn on the canvas
+                    level.bricks.setMatrix(screenColumns, screenRows, {
+                        name: background.name
+                    })
+                }
+            } 
+        })
     })
 }
 
