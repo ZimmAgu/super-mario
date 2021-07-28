@@ -28,14 +28,19 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
     level.layer.imageLayers.push(createCollisionLayer(level))
     
     const SPACEBAR = 32;
-    keyboard.addKeyMap(SPACEBAR, keystate => {
+    keyboard.addKeyMap(SPACEBAR, keystate => { // Jump
         if (keystate) {
             mario.jump.startJump();
         } else {
             mario.jump.cancelJump();
         }
     });
-
+    keyboard.addKeyMap(68, keystate => { // Move Right
+        mario.move.movementDirection = keystate
+    });
+    keyboard.addKeyMap(65, keystate => { // Move left
+        mario.move.movementDirection = -keystate
+    });
 
     ['mousedown', 'mousemove'].forEach(eventName => {
         canvas.addEventListener(eventName, event => {

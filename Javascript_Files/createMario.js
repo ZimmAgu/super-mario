@@ -1,5 +1,6 @@
 "use strict";
 // Trait Imports
+import Move from "./Classes/MoveTrait.js";
 import Jump from "./Classes/jumpTrait.js";
 import vectorUpdate from "./Classes/VectorTrait.js";
 
@@ -16,6 +17,7 @@ function createMario () {
         .then(marioSprite => {
             const mario = new OnScreenObject(); 
             mario.size.setVector(32, 42.6);
+            mario.addTrait(new Move())
             mario.addTrait(new Jump());  
             mario.addTrait(new vectorUpdate());
                    
