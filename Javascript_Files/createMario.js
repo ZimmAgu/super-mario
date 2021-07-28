@@ -15,8 +15,9 @@ function createMario () {
     return loadMarioSprite()
         .then(marioSprite => {
             const mario = new OnScreenObject(); 
+            mario.addTrait(new Jump());  
             mario.addTrait(new vectorUpdate());
-            mario.addTrait(new Jump());         
+                   
 
             mario.position.setVector(64, 100);   // Sets the position of mario
             const positionOfMario = mario.position;

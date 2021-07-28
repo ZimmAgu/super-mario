@@ -29,7 +29,6 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
     
     const SPACEBAR = 32;
     keyboard.addKeyMap(SPACEBAR, keystate => {
-        console.log(keystate)
         if (keystate) {
             mario.jump.startJump();
         } else {

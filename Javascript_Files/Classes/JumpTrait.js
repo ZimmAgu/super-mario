@@ -12,12 +12,10 @@ class Jump extends Trait {
 
     startJump () {
         this.engageTime = this.duration;    // Starts the jump by giving the update function the condition to change the velocity
-        console.log('Jump started');
     }
 
     cancelJump () {
         this.engageTime = 0;    //Cancels the jump
-        console.log('Jump cancelled');
     }
 
 
