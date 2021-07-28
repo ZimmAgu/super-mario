@@ -19,7 +19,7 @@ function createMario () {
             mario.size.setVector(32, 42.6);
             mario.addTrait(new Move())
             mario.addTrait(new Jump());  
-            mario.addTrait(new vectorUpdate());
+            // mario.addTrait(new vectorUpdate());
                    
 
             mario.position.setVector(64, 100);   // Sets the position of mario

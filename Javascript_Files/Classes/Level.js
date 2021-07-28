@@ -14,8 +14,16 @@ class Level {
 
     updateLevel (refreshRate) {
         this.objects.forEach(object => {
+            let gravity = 200;
+
             object.updateTrait(refreshRate);
-            this.brickCollider.testColl(object);
+
+            object.position.x += (object.velocity.x * refreshRate);
+            this.brickCollider.checkForX(object);
+
+            object.position.y += (object.velocity.y * refreshRate);
+            object.velocity.y += (gravity * refreshRate);
+            this.brickCollider.checkForY(object);
         })
     }
 }
