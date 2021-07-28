@@ -7,7 +7,7 @@ class BrickCollider {
 
 
     checkForY (onScreenObject) {
-        const match = this.bricks.matchByPosition(onScreenObject.position.x, onScreenObject.position.y);
+        const match = this.bricks.searchByPosition(onScreenObject.position.x, onScreenObject.position.y);
 
         if (!match) {
             return;
@@ -34,7 +34,7 @@ class BrickCollider {
 
     testColl (onScreenObject) {
         this.checkForY(onScreenObject);
-        const match = this.bricks.matchByPosition(onScreenObject.position.x, onScreenObject.position.y);
+        const match = this.bricks.searchByPosition(onScreenObject.position.x, onScreenObject.position.y);
         
         if (match) {
             // console.log('Matched Brick ', match, match.brick);
