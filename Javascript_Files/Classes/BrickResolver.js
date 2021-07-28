@@ -10,10 +10,11 @@ class BrickResolver {
 
     getByIndex (xIndex, yIndex) {
         const brick = this.matrix.getMatrix(xIndex, yIndex);
-
         if (brick) {
+            const y1 = yIndex * this.brickSize;
             return {
-                brick
+                brick,
+                y1
             };
         }
     }

@@ -5,11 +5,32 @@ class BrickCollider {
         this.bricks = new BrickResolver(brickMatrix);
     }
 
+
+    checkForY (onScreenObject) {
+        const match = this.bricks.matchByPosition(onScreenObject.position.x, onScreenObject.position.y);
+
+        if (!match) {
+            return;
+        }
+        console.log(match)
+        if (match.brick.name !== "ground") {
+            return;
+        }
+
+        if (onScreenObject.velocity.y > 0) {
+            if (onScreenObject.position.y > match.y1) {
+                onScreenObject.velocity.y = match.y1;
+                onScreenObject.velocity.y = 0;
+            }
+        }
+    }
+
     testColl (onScreenObject) {
+        this.checkForY(onScreenObject);
         const match = this.bricks.matchByPosition(onScreenObject.position.x, onScreenObject.position.y);
         
         if (match) {
-            console.log('Matched Brick ', match, match.brick);
+            // console.log('Matched Brick ', match, match.brick);
         }
     }
 }
