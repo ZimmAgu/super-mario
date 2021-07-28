@@ -8,6 +8,7 @@ class Level {
         this.layer = new LayeredImages();
         this.objects = new Set(); // Sets are like maps but they don't allow duplicates to be added to it
         this.bricks = new Matrix();
+        
         this.brickCollider = new BrickCollider(this.bricks);
     }
 }

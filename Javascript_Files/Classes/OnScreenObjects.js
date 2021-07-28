@@ -7,7 +7,6 @@ class OnScreenObject {
         this.position = new Vector(0, 0);   // The current positions of marion
         this.velocity = new Vector(0, 0);   // How fast mario is moving in the x & y direction
 
-        this.level = new Level();
 
         this.traits = []; // Each on screen object will have an array where all of their traits are stored                
     }
@@ -19,9 +18,8 @@ class OnScreenObject {
 
 
     updateTrait (elapsedTime) {
-        this.traits.forEach(onScreenObject => {
-            this.level.brickCollider.testColl(onScreenObject)
-            onScreenObject.updateTrait(this, elapsedTime)    // Each trait class will have a function named update trait
+        this.traits.forEach(trait => {
+            trait.updateTrait(this, elapsedTime)    // Each trait class will have a function named update trait
         })
     }
 

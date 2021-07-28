@@ -1,11 +1,16 @@
+import BrickResolver from "./BrickResolver.js";
 
 class BrickCollider {
-    constructor (bricks) {
-        this.bricks = bricks
+    constructor (brickMatrix) {
+        this.bricks = new BrickResolver(brickMatrix);
     }
 
     testColl (onScreenObject) {
-        console.log('Test function from collision')
+        const match = this.bricks.matchByPosition(onScreenObject.position.x, onScreenObject.position.y);
+        
+        if (match) {
+            console.log('Matched Brick ', match, match.brick);
+        }
     }
 }
 

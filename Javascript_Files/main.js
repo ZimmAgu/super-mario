@@ -39,6 +39,7 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
     const marioTimer = new Timer(1/60);
 
     marioTimer.updateMario = (refreshRate) => {
+        level.brickCollider.testColl(mario)
         level.layer.drawTheLayer(context);
         mario.updateTrait(refreshRate);
     }
