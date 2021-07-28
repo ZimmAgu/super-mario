@@ -9,12 +9,12 @@ import Timer from "./Classes/timer.js";
 import createMario from "./createMario.js";
 import { loadLevel } from "./loadFunctions.js";
 import { createCollisionLayer } from "./drawTheLayers.js";
+import { userInput } from "./userInput.js";
 
 const canvas = document.getElementById("gameScreen");
 const context = canvas.getContext("2d");
 
 const layer = new LayeredImages();
-const keyboard = new KeyboardEvent();
 
 
 
@@ -23,24 +23,11 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
     createMario()
 ]).then(([level, mario]) => {   // The image parameter is what is returned from the loadBackgroundSprites() function. The level parameter is what is returned from the loadLevel() function
 
-    level.objects.add(mario)
+    level.objects.add(mario);
     
-    level.layer.imageLayers.push(createCollisionLayer(level))
+    level.layer.imageLayers.push(createCollisionLayer(level));
     
-    const SPACEBAR = 32;
-    keyboard.addKeyMap(SPACEBAR, keystate => { // Jump
-        if (keystate) {
-            mario.jump.startJump();
-        } else {
-            mario.jump.cancelJump();
-        }
-    });
-    keyboard.addKeyMap(68, keystate => { // Move Right
-        mario.move.movementDirection = keystate
-    });
-    keyboard.addKeyMap(65, keystate => { // Move left
-        mario.move.movementDirection = -keystate
-    });
+    const input = userInput(mario);
 
     ['mousedown', 'mousemove'].forEach(eventName => {
         canvas.addEventListener(eventName, event => {
@@ -51,7 +38,7 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
         })
     })
 
-    keyboard.keyboardEventListener(window)
+    input.keyboardEventListener(window)
 
 
     const marioTimer = new Timer(1/60);
