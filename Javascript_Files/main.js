@@ -33,6 +33,16 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
         }
     });
 
+
+    ['mousedown', 'mousemove'].forEach(eventName => {
+        canvas.addEventListener(eventName, event => {
+            if (event.buttons == 1) {
+                mario.velocity.setVector(0, 0);
+                mario.position.setVector(event.offsetX, event.offsetY);
+            }
+        })
+    })
+
     keyboard.keyboardEventListener(window)
 
 
