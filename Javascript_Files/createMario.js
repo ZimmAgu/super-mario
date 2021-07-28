@@ -15,6 +15,7 @@ function createMario () {
     return loadMarioSprite()
         .then(marioSprite => {
             const mario = new OnScreenObject(); 
+            mario.size.setVector(32, 42.6);
             mario.addTrait(new Jump());  
             mario.addTrait(new vectorUpdate());
                    

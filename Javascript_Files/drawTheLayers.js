@@ -57,6 +57,16 @@ function createCollisionLayer (level) {
             context.stroke();
         });
         resolvedBricks.clear();
+
+        level.objects.forEach(onScreenObject => {
+            context.strokeStyle = 'green';
+            context.beginPath();
+            context.rect(onScreenObject.position.x, 
+                        onScreenObject.position.y, 
+                        onScreenObject.size.x,
+                        onScreenObject.size.y);
+            context.stroke();
+        })
     };
 
 }
