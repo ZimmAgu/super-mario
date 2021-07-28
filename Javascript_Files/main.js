@@ -4,9 +4,11 @@ import KeyboardEvent from "./Classes/keyboardEvents.js";
 import LayeredImages from "./Classes/layerTheImages.js"
 import Timer from "./Classes/timer.js";
 
+
 //Javascript File imports
 import createMario from "./createMario.js";
 import { loadLevel } from "./loadFunctions.js";
+import { createCollisionLayer } from "./drawTheLayers.js";
 
 const canvas = document.getElementById("gameScreen");
 const context = canvas.getContext("2d");
@@ -22,6 +24,8 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
 ]).then(([level, mario]) => {   // The image parameter is what is returned from the loadBackgroundSprites() function. The level parameter is what is returned from the loadLevel() function
 
     level.objects.add(mario)
+
+    createCollisionLayer(level)
  
     const SPACEBAR = 32;
     keyboard.addKeyMap(SPACEBAR, keystate => {

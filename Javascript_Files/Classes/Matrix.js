@@ -20,6 +20,11 @@ class Matrix {
             return undefined;
         }
     }
+
+
+    clear () {
+        this.grid.length = 0;
+    }
 }
 
 

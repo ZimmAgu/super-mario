@@ -12,7 +12,7 @@ class BrickCollider {
         if (!match) {
             return;
         }
-        console.log(match)
+        
         if (match.brick.name !== "ground") {
             return;
         }
