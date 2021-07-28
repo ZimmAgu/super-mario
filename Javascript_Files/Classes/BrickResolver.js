@@ -25,10 +25,14 @@ class BrickResolver {
     getByIndex (xIndex, yIndex) {
         const brick = this.matrix.getMatrix(xIndex, yIndex);
         if (brick) {
+            const x1 = xIndex * this.brickSize;
+            const x2 = x1 + this.brickSize;
             const y1 = yIndex * this.brickSize;
             const y2 = y1 + this.brickSize;
             return {
                 brick,
+                x1,
+                x2,
                 y1,
                 y2
             };
@@ -49,8 +53,8 @@ class BrickResolver {
                 if (match) {
                     matches.push(match)
                 }
-            })
-        })
+            });
+        });
 
         return matches;
     } 

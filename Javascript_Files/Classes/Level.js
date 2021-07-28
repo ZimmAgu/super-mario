@@ -11,6 +11,13 @@ class Level {
         
         this.brickCollider = new BrickCollider(this.bricks);
     }
+
+    updateLevel (refreshRate) {
+        this.objects.forEach(object => {
+            object.updateTrait(refreshRate);
+            this.brickCollider.testColl(object);
+        })
+    }
 }
 
 export default Level;
