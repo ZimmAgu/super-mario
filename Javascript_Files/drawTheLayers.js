@@ -45,11 +45,13 @@ function createCollisionLayer (level) {
         resolvedBricks.setMatrix(column, row, true);
         return getByIndexOriginal.call(brickResolver, column, row);
     }
+
+    
    
     return (context) => {   // Draws the outline of the hitbox
         context.strokeStyle = 'blue';
-        console.log('Hello');
-        resolvedBricks.grid.forEach((value, x, y) => {
+
+        resolvedBricks.forEach((value, x, y) => {
             context.beginPath();
             context.rect(x * brickSize, y * brickSize, brickSize, brickSize);
             context.stroke();

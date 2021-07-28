@@ -3,12 +3,20 @@ class Matrix {
         this.grid = [];
     }
 
+    forEach(callback) {
+        this.grid.forEach((column, x) => {
+            column.forEach((value, y) => {
+                callback(value, x, y);
+            });
+        });
+    }
+
     setMatrix (column, row, value) {
         if (!this.grid[column]) {   // If there is no value in a certain column of our grid
             this.grid[column] = []; // Then a new array is created that will contain all of the rows in that column 
         }
 
-        this.grid[column][row] = value; // A value is places in the specific row
+        this.grid[column][row] = value; // A value is places in the specific spot
     }
 
     getMatrix (column, row) {

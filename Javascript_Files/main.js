@@ -25,7 +25,6 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
 
     level.objects.add(mario)
     
-    console.log();
     level.layer.imageLayers.push(createCollisionLayer(level))
     
     const SPACEBAR = 32;
