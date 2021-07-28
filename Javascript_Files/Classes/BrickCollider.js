@@ -21,8 +21,8 @@ class BrickCollider {
 
             if (onScreenObject.velocity.y > 0) {
                 
-                if (onScreenObject.position.y > match.y1) {
-                    onScreenObject.velocity.y = match.y1;
+                if (onScreenObject.position.y + onScreenObject.size.y > match.y1) {
+                    onScreenObject.velocity.y = match.y1 - onScreenObject.size.y;
                     onScreenObject.velocity.y = 0;
                 }
             } else if (onScreenObject.velocity.y < 0) {
