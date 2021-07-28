@@ -5,17 +5,17 @@ function userInput (onScreenObject) {
     const keyboard = new KeyboardEvent();
 
     const SPACEBAR = 32;
-    keyboard.addKeyMap(SPACEBAR, keystate => { // Jump
+    keyboard.addKeyMap('Space', keystate => { // Jump
         if (keystate) {
             onScreenObject.jump.startJump();
         } else {
             onScreenObject.jump.cancelJump();
         }
     });
-    keyboard.addKeyMap(68, keystate => { // Move Right
+    keyboard.addKeyMap('KeyD', keystate => { // Move Right
         onScreenObject.move.movementDirection = keystate
     });
-    keyboard.addKeyMap(65, keystate => { // Move left
+    keyboard.addKeyMap('KeyA', keystate => { // Move left
         onScreenObject.move.movementDirection = -keystate
     });
 
