@@ -24,9 +24,10 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
 ]).then(([level, mario]) => {   // The image parameter is what is returned from the loadBackgroundSprites() function. The level parameter is what is returned from the loadLevel() function
 
     level.objects.add(mario)
-
-    createCollisionLayer(level)
- 
+    
+    console.log();
+    level.layer.imageLayers.push(createCollisionLayer(level))
+    
     const SPACEBAR = 32;
     keyboard.addKeyMap(SPACEBAR, keystate => {
         console.log(keystate)

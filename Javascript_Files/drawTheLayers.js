@@ -15,6 +15,7 @@ function drawBackground (gameLevel, allSprites) {    // Combines the background 
             allSprites.drawTexture(brick.name, backgroundLayerContext, onScreenColumnSize, onScreenRowSize);
         })
     })
+
   
 
     return (regularContext) => {
@@ -41,19 +42,19 @@ function createCollisionLayer (level) {
     const getByIndexOriginal = brickResolver.getByIndex;
 
     brickResolver.getByIndex = (column, row) => {
-        console.log(column, row);
         resolvedBricks.setMatrix(column, row, true);
         return getByIndexOriginal.call(brickResolver, column, row);
     }
-
+   
     return (context) => {   // Draws the outline of the hitbox
         context.strokeStyle = 'blue';
-        resolvedbricks.forEach((value, x, y) => {
+        console.log('Hello');
+        resolvedBricks.grid.forEach((value, x, y) => {
             context.beginPath();
             context.rect(x * brickSize, y * brickSize, brickSize, brickSize);
             context.stroke();
         });
-        resolvedbricks.clear();
+        resolvedBricks.clear();
     };
 
 }
