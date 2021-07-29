@@ -1,7 +1,6 @@
 "use strict";
 // Class Imports
 import Camera from "./Classes/Camera.js";
-import LayeredImages from "./Classes/layerTheImages.js"
 import Timer from "./Classes/timer.js";
 
 
@@ -10,6 +9,7 @@ import createMario from "./createMario.js";
 import { loadLevel } from "./loadFunctions.js";
 import { createCollisionLayer } from "./drawTheLayers.js";
 import { userInput } from "./userInput.js";
+import mouseControl from "./mouseDebugger.js";
 
 const canvas = document.getElementById("gameScreen");
 const context = canvas.getContext("2d");
@@ -28,14 +28,7 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
     
     const input = userInput(mario);
 
-    ['mousedown', 'mousemove'].forEach(eventName => {
-        canvas.addEventListener(eventName, event => {
-            if (event.buttons == 1) {
-                mario.velocity.setVector(0, 0);
-                mario.position.setVector(event.offsetX, event.offsetY);
-            }
-        })
-    })
+    mouseControl(canvas, mario, camera)
 
     input.keyboardEventListener(window)
 
