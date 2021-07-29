@@ -26,7 +26,7 @@ function createMario () {
             const positionOfMario = mario.position;
 
             mario.drawObject = (context) => {
-                marioSprite.drawTheSprite('Normal Idle Mario', context, positionOfMario.x, positionOfMario.y);
+                marioSprite.drawTheSprite('Normal Idle Mario', context, 0, 0);
             }
 
             return mario;
