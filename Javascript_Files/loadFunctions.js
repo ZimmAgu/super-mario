@@ -24,7 +24,7 @@ function loadSpriteSheet (spriteSetName) {
                 loadImage(spriteSheetInfo.imageURL)
             ]))
             .then(([spriteSheetInfo, image]) => {
-                console.log(spriteSheetInfo.sprites[0].xPosition)
+                console.log(spriteSheetInfo.sprites)
                 console.log(image)
 
                 const backGroundSprite = new SpriteSheet(
@@ -33,20 +33,15 @@ function loadSpriteSheet (spriteSetName) {
                                             spriteSheetInfo.spriteHeight
                                         );
 
-                backGroundSprite.saveTheSprite(
-                                    spriteSheetInfo.sprites[0].name, 
-                                    spriteSheetInfo.sprites[0].xPosition, 
-                                    spriteSheetInfo.sprites[0].yPosition, 
-                                    spriteSheetInfo.sprites[0].onScreenWidth, 
-                                    spriteSheetInfo.sprites[0].onScreenHeight
-                                );
-                backGroundSprite.saveTheSprite(
-                                    spriteSheetInfo.sprites[1].name, 
-                                    spriteSheetInfo.sprites[1].xPosition, 
-                                    spriteSheetInfo.sprites[1].yPosition, 
-                                    spriteSheetInfo.sprites[1].onScreenWidth, 
-                                    spriteSheetInfo.sprites[1].onScreenHeight
-                                );
+                spriteSheetInfo.sprites.forEach(sprite => {
+                    backGroundSprite.saveTheSprite(
+                        sprite.name,
+                        sprite.xPosition,
+                        sprite.yPosition,
+                        sprite.onScreenWidth,
+                        sprite.onScreenHeight
+                    )
+                });
 
                 return backGroundSprite
             })
