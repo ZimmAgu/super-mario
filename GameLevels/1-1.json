@@ -1,4 +1,6 @@
 {
+    "spriteSetName" : "overworld",
+    
     "backgrounds" : [
         {
             "name" : "sky",

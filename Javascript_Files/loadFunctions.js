@@ -40,7 +40,7 @@ function loadSpriteSheet (spriteSetName) {
                         sprite.yPosition,
                         sprite.onScreenWidth,
                         sprite.onScreenHeight
-                    )
+                    );
                 });
 
                 return backGroundSprite
@@ -75,10 +75,11 @@ function loadImage (spritesheetURL) { // Will be used to load the spritesheets s
 
 
 function loadLevel (levelName) {    // Loads the current levels from the requested JSON file in the GameLevels folder. The level is determined the parameter
-    return Promise.all([
-        loadJSON(`/GameLevels/${levelName}.json`),
-        loadSpriteSheet('overworld')    
-    ])
+    return loadJSON(`/GameLevels/${levelName}.json`)
+                .then(levelSpecification => Promise.all([
+        levelSpecification,
+        loadSpriteSheet(levelSpecification.spriteSetName)    
+    ]))
     .then(([levelSpecifications, backgroundSprites]) => {
         const currentLevel = new Level();
 
