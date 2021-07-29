@@ -9,6 +9,13 @@ import { drawSpriteLayer } from "./drawTheLayers.js";
 import { loadBackgroundSprites } from "./loadSprites.js"
 
 
+
+function loadJSON (url) {
+    return fetch(url)
+            .then(response  => response.json())
+}
+
+
 function loadImage (spritesheetURL) { // Will be used to load the spritesheets so they can then be drawn to the screen
     return new Promise(resolve => {
 
@@ -29,9 +36,7 @@ function loadImage (spritesheetURL) { // Will be used to load the spritesheets s
 
 function loadLevel (levelName) {    // Loads the current levels from the requested JSON file in the GameLevels folder. The level is determined the parameter
     return Promise.all([
-        fetch(`/GameLevels/${levelName}.json`)
-            .then(response  => response.json()),
-        
+        loadJSON(`/GameLevels/${levelName}.json`),
         loadBackgroundSprites()     
     ])
     .then(([levelSpecifications, backgroundSprites]) => {

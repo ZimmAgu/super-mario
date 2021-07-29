@@ -1,0 +1,22 @@
+{
+    "imageURL" : "/Spritesheet_Images/world.png",
+    "spriteWidth": "16",
+    "spriteHeigt": "16",
+
+    "bricks" : [
+        {
+            "name" : "ground",
+            "xPosition" : 0,
+            "yPosition" : 0,
+            "onScreenWidth" : 32,
+            "onScreenHeight" : 32
+        },
+        {
+            "name" : "sky",
+            "xPosition" : 48,
+            "yPosition" : 368,
+            "onScreenWidth" : 34,
+            "onScreenHeight" : 34
+        }
+    ]
+}
