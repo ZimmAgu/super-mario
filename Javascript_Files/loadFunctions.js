@@ -3,10 +3,11 @@
     This file is responsible for loading all of the things 
     that require functionality to be processed
 */
+import SpriteSheet from "./Classes/spritesheetClass.js";
+
 import { drawBackground } from "./drawTheLayers.js";
 import Level from "./Classes/Level.js";
 import { drawSpriteLayer } from "./drawTheLayers.js";
-import { loadBackgroundSprites } from "./loadSprites.js"
 
 
 
@@ -14,6 +15,45 @@ function loadJSON (url) {
     return fetch(url)
             .then(response  => response.json())
 }
+
+
+function loadSpriteSheet (spriteSetName) {
+    return loadJSON(`/SpriteSets/${spriteSetName}.json`)
+            .then(spriteSheetInfo => Promise.all ([
+                spriteSheetInfo,
+                loadImage(spriteSheetInfo.imageURL)
+            ]))
+            .then(([spriteSheetInfo, image]) => {
+                console.log(spriteSheetInfo.sprites[0].xPosition)
+                console.log(image)
+
+                const backGroundSprite = new SpriteSheet(
+                                            image, 
+                                            spriteSheetInfo.spriteWidth, 
+                                            spriteSheetInfo.spriteHeight
+                                        );
+
+                backGroundSprite.saveTheSprite(
+                                    spriteSheetInfo.sprites[0].name, 
+                                    spriteSheetInfo.sprites[0].xPosition, 
+                                    spriteSheetInfo.sprites[0].yPosition, 
+                                    spriteSheetInfo.sprites[0].onScreenWidth, 
+                                    spriteSheetInfo.sprites[0].onScreenHeight
+                                );
+                backGroundSprite.saveTheSprite(
+                                    spriteSheetInfo.sprites[1].name, 
+                                    spriteSheetInfo.sprites[1].xPosition, 
+                                    spriteSheetInfo.sprites[1].yPosition, 
+                                    spriteSheetInfo.sprites[1].onScreenWidth, 
+                                    spriteSheetInfo.sprites[1].onScreenHeight
+                                );
+
+                return backGroundSprite
+            })
+}
+
+
+
 
 
 function loadImage (spritesheetURL) { // Will be used to load the spritesheets so they can then be drawn to the screen
@@ -34,10 +74,15 @@ function loadImage (spritesheetURL) { // Will be used to load the spritesheets s
 
 
 
+
+
+
+
+
 function loadLevel (levelName) {    // Loads the current levels from the requested JSON file in the GameLevels folder. The level is determined the parameter
     return Promise.all([
         loadJSON(`/GameLevels/${levelName}.json`),
-        loadBackgroundSprites()     
+        loadSpriteSheet('overworld')    
     ])
     .then(([levelSpecifications, backgroundSprites]) => {
         const currentLevel = new Level();
@@ -53,6 +98,10 @@ function loadLevel (levelName) {    // Loads the current levels from the request
         return currentLevel;
     })
 }
+
+
+
+
 
 
 

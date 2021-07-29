@@ -1,9 +1,9 @@
 {
     "imageURL" : "/Spritesheet_Images/world.png",
     "spriteWidth": "16",
-    "spriteHeigt": "16",
+    "spriteHeight": "16",
 
-    "bricks" : [
+    "sprites" : [
         {
             "name" : "ground",
             "xPosition" : 0,
