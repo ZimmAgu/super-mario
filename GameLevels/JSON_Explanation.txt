@@ -1,7 +1,7 @@
 Level 1-1 JSON File explanation:
 
 The dimensions are formatted as shown below
-[columnStart, columnEnd, rowStart, RowEnd]
+[columnStart, columnLength, rowStart, RowLength]
 
 The columns go from left to right
 The rows go from top to bottom
@@ -17,8 +17,20 @@ Example:
 Lets say you cut a 16x16 sprite out from the sprite sheet
     Lets also assume the canvas has a size of 800x400
 
-800/16 = 50 so columnEnd would be 50
-400/16 = 25 so rowEnd would be 25
+800/16 = 50 
+    So to cover all of the columns 
+        columnStart would be 0
+        columnLength would be 50
+    To cover columns 4 - 15
+        columnStart would be 4
+        columnLength would be 11
+400/16 = 25 
+    So to cover all of the rows 
+        rowStart would be 0
+        rowLength would be 25
+    To cover rows 6 - 9
+        rowStart would be 4
+        rowLength would be 3
 SPRITE_RATIO would start at 1 by default
 
 

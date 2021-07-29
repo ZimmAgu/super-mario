@@ -12,7 +12,8 @@ function mouseControl (canvas, object, camera) {
             } else if (event.buttons == 2 // Right clisk
                         && previousEvent && previousEvent.buttons === 2 
                         && previousEvent.type === 'mousemove') {
-                camera.position.x -= event.offsetX - previousEvent.offsetY;
+                console.log(camera.position.x)
+                camera.position.x += event.offsetX - previousEvent.offsetY;
             }
             previousEvent = event;
         })
