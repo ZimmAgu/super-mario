@@ -1,6 +1,6 @@
 "use strict";
 // Class Imports
-import KeyboardEvent from "./Classes/keyboardEvents.js";
+import Camera from "./Classes/Camera.js";
 import LayeredImages from "./Classes/layerTheImages.js"
 import Timer from "./Classes/timer.js";
 
@@ -14,8 +14,7 @@ import { userInput } from "./userInput.js";
 const canvas = document.getElementById("gameScreen");
 const context = canvas.getContext("2d");
 
-const layer = new LayeredImages();
-
+const camera = new Camera();
 
 
 Promise.all([   // Will make the Spritesheet and world textures load at the same time instead of one after another
@@ -45,7 +44,7 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
 
     marioTimer.updateMario = (refreshRate) => {
         level.updateLevel(refreshRate);
-        level.layer.drawTheLayer(context);
+        level.layer.drawTheLayer(context, camera);
     }
 
     marioTimer.startTimer();

@@ -18,8 +18,8 @@ function drawBackground (gameLevel, allSprites) {    // Combines the background 
 
   
 
-    return (regularContext) => {
-        regularContext.drawImage(backgroundLayer, 0, 0)
+    return (regularContext, camera) => {
+        regularContext.drawImage(backgroundLayer, -camera.position.x, -camera.position.y);
     }
 }
 

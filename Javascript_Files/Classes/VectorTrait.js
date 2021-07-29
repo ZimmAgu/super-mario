@@ -2,7 +2,7 @@
 
 import Trait from "./Traits.js";
 
-class vectorUpdate extends Trait {
+class VectorUpdate extends Trait {
     constructor () {
         super('vectorUpdate');
     }
@@ -15,4 +15,4 @@ class vectorUpdate extends Trait {
     }
 }
 
-export default vectorUpdate;
+export default VectorUpdate;
