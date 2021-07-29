@@ -15,7 +15,7 @@ const canvas = document.getElementById("gameScreen");
 const context = canvas.getContext("2d");
 
 const camera = new Camera();
-
+window.camera = camera;
 
 Promise.all([   // Will make the Spritesheet and world textures load at the same time instead of one after another
     loadLevel('1-1'),

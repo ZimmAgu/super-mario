@@ -61,12 +61,16 @@ function createCollisionLayer (level) {
 
     
    
-    return (context) => {   // Draws the outline of the hitbox
+    return (context, camera) => {   // Draws the outline of the hitbox
         context.strokeStyle = 'blue';
 
         resolvedBricks.forEach((value, x, y) => {
             context.beginPath();
-            context.rect(x * brickSize, y * brickSize, brickSize, brickSize);
+            context.rect(
+                x * brickSize - camera.position.x, 
+                y * brickSize - camera.position.y, 
+                brickSize, 
+                brickSize);
             context.stroke();
         });
         resolvedBricks.clear();
@@ -74,8 +78,8 @@ function createCollisionLayer (level) {
         level.objects.forEach(onScreenObject => {
             context.strokeStyle = 'green';
             context.beginPath();
-            context.rect(onScreenObject.position.x, 
-                        onScreenObject.position.y, 
+            context.rect(onScreenObject.position.x - camera.position.x, 
+                        onScreenObject.position.y - camera.position.y, 
                         onScreenObject.size.x,
                         onScreenObject.size.y);
             context.stroke();
