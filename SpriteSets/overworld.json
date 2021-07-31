@@ -3,7 +3,7 @@
     "spriteWidth": "16",
     "spriteHeight": "16",
 
-    "sprites" : [
+    "blocks" : [
         {
             "name" : "ground",
             "xPosition" : 0,
@@ -17,6 +17,27 @@
             "yPosition" : 368,
             "onScreenWidth" : 34,
             "onScreenHeight" : 34
+        },
+        {
+            "name" : "stone",
+            "xPosition" : 0,
+            "yPosition" : 16,
+            "onScreenWidth" : 32,
+            "onScreenHeight" : 32
+        },
+        {
+            "name" : "brick",
+            "xPosition" : 16,
+            "yPosition" : 0,
+            "onScreenWidth" : 32,
+            "onScreenHeight" : 32
+        },
+        {
+            "name" : "chance",
+            "xPosition" : 384,
+            "yPosition" : 0,
+            "onScreenWidth" : 32,
+            "onScreenHeight" : 32
         }
     ]
 }

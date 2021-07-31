@@ -30,7 +30,7 @@ function loadSpriteSheet (spriteSetName) {
                                             spriteSheetInfo.spriteHeight
                                         );
 
-                spriteSheetInfo.sprites.forEach(sprite => {
+                spriteSheetInfo.blocks.forEach(sprite => {
                     backGroundSprite.saveTheSprite(
                         sprite.name,
                         sprite.xPosition,
