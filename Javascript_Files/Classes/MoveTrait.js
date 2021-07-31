@@ -6,7 +6,7 @@ class Move extends Trait {
         super('move');
 
         this.movementDirection = 0; // How long the jump lasts
-        this.movementSpeed = 4000;
+        this.movementSpeed = 6000;
     }
 
     updateTrait (object, elapsedTime) { // Holds all of the functionality of a jump

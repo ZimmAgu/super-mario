@@ -77,15 +77,37 @@ function createCollisionLayer (level) {
         level.objects.forEach(onScreenObject => {
             context.strokeStyle = 'green';
             context.beginPath();
-            context.rect(onScreenObject.position.x - camera.position.x, 
+
+            context.rect(
+                        onScreenObject.position.x - camera.position.x, 
                         onScreenObject.position.y - camera.position.y, 
                         onScreenObject.size.x,
-                        onScreenObject.size.y);
+                        onScreenObject.size.y
+                    );
+
             context.stroke();
         })
     };
-
 }
 
 
-export { createCollisionLayer, drawBackground, drawSpriteLayer }
+
+
+function createCameraLayer (cameraToDraw) {
+    return (context, fromCamera) => {
+        context.strokeStyle = 'purple';
+            context.beginPath();
+
+            context.rect(
+                        cameraToDraw.position.x - fromCamera.position.x, 
+                        cameraToDraw.position.y - fromCamera.position.y, 
+                        cameraToDraw.size.x,
+                        cameraToDraw.size.y
+                    );
+            
+            context.stroke();
+    }
+}
+
+
+export { createCameraLayer, createCollisionLayer, drawBackground, drawSpriteLayer }
