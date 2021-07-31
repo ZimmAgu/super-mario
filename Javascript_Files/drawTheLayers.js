@@ -3,22 +3,50 @@ import Matrix from "./Classes/Matrix.js";
 
 function drawBackground (gameLevel, allSprites) {    // Combines the background images together into one single background
     const backgroundLayer = document.createElement("canvas");  // A new canvas is specifically for the background so I have more control over the size of the background instead of just locking it in the html file 
-    backgroundLayer.width = 800;
+    backgroundLayer.width = 4000;
     backgroundLayer.height = 416;
-    const backgroundLayerContext = backgroundLayer.getContext('2d')
+    const backgroundLayerContext = backgroundLayer.getContext('2d');
+
+    const blocks = gameLevel.blocks;
+    const blockResolver = gameLevel.blockCollider.blocks
     
-    gameLevel.blocks.grid.forEach((column, screenColumns) => {
-        column.forEach((block, screenRows) => {
-            const SPRITE_RATIO = 2
-            const onScreenColumnSize = screenColumns * SPRITE_RATIO;
-            const onScreenRowSize   = screenRows * SPRITE_RATIO;
-            allSprites.drawTexture(block.name, backgroundLayerContext, onScreenColumnSize, onScreenRowSize);
-        })
-    })
+    // gameLevel.blocks.grid.forEach((column, screenColumns) => {
+    //     column.forEach((block, screenRows) => {
+    //         const SPRITE_RATIO = 2
+    //         const onScreenColumnSize = screenColumns * SPRITE_RATIO;
+    //         const onScreenRowSize   = screenRows * SPRITE_RATIO;
+    //         allSprites.drawTexture(block.name, backgroundLayerContext, onScreenColumnSize, onScreenRowSize);
+    //     })
+    // });
 
-  
 
-    return (regularContext, camera) => {
+    function updateDrawing (startOfDrawing, endOfDrawing) {
+        const SPRITE_RATIO = 2
+        
+
+        for (let screenColumns = startOfDrawing; screenColumns < endOfDrawing; screenColumns++) {
+            const columnGrid = blocks.grid[screenColumns];
+
+            if (columnGrid) {
+                columnGrid.forEach((block, screenRows) => {
+
+                    const onScreenColumnSize = screenColumns * SPRITE_RATIO;
+                    const onScreenRowSize   = screenRows * SPRITE_RATIO;
+
+                    allSprites.drawTexture(block.name, backgroundLayerContext, onScreenColumnSize, onScreenRowSize);
+                });
+            }
+        }
+    }
+
+    return function drawBackgroundLayer (regularContext, camera) {    // Draws the background layer
+        const drawWidth = blockResolver.toIndex(camera.size.x);
+        const drawFrom = blockResolver.toIndex(camera.position.x);
+        const drawTo = drawFrom + drawWidth;
+
+        updateDrawing(drawFrom, drawTo);
+
+
         regularContext.drawImage(backgroundLayer, -camera.position.x, -camera.position.y);
     }
 }
@@ -98,10 +126,11 @@ function createCameraLayer (cameraToDraw) {
         context.strokeStyle = 'purple';
             context.beginPath();
 
+
             context.rect(
                         cameraToDraw.position.x - fromCamera.position.x, 
                         cameraToDraw.position.y - fromCamera.position.y, 
-                        cameraToDraw.size.x,
+                        cameraToDraw.size.x - 40,
                         cameraToDraw.size.y
                     );
             
