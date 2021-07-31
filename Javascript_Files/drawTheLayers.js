@@ -7,12 +7,12 @@ function drawBackground (gameLevel, allSprites) {    // Combines the background 
     backgroundLayer.height = 416;
     const backgroundLayerContext = backgroundLayer.getContext('2d')
     
-    gameLevel.bricks.grid.forEach((column, screenColumns) => {
-        column.forEach((brick, screenRows) => {
+    gameLevel.blocks.grid.forEach((column, screenColumns) => {
+        column.forEach((block, screenRows) => {
             const SPRITE_RATIO = 2
             const onScreenColumnSize = screenColumns * SPRITE_RATIO;
             const onScreenRowSize   = screenRows * SPRITE_RATIO;
-            allSprites.drawTexture(brick.name, backgroundLayerContext, onScreenColumnSize, onScreenRowSize);
+            allSprites.drawTexture(block.name, backgroundLayerContext, onScreenColumnSize, onScreenRowSize);
         })
     })
 
@@ -47,15 +47,15 @@ function drawSpriteLayer (onScreenSprites, width = 96, height = 96) {
 
 
 function createCollisionLayer (level) {
-    const brickResolver = level.brickCollider.bricks;
-    const brickSize = brickResolver.brickSize;
+    const blockResolver = level.blockCollider.blocks;
+    const blockSize = blockResolver.blockSize;
 
-    const resolvedBricks = new Matrix();
-    const getByIndexOriginal = brickResolver.getByIndex;
+    const resolvedBlocks = new Matrix();
+    const getByIndexOriginal = blockResolver.getByIndex;
 
-    brickResolver.getByIndex = (column, row) => {
-        resolvedBricks.setMatrix(column, row, true);
-        return getByIndexOriginal.call(brickResolver, column, row);
+    blockResolver.getByIndex = (column, row) => {
+        resolvedBlocks.setMatrix(column, row, true);
+        return getByIndexOriginal.call(blockResolver, column, row);
     }
 
     
@@ -63,16 +63,16 @@ function createCollisionLayer (level) {
     return (context, camera) => {   // Draws the outline of the hitbox
         context.strokeStyle = 'blue';
 
-        resolvedBricks.forEach((value, x, y) => {
+        resolvedBlocks.forEach((value, x, y) => {
             context.beginPath();
             context.rect(
-                x * brickSize - camera.position.x, 
-                y * brickSize - camera.position.y, 
-                brickSize, 
-                brickSize);
+                x * blockSize - camera.position.x, 
+                y * blockSize - camera.position.y, 
+                blockSize, 
+                blockSize);
             context.stroke();
         });
-        resolvedBricks.clear();
+        resolvedBlocks.clear();
 
         level.objects.forEach(onScreenObject => {
             context.strokeStyle = 'green';

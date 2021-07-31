@@ -1,8 +1,8 @@
-import BrickResolver from "./BrickResolver.js";
+import BlockResolver from "./BlockResolver.js";
 
-class BrickCollider {
-    constructor (brickMatrix) {
-        this.bricks = new BrickResolver(brickMatrix);
+class BlockCollider {
+    constructor (blockMatrix) {
+        this.blocks = new BlockResolver(blockMatrix);
     }
 
 
@@ -16,14 +16,14 @@ class BrickCollider {
             return;
         }
 
-        const matches = this.bricks.searchByRange(
+        const matches = this.blocks.searchByRange(
                                         xPosition, 
                                         xPosition,
                                         onScreenObject.position.y, 
                                         onScreenObject.position.y + onScreenObject.size.y
                                     );
         matches.forEach(match => { 
-            if (match.brick.type !== "ground") {
+            if (match.block.type !== "ground") {
                 return;
             }
             if (onScreenObject.velocity.x > 0) {
@@ -51,22 +51,22 @@ class BrickCollider {
             return;
         }
 
-        const matches = this.bricks.searchByRange(
+        const matches = this.blocks.searchByRange(
                                     onScreenObject.position.x, 
                                     onScreenObject.position.x + onScreenObject.size.x,
                                     yPosition, 
                                     yPosition);
         matches.forEach(match => { 
-            if (match.brick.type !== "ground") {
+            if (match.block.type !== "ground") {
                 return;
             }
 
-            if (onScreenObject.velocity.y > 0) {    // Top of brick 
+            if (onScreenObject.velocity.y > 0) {    // Top of block 
                 if (onScreenObject.position.y + onScreenObject.size.y > match.y1) {
                     onScreenObject.position.y = match.y1 - onScreenObject.size.y;
                     onScreenObject.velocity.y = 0;
                 }
-            } else if (onScreenObject.velocity.y < 0) { // Bottom of brick 
+            } else if (onScreenObject.velocity.y < 0) { // Bottom of block 
                 if (onScreenObject.position.y < match.y2) {
                     onScreenObject.position.y = match.y2;
                     onScreenObject.velocity.y = 0;
@@ -77,4 +77,4 @@ class BrickCollider {
 }
 
 
-export default BrickCollider;
+export default BlockCollider;

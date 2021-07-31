@@ -24,9 +24,6 @@ function loadSpriteSheet (spriteSetName) {
                 loadImage(spriteSheetInfo.imageURL)
             ]))
             .then(([spriteSheetInfo, image]) => {
-                console.log(spriteSheetInfo.sprites)
-                console.log(image)
-
                 const backGroundSprite = new SpriteSheet(
                                             image, 
                                             spriteSheetInfo.spriteWidth, 
@@ -83,7 +80,7 @@ function loadLevel (levelName) {    // Loads the current levels from the request
     .then(([levelSpecifications, backgroundSprites]) => {
         const currentLevel = new Level();
 
-        loadTheBricks(currentLevel, levelSpecifications.backgrounds)
+        loadTheBlocks(currentLevel, levelSpecifications.backgrounds)
 
         const backgroundLayer = drawBackground(currentLevel, backgroundSprites);
         currentLevel.layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
@@ -102,14 +99,14 @@ function loadLevel (levelName) {    // Loads the current levels from the request
 
 
 
-function loadTheBricks (level, backgrounds) {
+function loadTheBlocks (level, backgrounds) {
     backgrounds.forEach(background => {
         background.dimensions.forEach( ([colStart, colLength, rowStart, rowLength]) => {              // The array stuffed in the parameter is where the dimensions from the levels JSON files will be stored
             const colEnd = colStart + colLength;
             const rowEnd = rowStart + rowLength;
             for (let screenColumns = colStart; screenColumns < colEnd; screenColumns++) {       // This for loop represents how wide the sprite will be drawn on the canvase
                 for (let screenRows = rowStart; screenRows < rowEnd; screenRows++) {            // This loop represents how tall the sprite will be drawn on the canvas
-                    level.bricks.setMatrix(screenColumns, screenRows, {
+                    level.blocks.setMatrix(screenColumns, screenRows, {
                         name: background.name,
                         type: background.type
                     })
