@@ -47,7 +47,6 @@ function drawSpriteLayer (onScreenSprites, width = 96, height = 96) {
 
 
 function createCollisionLayer (level) {
-    
     const brickResolver = level.brickCollider.bricks;
     const brickSize = brickResolver.brickSize;
 

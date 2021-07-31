@@ -4,24 +4,28 @@
     "backgrounds" : [
         {
             "name" : "sky",
+            "type" : "sky",
             "dimensions": [
                 [0, 4000, 0, 13]
             ]
         }, 
         {
             "name" : "ground",
+            "type" : "ground",
             "dimensions": [
                 [0, 4000, 11, 2]
             ]
         },
         { 
             "name" : "sky",
+            "type" : "sky",
             "dimensions": [
                 [14, 2, 11, 2]
             ]
         },
         { 
             "name" : "ground",
+            "type" : "ground",
             "dimensions": [
                 [5, 3, 8, 1],
                

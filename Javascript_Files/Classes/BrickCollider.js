@@ -17,13 +17,13 @@ class BrickCollider {
         }
 
         const matches = this.bricks.searchByRange(
-                                    xPosition, 
-                                    xPosition,
-                                    onScreenObject.position.y, 
-                                    onScreenObject.position.y + onScreenObject.size.y);
+                                        xPosition, 
+                                        xPosition,
+                                        onScreenObject.position.y, 
+                                        onScreenObject.position.y + onScreenObject.size.y
+                                    );
         matches.forEach(match => { 
-          
-            if (match.brick.name !== "ground") {
+            if (match.brick.type !== "ground") {
                 return;
             }
             if (onScreenObject.velocity.x > 0) {
@@ -57,7 +57,7 @@ class BrickCollider {
                                     yPosition, 
                                     yPosition);
         matches.forEach(match => { 
-            if (match.brick.name !== "ground") {
+            if (match.brick.type !== "ground") {
                 return;
             }
 

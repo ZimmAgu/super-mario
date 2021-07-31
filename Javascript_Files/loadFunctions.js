@@ -110,7 +110,8 @@ function loadTheBricks (level, backgrounds) {
             for (let screenColumns = colStart; screenColumns < colEnd; screenColumns++) {       // This for loop represents how wide the sprite will be drawn on the canvase
                 for (let screenRows = rowStart; screenRows < rowEnd; screenRows++) {            // This loop represents how tall the sprite will be drawn on the canvas
                     level.bricks.setMatrix(screenColumns, screenRows, {
-                        name: background.name
+                        name: background.name,
+                        type: background.type
                     })
                 }
             } 
