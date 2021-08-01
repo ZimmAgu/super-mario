@@ -1,19 +1,33 @@
 "use strict";
 
 import SpriteSheet from "./Classes/spritesheetClass.js";
-import {loadImage} from "./loadFunctions.js";
-
+import { loadJSON, loadImage } from "./loadFunctions.js";
 
 
 function loadMarioSprite () {
-    return loadImage("/Spritesheet_Images/characters.png")
-        .then(image => {
-            const marioSprite = new SpriteSheet(image, 15, 20);
+    return Promise.all([
+        loadImage("/Spritesheet_Images/characters.png"),
+        loadJSON(`/SpriteSets/mario.json`)
+    ])
+    .then(([image, marioInfo]) => {
+        const marioSprite = new SpriteSheet(
+                                    image,
+                                    marioInfo.cutOutWidth,
+                                    marioInfo.cutOutHeight
+                                );
+        
+        marioInfo.frames.forEach(frame => {
+            marioSprite.saveTheSprite(
+                            frame.name,
+                            frame.xPosition,
+                            frame.yPosition,
+                            frame.onScreenWidth,
+                            frame.onScreenHeight
+                        )  
+        });
 
-            marioSprite.saveTheSprite('Normal Idle Mario', 275, 42, 32, 42.6)
-
-            return marioSprite
-        })
+        return marioSprite;
+    })
 }
 
 

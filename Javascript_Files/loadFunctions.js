@@ -117,4 +117,4 @@ function loadTheBlocks (level, backgrounds) {
 }
 
 
-export {loadImage, loadLevel};
+export { loadJSON, loadImage, loadLevel};

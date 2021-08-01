@@ -1,0 +1,15 @@
+{
+    "cutOutWidth" : "15",
+    "cutOutHeight" : "20",
+    
+    "frames" : [
+        {
+            "name" : "idle normal mario",
+            "xPosition" : "275",
+            "yPosition" : "42",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6" 
+        }
+    ]
+    
+}
