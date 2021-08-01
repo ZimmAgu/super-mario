@@ -3,23 +3,14 @@ import Matrix from "./Classes/Matrix.js";
 
 function drawBackground (gameLevel, allSprites) {    // Combines the background images together into one single background
     const backgroundLayer = document.createElement("canvas");  // A new canvas is specifically for the background so I have more control over the size of the background instead of just locking it in the html file 
-    backgroundLayer.width = 4000;
+    backgroundLayer.width = 600;
     backgroundLayer.height = 416;
     const backgroundLayerContext = backgroundLayer.getContext('2d');
 
     const blocks = gameLevel.blocks;
     const blockResolver = gameLevel.blockCollider.blocks
     
-    // gameLevel.blocks.grid.forEach((column, screenColumns) => {
-    //     column.forEach((block, screenRows) => {
-    //         const SPRITE_RATIO = 2
-    //         const onScreenColumnSize = screenColumns * SPRITE_RATIO;
-    //         const onScreenRowSize   = screenRows * SPRITE_RATIO;
-    //         allSprites.drawTexture(block.name, backgroundLayerContext, onScreenColumnSize, onScreenRowSize);
-    //     })
-    // });
-
-
+    
     function updateDrawing (startOfDrawing, endOfDrawing) {
         const SPRITE_RATIO = 2
         
@@ -32,8 +23,9 @@ function drawBackground (gameLevel, allSprites) {    // Combines the background 
 
                     const onScreenColumnSize = screenColumns * SPRITE_RATIO;
                     const onScreenRowSize   = screenRows * SPRITE_RATIO;
+                    const start = startOfDrawing * SPRITE_RATIO
 
-                    allSprites.drawTexture(block.name, backgroundLayerContext, onScreenColumnSize, onScreenRowSize);
+                    allSprites.drawTexture(block.name, backgroundLayerContext, onScreenColumnSize - start , onScreenRowSize);
                 });
             }
         }
@@ -47,7 +39,7 @@ function drawBackground (gameLevel, allSprites) {    // Combines the background 
         updateDrawing(drawFrom, drawTo);
 
 
-        regularContext.drawImage(backgroundLayer, -camera.position.x, -camera.position.y);
+        regularContext.drawImage(backgroundLayer, -camera.position.x %32, -camera.position.y);
     }
 }
 
@@ -130,7 +122,7 @@ function createCameraLayer (cameraToDraw) {
             context.rect(
                         cameraToDraw.position.x - fromCamera.position.x, 
                         cameraToDraw.position.y - fromCamera.position.y, 
-                        cameraToDraw.size.x - 40,
+                        cameraToDraw.size.x,
                         cameraToDraw.size.y
                     );
             
