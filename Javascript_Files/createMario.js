@@ -2,7 +2,6 @@
 // Trait Imports
 import Move from "./Classes/MoveTrait.js";
 import Jump from "./Classes/jumpTrait.js";
-import VectorUpdate from "./Classes/VectorTrait.js";
 
 // Class Imports
 import OnScreenObject from "./Classes/onScreenObjects.js";
@@ -19,7 +18,6 @@ function createMario () {
             mario.size.setVector(32, 42.6);
             mario.addTrait(new Move())
             mario.addTrait(new Jump());  
-            // mario.addTrait(new VectorUpdate());
                    
 
             mario.position.setVector(64, 100);   // Sets the position of mario

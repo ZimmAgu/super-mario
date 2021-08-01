@@ -23,7 +23,7 @@ class BlockCollider {
                                         onScreenObject.position.y + onScreenObject.size.y
                                     );
         matches.forEach(match => { 
-            if (match.block.type !== "ground") {
+            if (match.block.type !== "solid") {
                 return;
             }
             if (onScreenObject.velocity.x > 0) {
@@ -57,7 +57,7 @@ class BlockCollider {
                                     yPosition, 
                                     yPosition);
         matches.forEach(match => { 
-            if (match.block.type !== "ground") {
+            if (match.block.type !== "solid") {
                 return;
             }
 

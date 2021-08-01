@@ -11,21 +11,20 @@
         }, 
         {
             "name" : "ground",
-            "type" : "ground",
+            "type" : "solid",
             "dimensions": [
                 [0, 4000, 11, 2]
             ]
         },
         { 
             "name" : "sky",
-            "type" : "sky",
             "dimensions": [
                 [14, 2, 11, 2]
             ]
         },
         { 
             "name" : "ground",
-            "type" : "ground",
+            "type" : "solid",
             "dimensions": [
                 [2, 3, 11, 1],
 
@@ -36,9 +35,17 @@
         },
         {
             "name" : "brick",
-            "type" : "ground",
+            "type" : "solid",
             "dimensions" : [
-                [5, 4, 7, 1]
+                [5, 3, 7, 1],
+                [25, 5, 7, 1]
+            ]
+        },
+        {
+            "name" : "chance",
+            "dimensions": [
+                [6, 1, 7, 1]
+
             ]
         }
     ]
