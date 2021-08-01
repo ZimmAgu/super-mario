@@ -13,7 +13,7 @@ function mouseControl (canvas, object, camera) {
                         && previousEvent && previousEvent.buttons === 2 
                         && previousEvent.type === 'mousemove') {
                 console.log(camera.position.x, camera.position.x%16)
-                camera.position.x -= event.offsetX - previousEvent.offsetY;
+                camera.position.x += event.offsetX - previousEvent.offsetY;
             }
             previousEvent = event;
         })
