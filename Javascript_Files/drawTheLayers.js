@@ -10,9 +10,18 @@ function drawBackground (gameLevel, allSprites) {    // Combines the background 
     const blocks = gameLevel.blocks;
     const blockResolver = gameLevel.blockCollider.blocks
     
-    
-    function updateDrawing (startOfDrawing, endOfDrawing) {
+    let startOfDrawing;
+    let endOfDrawing;
+    function updateDrawing (drawFrom, drawTo) {
         const SPRITE_RATIO = 2
+        
+        if (drawFrom == startOfDrawing && drawTo == endOfDrawing) { // If the camera has not moved the image is not redrawn
+            return
+        }
+
+        // If the camera is moved then the start and end of the drawing are redifined and the canvas is redrawn
+        startOfDrawing = drawFrom; 
+        endOfDrawing = drawTo;
         
 
         for (let screenColumns = startOfDrawing; screenColumns < endOfDrawing; screenColumns++) {
