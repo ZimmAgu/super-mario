@@ -8,14 +8,7 @@ import OnScreenObject from "./Classes/onScreenObjects.js";
 
 // Javascript File Imports
 import { loadMarioSprite } from "./loadSprites.js"
-
-function createAnimation (allFrames, frameLength) {
-    return (distance) => {
-        const currentFrame = Math.floor(distance / frameLength)  % allFrames.length;
-        const frames = allFrames[currentFrame];
-        return frames 
-    }
-}
+import { marioRunningRight, marioRunningLeft } from "./animations.js"
 
 function createMario () {
     return loadMarioSprite()
@@ -26,25 +19,6 @@ function createMario () {
             mario.addTrait(new Jump());  
 
 
-            const marioRunningRight = createAnimation(
-                                        [
-                                            'normal mario run right 1',
-                                            'normal mario run right 2',
-                                            'normal mario run right 3'
-                                        ], 
-                                        10
-                                    )
-
-            const marioRunningLeft = createAnimation(
-                                        [
-                                            'normal mario run left 1',
-                                            'normal mario run left 2',
-                                            'normal mario run left 3'
-                                        ],
-                                        10
-                                    )
-            
-            
             function routeFrame () {
                 let sign = Math.sign(mario.move.movementDirection)
                 
@@ -62,14 +36,10 @@ function createMario () {
                 } else {
                     return 'normal mario idle left'
                 }
-                
-               
-                
             }       
 
 
             mario.position.setVector(64, 100);   // Sets the position of mario
-            const positionOfMario = mario.position;
 
             mario.drawObject = (context) => {
                 marioSprite.drawTheSprite(routeFrame(this), context, 0, 0);
