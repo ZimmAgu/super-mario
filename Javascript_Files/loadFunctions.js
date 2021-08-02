@@ -24,23 +24,37 @@ function loadSpriteSheet (spriteSetName) {
                 loadImage(spriteSheetInfo.imageURL)
             ]))
             .then(([spriteSheetInfo, image]) => {
-                const backGroundSprite = new SpriteSheet(
+                const sprites = new SpriteSheet(
                                             image, 
                                             spriteSheetInfo.spriteWidth, 
                                             spriteSheetInfo.spriteHeight
                                         );
 
-                spriteSheetInfo.blocks.forEach(sprite => {
-                    backGroundSprite.saveTheSprite(
-                        sprite.name,
-                        sprite.xPosition,
-                        sprite.yPosition,
-                        sprite.onScreenWidth,
-                        sprite.onScreenHeight
-                    );
-                });
+                if (spriteSheetInfo.blocks) {
+                    spriteSheetInfo.blocks.forEach(sprite => {
+                        sprites.saveTheSprite(
+                                    sprite.name,
+                                    sprite.xPosition,
+                                    sprite.yPosition,
+                                    sprite.onScreenWidth,
+                                    sprite.onScreenHeight
+                                );
+                    });
+                }
 
-                return backGroundSprite
+                if (spriteSheetInfo.marioFrames) {
+                    spriteSheetInfo.marioFrames.forEach(frame => {
+                        sprites.saveTheSprite(
+                                    frame.name,
+                                    frame.xPosition,
+                                    frame.yPosition,
+                                    frame.onScreenWidth,
+                                    frame.onScreenHeight
+                                )  
+                    });
+                }
+
+                return sprites
             })
 }
 
@@ -117,4 +131,4 @@ function loadTheBlocks (level, backgrounds) {
 }
 
 
-export { loadJSON, loadImage, loadLevel};
+export { loadJSON, loadImage, loadLevel, loadSpriteSheet};

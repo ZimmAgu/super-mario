@@ -32,9 +32,32 @@
             "onScreenWidth" : 32,
             "onScreenHeight" : 32
         },
+
         {
             "name" : "chance",
             "xPosition" : 384,
+            "yPosition" : 0,
+            "onScreenWidth" : 32,
+            "onScreenHeight" : 32
+        },
+
+        {
+            "name" : "chance1",
+            "xPosition" : 384,
+            "yPosition" : 0,
+            "onScreenWidth" : 32,
+            "onScreenHeight" : 32
+        },
+        {
+            "name" : "chance2",
+            "xPosition" : 400,
+            "yPosition" : 0,
+            "onScreenWidth" : 32,
+            "onScreenHeight" : 32
+        },
+        {
+            "name" : "chance3",
+            "xPosition" : 416,
             "yPosition" : 0,
             "onScreenWidth" : 32,
             "onScreenHeight" : 32
