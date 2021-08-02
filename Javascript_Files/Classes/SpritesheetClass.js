@@ -10,6 +10,7 @@ class SpriteSheet  {
         this.spriteWidth = spriteWidth;
         this.spriteHeight = spriteHeight;
         this.world = new Map();
+        this.animation = new Map();
     }
 
     saveTheSprite (spriteName, xPostion, yPosition, onScreenWidth, onScreenHeight) {     // Saves the current sprite so we don't have to recut it from the spritesheet every time we want to use it 
@@ -45,8 +46,34 @@ class SpriteSheet  {
 
 
     drawTexture (spriteName, spriteContext, widthMultiple, heightMultiple) {    // Draws the to the screen then multiplies it by a specified width and height so it can appear at one giant texture
-        this.drawTheSprite(spriteName, spriteContext, widthMultiple * this.spriteWidth, heightMultiple * this.spriteHeight);
+        
+        this.drawTheSprite(
+                            spriteName, 
+                            spriteContext, 
+                            widthMultiple * this.spriteWidth, 
+                            heightMultiple * this.spriteHeight
+                        );
     }
+
+
+    defineAnimation (name, animation) {
+        this.animation.set(name, animation);
+    }
+
+    drawAnimation (spriteName, spriteContext, widthMultiple, heightMultiple, distance ) {
+        const animation = this.animation.get(spriteName);
+
+        console.log(animation(distance))
+        this.drawTheSprite(
+                            animation(distance), 
+                            spriteContext, 
+                            widthMultiple * this.spriteWidth, 
+                            heightMultiple * this.spriteHeight
+                        );
+    }
+
+
+
 }
 
 

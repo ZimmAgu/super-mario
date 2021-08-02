@@ -34,7 +34,19 @@ function drawBackground (gameLevel, allSprites) {    // Combines the background 
                     const onScreenRowSize   = screenRows * SPRITE_RATIO;
                     const start = startOfDrawing * SPRITE_RATIO
 
-                    allSprites.drawTexture(block.name, backgroundLayerContext, onScreenColumnSize - start , onScreenRowSize);
+                    if (block.name === 'chance') {
+                        console.log('hello')
+                        allSprites.drawAnimation(
+                                        block.name, 
+                                        backgroundLayerContext, 
+                                        onScreenColumnSize - start , 
+                                        onScreenRowSize, 
+                                        0
+                                    );
+                    } else {
+                        allSprites.drawTexture(block.name, backgroundLayerContext, onScreenColumnSize - start , onScreenRowSize);
+                    }
+
                 });
             }
         }

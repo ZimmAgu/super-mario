@@ -3,7 +3,7 @@ function createAnimation (allFrames, frameLength) {
     return (distance) => {
         const currentFrame = Math.floor(distance / frameLength)  % allFrames.length;
         const frames = allFrames[currentFrame];
-        return frames 
+        return frames ;
     }
 }
 
@@ -26,4 +26,4 @@ const marioRunningLeft = createAnimation(
 );
 
 
-export { marioRunningRight, marioRunningLeft };
+export { createAnimation, marioRunningRight, marioRunningLeft };

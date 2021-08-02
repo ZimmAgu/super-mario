@@ -8,6 +8,7 @@ import SpriteSheet from "./Classes/spritesheetClass.js";
 import { drawBackground } from "./drawTheLayers.js";
 import Level from "./Classes/Level.js";
 import { drawSpriteLayer } from "./drawTheLayers.js";
+import { createAnimation } from "./animations.js"
 
 
 
@@ -53,6 +54,16 @@ function loadSpriteSheet (spriteSetName) {
                                 )  
                     });
                 }
+
+
+                if (spriteSheetInfo.animations) {
+                    spriteSheetInfo.animations.forEach(anim => {
+                        const animation = createAnimation(anim.frames, anim.frameLength)
+                        console.log(anim.name)
+                        sprites.defineAnimation(anim.name, animation)
+                    })
+                }
+
 
                 return sprites
             })

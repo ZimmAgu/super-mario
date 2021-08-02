@@ -6,7 +6,7 @@ class Move extends Trait {
         super('move');
 
         this.movementDirection = 0; // How long the jump lasts
-        this.movementSpeed = 6000;  // How fast mario moves
+        this.movementSpeed = 8000;  // How fast mario moves
 
         this.distance = 0;
         this.heading = 1;

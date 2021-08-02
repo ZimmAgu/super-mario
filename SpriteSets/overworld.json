@@ -62,5 +62,17 @@
             "onScreenWidth" : 32,
             "onScreenHeight" : 32
         }
+    ],
+
+    "animations" : [
+        {
+            "name" : "chance",
+            "frameLength" : 1,
+            "frames" : [
+                "chance1",
+                "chance2",
+                "chance3"
+            ]
+        }
     ]
 }
