@@ -9,8 +9,14 @@ import OnScreenObject from "./Classes/onScreenObjects.js";
 // Javascript File Imports
 import { loadMarioSprite } from "./loadSprites.js"
 
+function createAnimation (allFrames, frameLength) {
+    return (distance) => {
+        const currentFrame = Math.floor(distance / frameLength)  % allFrames.length;
+        const frames = allFrames[currentFrame];
+        return frames 
+    }
+}
 
-const GRAVITY = 2000;
 function createMario () {
     return loadMarioSprite()
         .then(marioSprite => {
@@ -20,18 +26,18 @@ function createMario () {
             mario.addTrait(new Jump());  
 
 
-            const marioFrames = [
-                'normal mario run1',
-                'normal mario run2',
-                'normal mario run3'
-            ]
+            const marioFrames = createAnimation([
+                                    'normal mario run1',
+                                    'normal mario run2',
+                                    'normal mario run3'
+                                    ], 
+                                    10
+                                )
             
             
             function routeFrame () {
                 if (mario.move.movementDirection !== 0) {
-                    console.log(Math.floor(mario.move.distance / 10)  % marioFrames.length);
-                    const currentFrame = Math.floor(mario.move.distance / 10)  % marioFrames.length;
-                    return marioFrames[currentFrame];
+                    return marioFrames(mario.move.distance)
                 } 
 
                 return 'normal mario idle'
