@@ -4,29 +4,59 @@
     
     "frames" : [
         {
-            "name" : "normal mario idle",
+            "name" : "normal mario idle right",
             "xPosition" : "275",
             "yPosition" : "42",
             "onScreenWidth" : "32",
             "onScreenHeight" : "42.6" 
         },
         {
-            "name" : "normal mario run1",
+            "name" : "normal mario run right 1",
             "xPosition" : "290",
             "yPosition" : "42",
             "onScreenWidth" : "32",
             "onScreenHeight" : "42.6" 
         },
         {
-            "name" : "normal mario run2",
+            "name" : "normal mario run right 2",
             "xPosition" : "305",
             "yPosition" : "42",
             "onScreenWidth" : "32",
             "onScreenHeight" : "42.6" 
         },
         {
-            "name" : "normal mario run3",
+            "name" : "normal mario run right 3",
             "xPosition" : "320",
+            "yPosition" : "42",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6" 
+        },
+
+
+        {
+            "name" : "normal mario idle left",
+            "xPosition" : "222",
+            "yPosition" : "42",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6" 
+        },
+        {
+            "name" : "normal mario run left 1",
+            "xPosition" : "207",
+            "yPosition" : "42",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6" 
+        },
+        {
+            "name" : "normal mario run left 2",
+            "xPosition" : "192",
+            "yPosition" : "42",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6" 
+        },
+        {
+            "name" : "normal mario run left 3",
+            "xPosition" : "177",
             "yPosition" : "42",
             "onScreenWidth" : "32",
             "onScreenHeight" : "42.6" 

@@ -26,21 +26,44 @@ function createMario () {
             mario.addTrait(new Jump());  
 
 
-            const marioFrames = createAnimation([
-                                    'normal mario run1',
-                                    'normal mario run2',
-                                    'normal mario run3'
-                                    ], 
-                                    10
-                                )
+            const marioRunningRight = createAnimation(
+                                        [
+                                            'normal mario run right 1',
+                                            'normal mario run right 2',
+                                            'normal mario run right 3'
+                                        ], 
+                                        10
+                                    )
+
+            const marioRunningLeft = createAnimation(
+                                        [
+                                            'normal mario run left 1',
+                                            'normal mario run left 2',
+                                            'normal mario run left 3'
+                                        ],
+                                        10
+                                    )
             
             
             function routeFrame () {
-                if (mario.move.movementDirection !== 0) {
-                    return marioFrames(mario.move.distance)
+                let sign = Math.sign(mario.move.movementDirection)
+                let previousSign = 0
+                
+                if (mario.move.movementDirection !== 0 && sign === 1) {
+                    previousSign = sign;
+                    
+                    // console.log(mario.move.movementDirection % marioFrames.length)
+                    return marioRunningRight(mario.move.distance)
                 } 
 
-                return 'normal mario idle'
+                if (mario.move.movementDirection !== 0 && sign === -1) {
+                    previousSign = sign;
+
+                    return marioRunningLeft(mario.move.distance)
+                }
+               
+
+                return 'normal mario idle right'
             }       
 
 
