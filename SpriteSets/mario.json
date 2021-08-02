@@ -4,8 +4,29 @@
     
     "frames" : [
         {
-            "name" : "idle normal mario",
+            "name" : "normal mario idle",
             "xPosition" : "275",
+            "yPosition" : "42",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6" 
+        },
+        {
+            "name" : "normal mario run1",
+            "xPosition" : "290",
+            "yPosition" : "42",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6" 
+        },
+        {
+            "name" : "normal mario run2",
+            "xPosition" : "305",
+            "yPosition" : "42",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6" 
+        },
+        {
+            "name" : "normal mario run3",
+            "xPosition" : "320",
             "yPosition" : "42",
             "onScreenWidth" : "32",
             "onScreenHeight" : "42.6" 
