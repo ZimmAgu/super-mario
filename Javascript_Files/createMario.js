@@ -47,23 +47,24 @@ function createMario () {
             
             function routeFrame () {
                 let sign = Math.sign(mario.move.movementDirection)
-                let previousSign = 0
                 
                 if (mario.move.movementDirection !== 0 && sign === 1) {
-                    previousSign = sign;
-                    
-                    // console.log(mario.move.movementDirection % marioFrames.length)
-                    return marioRunningRight(mario.move.distance)
+                    return marioRunningRight(mario.move.distance);
                 } 
 
                 if (mario.move.movementDirection !== 0 && sign === -1) {
-                    previousSign = sign;
-
-                    return marioRunningLeft(mario.move.distance)
+                    return marioRunningLeft(mario.move.distance);
                 }
-               
 
-                return 'normal mario idle right'
+
+                if (mario.move.heading === 1) {
+                    return 'normal mario idle right'
+                } else {
+                    return 'normal mario idle left'
+                }
+                
+               
+                
             }       
 
 
