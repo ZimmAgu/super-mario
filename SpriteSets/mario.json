@@ -61,6 +61,22 @@
             "yPosition" : "43",
             "onScreenWidth" : "32",
             "onScreenHeight" : "42.6" 
+        },
+
+
+        {
+            "name" : "break facing left",
+            "xPosition" : "160",
+            "yPosition" : "43",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6" 
+        },
+        {
+            "name" : "break facing right",
+            "xPosition" : "338",
+            "yPosition" : "43",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6" 
         }
     ]
     

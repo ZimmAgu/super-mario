@@ -25,13 +25,13 @@ class Move extends Trait {
         if (this.movementDirection) {                                                       // If the character is moving, then the distance variable is incremented up regardless of what direction the character is moving in
             object.velocity.x += this.acceleration * this.movementDirection * elapsedTime;  // The acceleration speed gets added on to the velocity over time
             this.heading = this.movementDirection;
-            this.distance += absoluteObjectVelocity * elapsedTime;
         } else if (object.velocity.x !== 0) {
             object.velocity.x += object.velocity.x > 0 ? -slowdownRate : slowdownRate;      // If you you going to the right, then the slowdown rate is - to subtract velocity. If you are going to the left, then the slowdown rate is + to subtract velocity 
         } else {    
             this.distance = 0;                                                              // If the character is not moving, the distance gets reset to 0
         }
 
+        this.distance += absoluteObjectVelocity * elapsedTime;
         const dragFactor = this.drag * object.velocity.x * absoluteObjectVelocity
         object.velocity.x -= dragFactor; // This drag factor adds wind resistance to prevent mario from going infinitely fast
         

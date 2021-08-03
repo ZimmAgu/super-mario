@@ -32,8 +32,15 @@ function createMario () {
 
 
             if (mario.move.heading === 1) {
+                if (mario.velocity.x > 0) {
+                    return marioRunningRight(mario.move.distance);
+                }
+
                 return 'normal mario idle right'
             } else {
+                if (mario.velocity.x < 0) {
+                    return marioRunningLeft(mario.move.distance);
+                }
                 return 'normal mario idle left'
             }
         }       
