@@ -29,7 +29,17 @@ const marioRunningLeft = createAnimation(
 
 function routeFrame (object) {
     
+    
     let sign = Math.sign(object.move.movementDirection)
+
+
+    if (!object.jump.jumpIsReady && sign === 1) {
+        return 'jump facing right';
+    }
+
+    if (!object.jump.jumpIsReady && sign === -1) {
+        return 'jump facing left';
+    }
 
     if (object.move.movementDirection === -1 && object.velocity.x > 0) {  // Break animation runs if user abruptly turns left after going right
         return 'break facing left';
