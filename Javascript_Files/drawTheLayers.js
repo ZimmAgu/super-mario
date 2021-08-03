@@ -34,8 +34,7 @@ function drawBackground (gameLevel, allSprites) {    // Combines the background 
                     const onScreenColumnSize = screenColumns * SPRITE_RATIO;
                     const onScreenRowSize   = screenRows * SPRITE_RATIO;
                     const start = startOfDrawing * SPRITE_RATIO
-                    if (block.name === 'chance') {
-                        
+                    if (allSprites.animation.has(block.name)) {
                         allSprites.drawAnimation(
                                         block.name, 
                                         backgroundLayerContext, 
