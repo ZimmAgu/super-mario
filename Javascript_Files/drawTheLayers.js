@@ -1,6 +1,7 @@
 "use strict";
 import Matrix from "./Classes/Matrix.js";
 
+
 function drawBackground (gameLevel, allSprites) {    // Combines the background images together into one single background
     const backgroundLayer = document.createElement("canvas");  // A new canvas is specifically for the background so I have more control over the size of the background instead of just locking it in the html file 
     backgroundLayer.width = 600;
@@ -15,9 +16,9 @@ function drawBackground (gameLevel, allSprites) {    // Combines the background 
     function updateDrawing (drawFrom, drawTo) {
         const SPRITE_RATIO = 2
         
-        if (drawFrom == startOfDrawing && drawTo == endOfDrawing) { // If the camera has not moved the image is not redrawn
-            return
-        }
+        // if (drawFrom == startOfDrawing && drawTo == endOfDrawing) { // If the camera has not moved the image is not redrawn
+        //     return
+        // }
 
         // If the camera is moved then the start and end of the drawing are redifined and the canvas is redrawn
         startOfDrawing = drawFrom; 
@@ -33,15 +34,14 @@ function drawBackground (gameLevel, allSprites) {    // Combines the background 
                     const onScreenColumnSize = screenColumns * SPRITE_RATIO;
                     const onScreenRowSize   = screenRows * SPRITE_RATIO;
                     const start = startOfDrawing * SPRITE_RATIO
-
                     if (block.name === 'chance') {
-                        console.log('hello')
+                        
                         allSprites.drawAnimation(
                                         block.name, 
                                         backgroundLayerContext, 
                                         onScreenColumnSize - start , 
                                         onScreenRowSize, 
-                                        0
+                                        gameLevel.totalTime
                                     );
                     } else {
                         allSprites.drawTexture(block.name, backgroundLayerContext, onScreenColumnSize - start , onScreenRowSize);

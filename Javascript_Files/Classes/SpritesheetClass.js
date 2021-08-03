@@ -63,7 +63,6 @@ class SpriteSheet  {
     drawAnimation (spriteName, spriteContext, widthMultiple, heightMultiple, distance ) {
         const animation = this.animation.get(spriteName);
 
-        console.log(animation(distance))
         this.drawTheSprite(
                             animation(distance), 
                             spriteContext, 

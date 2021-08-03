@@ -59,7 +59,6 @@ function loadSpriteSheet (spriteSetName) {
                 if (spriteSheetInfo.animations) {
                     spriteSheetInfo.animations.forEach(anim => {
                         const animation = createAnimation(anim.frames, anim.frameLength)
-                        console.log(anim.name)
                         sprites.defineAnimation(anim.name, animation)
                     })
                 }

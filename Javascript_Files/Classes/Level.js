@@ -5,6 +5,9 @@ import Matrix from "./Matrix.js";
 
 class Level {
     constructor () {
+        this.gravity = 200;
+        this.totalTime = 0;
+
         this.layer = new LayeredImages();
         this.objects = new Set(); // Sets are like maps but they don't allow duplicates to be added to it
         this.blocks = new Matrix();
@@ -14,7 +17,6 @@ class Level {
 
     updateLevel (refreshRate) {
         this.objects.forEach(object => {
-            let gravity = 200;
 
             object.updateTrait(refreshRate);
 
@@ -22,9 +24,10 @@ class Level {
             this.blockCollider.checkForX(object);
 
             object.position.y += (object.velocity.y * refreshRate);
-            object.velocity.y += (gravity * refreshRate);
+            object.velocity.y += (this.gravity * refreshRate);
             this.blockCollider.checkForY(object);
         })
+        this.totalTime += refreshRate;
     }
 }
 
