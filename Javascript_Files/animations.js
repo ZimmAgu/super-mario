@@ -26,4 +26,42 @@ const marioRunningLeft = createAnimation(
 );
 
 
-export { createAnimation, marioRunningRight, marioRunningLeft };
+
+function routeFrame (object) {
+    
+    let sign = Math.sign(object.move.movementDirection)
+
+    if (object.move.movementDirection === -1 && object.velocity.x > 0) {  // Break animation runs if user abruptly turns left after going right
+        return 'break facing left';
+    }
+
+    if (object.move.movementDirection === 1 && object.velocity.x < 0) { // Break animation runs if user abruptly turns right  after going left
+        return 'break facing right';
+    }
+
+    if (object.move.movementDirection !== 0 && sign === 1) {         // Mario running animation loops when user presses and holds the button to go right
+        return marioRunningRight(object.move.distance);
+    } 
+
+    if (object.move.movementDirection !== 0 && sign === -1) {        // Mario running animation loops when user presses and holds the button to go left
+        return marioRunningLeft(object.move.distance);
+    }
+
+
+    if (object.move.heading === 1) {
+
+        if (object.velocity.x > 0) {
+            return marioRunningRight(object.move.distance); // Mario will take a couple of extra steps before stopping completely
+        }
+
+        return 'normal mario idle right'
+    } else {
+        if (object.velocity.x < 0) {
+            return marioRunningLeft(object.move.distance); // Mario will take a couple of extra steps before stopping completely
+        }
+        return 'normal mario idle left'
+    }
+}  
+
+
+export { createAnimation, routeFrame };
