@@ -24,8 +24,9 @@ class Level {
             this.blockCollider.checkForX(object);
 
             object.position.y += (object.velocity.y * refreshRate);
-            object.velocity.y += (this.gravity * refreshRate);
             this.blockCollider.checkForY(object);
+
+            object.velocity.y += (this.gravity * refreshRate);
         })
         this.totalTime += refreshRate;
     }

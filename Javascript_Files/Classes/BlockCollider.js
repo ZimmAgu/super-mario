@@ -65,6 +65,8 @@ class BlockCollider {
                 if (onScreenObject.position.y + onScreenObject.size.y > match.y1) {
                     onScreenObject.position.y = match.y1 - onScreenObject.size.y;
                     onScreenObject.velocity.y = 0;
+
+                    onScreenObject.obstruct('bottom');
                 }
             } else if (onScreenObject.velocity.y < 0) { // Bottom of block 
                 if (onScreenObject.position.y < match.y2) {

@@ -12,6 +12,12 @@ class OnScreenObject {
         this.traits = []; // Each on screen object will have an array where all of their traits are stored                
     }
 
+    obstruct (side) {
+        this.traits.forEach(trait => {
+            trait.obstruct(this, side)    // Each trait class will have a function named update trait
+        })
+    }
+
     addTrait (currentTrait) {
         this.traits.push(currentTrait);
         this[currentTrait.traitName] = currentTrait;
