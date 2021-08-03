@@ -13,10 +13,10 @@ function userInput (onScreenObject) {
         }
     });
     keyboard.addKeyMap('KeyD', keystate => { // Move Right
-        onScreenObject.move.movementDirection = keystate
+        onScreenObject.move.movementDirection += keystate ? 1 : -1 // These ternary operaters ensure that the keystate is always either 1 or -1. This avoids a glitch in which mario comes to a stop when auser tries to go in the opposite direction
     });
     keyboard.addKeyMap('KeyA', keystate => { // Move left
-        onScreenObject.move.movementDirection = -keystate
+        onScreenObject.move.movementDirection += keystate ? -1 : 1
     });
 
     return keyboard;

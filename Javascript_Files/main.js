@@ -34,12 +34,17 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
 
     input.keyboardEventListener(window)
 
+    
 
     const marioTimer = new Timer(1/60);
 
     marioTimer.updateMario = (refreshRate) => {
         level.updateLevel(refreshRate);
         level.layer.drawTheLayer(context, camera);
+
+        if (mario.position.x > 100) {
+        camera.position.x = mario.position.x - 100;
+    }
     }
 
     marioTimer.startTimer();
