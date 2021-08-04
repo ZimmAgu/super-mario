@@ -65,10 +65,8 @@ function loadSpriteSheet (spriteSetName) {
 
 
                 if (spriteSheetInfo.patterns) { // patterns located in overworld.json
-                    console.log(spriteSheetInfo.patterns);
 
                     spriteSheetInfo.patterns.verticalPipe.forEach(piece => { // The vertical pipe pattern
-                        console.log(piece);
                         sprites.saveTheSprite(
                             piece.name,
                             piece.xPosition,
@@ -120,6 +118,7 @@ function loadLevel (levelName) {    // Loads the current levels from the request
     .then(([levelSpecifications, backgroundSprites]) => {
         const currentLevel = new Level();
 
+        console.log(levelSpecifications.patterns)
         loadTheBlocks(currentLevel, levelSpecifications.backgrounds)
 
         const backgroundLayer = drawBackground(currentLevel, backgroundSprites);
@@ -140,21 +139,33 @@ function loadLevel (levelName) {    // Loads the current levels from the request
 
 
 function loadTheBlocks (level, backgrounds) {
+
+    backgrounds.forEach(background => {
+        console.log(background)
+    })
+
     backgrounds.forEach(background => {
         background.dimensions.forEach( ([colStart, colLength, rowStart, rowLength]) => {              // The array stuffed in the parameter is where the dimensions from the levels JSON files will be stored
-            const colEnd = colStart + colLength;
-            const rowEnd = rowStart + rowLength;
-            for (let screenColumns = colStart; screenColumns < colEnd; screenColumns++) {       // This for loop represents how wide the sprite will be drawn on the canvase
-                for (let screenRows = rowStart; screenRows < rowEnd; screenRows++) {            // This loop represents how tall the sprite will be drawn on the canvas
-                    level.blocks.setMatrix(screenColumns, screenRows, {
-                        name: background.name,
-                        type: background.type
-                    })
-                }
-            } 
+            applyDimensions(level, background, colStart, colLength, rowStart, rowLength);
         })
     })
 }
 
+
+
+
+function applyDimensions (marioLevel, backgroundBlock, xStart, xLength, yStart, yLength) {
+    const xEnd = xStart + xLength;
+    const yEnd = yStart + yLength;
+
+    for (let screenColumns = xStart; screenColumns < xEnd; screenColumns++) {       // This for loop represents how wide the sprite will be drawn on the canvas
+        for (let screenRows = yStart; screenRows < yEnd; screenRows++) {            // This loop represents how tall the sprite will be drawn on the canvas
+            marioLevel.blocks.setMatrix(screenColumns, screenRows, {
+                name: backgroundBlock.name,
+                type: backgroundBlock.type
+            })
+        }
+    } 
+}
 
 export { loadJSON, loadImage, loadLevel, loadSpriteSheet};

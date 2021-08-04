@@ -9,6 +9,7 @@
                 [0, 4000, 0, 13]
             ]
         }, 
+
         {
             "name" : "ground",
             "type" : "solid",
@@ -16,12 +17,14 @@
                 [0, 4000, 11, 2]
             ]
         },
+
         { 
             "name" : "sky",
             "dimensions": [
                 [14, 2, 11, 2]
             ]
         },
+
         { 
             "name" : "ground",
             "type" : "solid",
@@ -33,6 +36,7 @@
                 [10, 2, 0, 7]
             ]
         },
+
         {
             "name" : "brick",
             "type" : "solid",
@@ -41,37 +45,48 @@
                 [25, 10, 7, 1]
             ]
         },
+
         {
             "name" : "chance",
             "dimensions": [
                 [6, 1, 7, 1]
-
-            ]
-        },
-
-        {
-            "name" : "upper left vert pipe",
-            "dimensions" : [
-                [1, 1, 1, 1]
-            ]
-        },
-        {
-            "name" : "upper right vert pipe",
-            "dimensions" : [
-                [2, 1, 1, 1]
-            ]
-        },
-        {
-            "name" : "lower left vert pipe",
-            "dimensions" : [
-                [1, 1, 2, 1]
-            ]
-        },
-        {
-            "name" : "lower right vert pipe",
-            "dimensions" : [
-                [2, 1, 2, 1]
             ]
         }
-    ]
+
+       
+    ],
+
+
+
+
+    "patterns" : {
+        "pipe2h" : {
+            "backgrounds" : [
+                {
+                    "name" : "upper left vert pipe",
+                    "dimensions" : [
+                        [1, 1, 1, 1]
+                    ]
+                },
+                {
+                    "name" : "upper right vert pipe",
+                    "dimensions" : [
+                        [2, 1, 1, 1]
+                    ]
+                },
+                {
+                    "name" : "lower left vert pipe",
+                    "dimensions" : [
+                        [1, 1, 2, 1]
+                    ]
+                },
+                {
+                    "name" : "lower right vert pipe",
+                    "dimensions" : [
+                        [2, 1, 2, 1]
+                    ]
+                }
+            ]
+        }
+    }
 }
