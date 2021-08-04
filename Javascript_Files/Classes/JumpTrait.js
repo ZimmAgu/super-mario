@@ -7,18 +7,20 @@ class Jump extends Trait {
 
         this.jumpIsReady = false;
         this.duration = 0.5; // How long the jump lasts
-        this.jumpVelocity = 300;
+        this.jumpVelocity = 200;
         this.engageTime = 0;
+
+        this.requestTime = 0;   // The request time and the grace period give the user a certain amount of time before the land on the ground to press the jump button again & trigger another jump
+        this.gracePeriod = 0.1;
     }
 
-    startJump () {
-        if (this.jumpIsReady) {
-            this.engageTime = this.duration;    // Starts the jump by giving the update function the condition to change the velocity
-        }
+    startJump () {  // Triggers the jump functionality defined in the updateTrait function below 
+        this.requestTime = this.gracePeriod;
     }
 
     cancelJump () {
         this.engageTime = 0;    //Cancels the jump
+        this.requestTime = 0;
     }
 
     obstruct (object, side) {
@@ -33,7 +35,16 @@ class Jump extends Trait {
     }
 
 
-    updateTrait (object, elapsedTime) { // Holds all of the functionality of a jump
+    updateTrait (object, elapsedTime) {             // Holds all of the functionality of a jump
+
+        if (this.requestTime > 0) {                 // If the jump button is pressed  and the user is in the air then the jump funcitonality is triggered 
+            if (this.jumpIsReady) {
+                this.engageTime = this.duration;    // Starts the jump by giving the update function the condition to change the velocity
+                this.requestTime = 0;
+            }
+
+            this.requestTime -= elapsedTime;        // Eventually sets the request time back to 0
+        }
 
         if (this.engageTime > 0) {
             object.velocity.y = -this.jumpVelocity
