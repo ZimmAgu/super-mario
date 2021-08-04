@@ -56,7 +56,7 @@
         {
             "pattern" : "pipe2h",
             "dimensions": [
-                [10, 1, 7, 1]
+                [18, 1, 8, 1]
             ]
         } 
     ],
@@ -69,24 +69,28 @@
             "pieces" : [
                 {
                     "name" : "upper left vert pipe",
+                    "type" : "solid",
                     "dimensions" : [
                         [1, 1, 1, 1]
                     ]
                 },
                 {
                     "name" : "upper right vert pipe",
+                    "type" : "solid",
                     "dimensions" : [
                         [2, 1, 1, 1]
                     ]
                 },
                 {
                     "name" : "lower left vert pipe",
+                    "type" : "solid",
                     "dimensions" : [
                         [1, 1, 2, 1]
                     ]
                 },
                 {
                     "name" : "lower right vert pipe",
+                    "type" : "solid",
                     "dimensions" : [
                         [2, 1, 2, 1]
                     ]
