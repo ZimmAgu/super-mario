@@ -118,7 +118,6 @@ function loadLevel (levelName) {    // Loads the current levels from the request
     .then(([levelSpecifications, backgroundSprites]) => {
         const currentLevel = new Level();
 
-        console.log(levelSpecifications.patterns)
         loadTheBlocks(currentLevel, levelSpecifications.backgrounds, levelSpecifications.patterns)
 
         const backgroundLayer = drawBackground(currentLevel, backgroundSprites);
@@ -161,7 +160,6 @@ function applyDimensions (marioLevel, backgroundBlock, patterns, xStart, xLength
             if (backgroundBlock.pattern) {
                 const patternBackgrounds = patterns[backgroundBlock.pattern].pieces
                 loadTheBlocks(marioLevel, patternBackgrounds, patterns, derivedX, derivedY);
-                console.log(patternBackgrounds);
             } else {
                 marioLevel.blocks.setMatrix(derivedX, derivedY, {
                     name: backgroundBlock.name,

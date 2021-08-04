@@ -54,9 +54,9 @@
         },
 
         {
-            "pattern" : "pipe2h",
+            "pattern" : "pipe",
             "dimensions": [
-                [18, 1, 8, 1]
+                [15, 1, 7, 1]
             ]
         } 
     ],
@@ -65,7 +65,7 @@
 
 
     "patterns" : {
-        "pipe2h" : {
+        "pipe" : {
             "pieces" : [
                 {
                     "name" : "upper left vert pipe",
@@ -81,6 +81,18 @@
                         [2, 1, 1, 1]
                     ]
                 },
+                { 
+                    "pattern" : "addPipeHeight",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 0, 1],
+                        [0, 1, 1, 1]
+                    ]
+                }
+            ]
+        },
+        "addPipeHeight" : {
+            "pieces" : [ 
                 {
                     "name" : "lower left vert pipe",
                     "type" : "solid",
