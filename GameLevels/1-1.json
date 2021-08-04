@@ -51,9 +51,14 @@
             "dimensions": [
                 [6, 1, 7, 1]
             ]
-        }
+        },
 
-       
+        {
+            "pattern" : "pipe2h",
+            "dimensions": [
+                [8, 1, 7, 1]
+            ]
+        } 
     ],
 
 
@@ -61,7 +66,7 @@
 
     "patterns" : {
         "pipe2h" : {
-            "backgrounds" : [
+            "pieces" : [
                 {
                     "name" : "upper left vert pipe",
                     "dimensions" : [

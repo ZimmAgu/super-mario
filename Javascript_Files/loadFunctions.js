@@ -119,7 +119,7 @@ function loadLevel (levelName) {    // Loads the current levels from the request
         const currentLevel = new Level();
 
         console.log(levelSpecifications.patterns)
-        loadTheBlocks(currentLevel, levelSpecifications.backgrounds)
+        loadTheBlocks(currentLevel, levelSpecifications.backgrounds, levelSpecifications.patterns)
 
         const backgroundLayer = drawBackground(currentLevel, backgroundSprites);
         currentLevel.layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
@@ -138,15 +138,10 @@ function loadLevel (levelName) {    // Loads the current levels from the request
 
 
 
-function loadTheBlocks (level, backgrounds) {
-
-    backgrounds.forEach(background => {
-        console.log(background)
-    })
-
+function loadTheBlocks (level, backgrounds, patterns) {
     backgrounds.forEach(background => {
         background.dimensions.forEach( ([colStart, colLength, rowStart, rowLength]) => {              // The array stuffed in the parameter is where the dimensions from the levels JSON files will be stored
-            applyDimensions(level, background, colStart, colLength, rowStart, rowLength);
+            applyDimensions(level, background, patterns, colStart, colLength, rowStart, rowLength);
         })
     })
 }
@@ -154,16 +149,26 @@ function loadTheBlocks (level, backgrounds) {
 
 
 
-function applyDimensions (marioLevel, backgroundBlock, xStart, xLength, yStart, yLength) {
+function applyDimensions (marioLevel, backgroundBlock, patterns, xStart, xLength, yStart, yLength) {    // Made specifically for the loadTheBlocks function
     const xEnd = xStart + xLength;
     const yEnd = yStart + yLength;
 
     for (let screenColumns = xStart; screenColumns < xEnd; screenColumns++) {       // This for loop represents how wide the sprite will be drawn on the canvas
         for (let screenRows = yStart; screenRows < yEnd; screenRows++) {            // This loop represents how tall the sprite will be drawn on the canvas
-            marioLevel.blocks.setMatrix(screenColumns, screenRows, {
-                name: backgroundBlock.name,
-                type: backgroundBlock.type
-            })
+            
+            
+            if (backgroundBlock.pattern) {
+                const patternBackgrounds = patterns[backgroundBlock.pattern].pieces
+                loadTheBlocks(marioLevel, patternBackgrounds, patterns);
+                console.log(patternBackgrounds);
+            } else {
+                marioLevel.blocks.setMatrix(screenColumns, screenRows, {
+                    name: backgroundBlock.name,
+                    type: backgroundBlock.type
+                }) 
+            }
+            
+            
         }
     } 
 }
