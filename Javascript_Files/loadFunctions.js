@@ -67,8 +67,15 @@ function loadSpriteSheet (spriteSetName) {
                 if (spriteSheetInfo.patterns) { // patterns located in overworld.json
                     console.log(spriteSheetInfo.patterns);
 
-                    spriteSheetInfo.patterns.verticalPipe.forEach(pattern => { // The vertical pipe pattern
-                        console.log(pattern);
+                    spriteSheetInfo.patterns.verticalPipe.forEach(piece => { // The vertical pipe pattern
+                        console.log(piece);
+                        sprites.saveTheSprite(
+                            piece.name,
+                            piece.xPosition,
+                            piece.yPosition,
+                            piece.onScreenWidth,
+                            piece.onScreenHeight
+                        );
                     });
                 }
 

@@ -47,6 +47,31 @@
                 [6, 1, 7, 1]
 
             ]
+        },
+
+        {
+            "name" : "upper left vert pipe",
+            "dimensions" : [
+                [1, 1, 1, 1]
+            ]
+        },
+        {
+            "name" : "upper right vert pipe",
+            "dimensions" : [
+                [2, 1, 1, 1]
+            ]
+        },
+        {
+            "name" : "lower left vert pipe",
+            "dimensions" : [
+                [1, 1, 2, 1]
+            ]
+        },
+        {
+            "name" : "lower right vert pipe",
+            "dimensions" : [
+                [2, 1, 2, 1]
+            ]
         }
     ]
 }
