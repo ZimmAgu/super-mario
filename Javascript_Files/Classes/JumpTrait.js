@@ -7,7 +7,7 @@ class Jump extends Trait {
 
         this.jumpIsReady = false;
         this.duration = 0.5; // How long the jump lasts
-        this.jumpVelocity = 150;
+        this.jumpVelocity = 300;
         this.engageTime = 0;
     }
 
@@ -24,6 +24,11 @@ class Jump extends Trait {
     obstruct (object, side) {
         if (side === 'bottom') {    // When mario is touching the ground then he is given the ability to jump
             this.jumpIsReady = true;
+        }
+
+        if (side == 'top') {
+            console.log('jump cancelled')
+            this.cancelJump()
         }
     }
 

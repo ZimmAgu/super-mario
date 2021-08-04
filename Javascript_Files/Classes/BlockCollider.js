@@ -72,6 +72,8 @@ class BlockCollider {
                 if (onScreenObject.position.y < match.y2) {
                     onScreenObject.position.y = match.y2;
                     onScreenObject.velocity.y = 0;
+
+                    onScreenObject.obstruct('top');
                 }
             }
         })
