@@ -24,7 +24,14 @@ class Move extends Trait {
 
         if (this.movementDirection) {                                                       // If the character is moving, then the distance variable is incremented up regardless of what direction the character is moving in
             object.velocity.x += this.acceleration * this.movementDirection * elapsedTime;  // The acceleration speed gets added on to the velocity over time
-            this.heading = this.movementDirection;
+
+            if (object.jump) {
+                if (object.jump.jumpIsReady === true) {     // Mario's animations can only change from right to left if he is on the ground 
+                    this.heading = this.movementDirection;
+                }
+            } else {
+                this.heading = this.movementDirection;      // Any other object's animations can change whenever
+            }
         } else if (object.velocity.x !== 0) {
             object.velocity.x += object.velocity.x > 0 ? -slowdownRate : slowdownRate;      // If you you going to the right, then the slowdown rate is - to subtract velocity. If you are going to the left, then the slowdown rate is + to subtract velocity 
         } else {    
