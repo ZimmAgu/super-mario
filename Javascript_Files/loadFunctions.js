@@ -75,7 +75,20 @@ function loadSpriteSheet (spriteSetName) {
                             piece.onScreenHeight
                         );
                     });
+
+
+                    spriteSheetInfo.patterns.regularCloud.forEach(piece => {
+                        sprites.saveTheSprite(
+                            piece.name,
+                            piece.xPosition,
+                            piece.yPosition,
+                            piece.onScreenWidth,
+                            piece.onScreenHeight
+                        );
+                    })
                 }
+
+
 
 
                 return sprites
