@@ -94,6 +94,9 @@
                 "onScreenWidth" : 32,
                 "onScreenHeight" : 32
             }
+        ],
+        "test" : [
+
         ]
     },
 

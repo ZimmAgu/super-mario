@@ -31,7 +31,7 @@ function loadSpriteSheet (spriteSetName) {
                                             spriteSheetInfo.spriteHeight
                                         );
 
-                if (spriteSheetInfo.blocks) {
+                if (spriteSheetInfo.blocks) { // Blocks located in overworld.json
                     spriteSheetInfo.blocks.forEach(sprite => {
                         sprites.saveTheSprite(
                                     sprite.name,
@@ -43,7 +43,7 @@ function loadSpriteSheet (spriteSetName) {
                     });
                 }
 
-                if (spriteSheetInfo.marioFrames) {
+                if (spriteSheetInfo.marioFrames) { // marioFrams located in mario.json
                     spriteSheetInfo.marioFrames.forEach(frame => {
                         sprites.saveTheSprite(
                                     frame.name,
@@ -51,21 +51,25 @@ function loadSpriteSheet (spriteSetName) {
                                     frame.yPosition,
                                     frame.onScreenWidth,
                                     frame.onScreenHeight
-                                )  
+                                );  
                     });
                 }
 
 
-                if (spriteSheetInfo.animations) {
+                if (spriteSheetInfo.animations) { // animations located in overworld.json
                     spriteSheetInfo.animations.forEach(anim => {
                         const animation = createAnimation(anim.frames, anim.frameLength)
                         sprites.defineAnimation(anim.name, animation)
-                    })
+                    });
                 }
 
 
-                if (spriteSheetInfo.patterns) {
+                if (spriteSheetInfo.patterns) { // patterns located in overworld.json
                     console.log(spriteSheetInfo.patterns);
+
+                    spriteSheetInfo.patterns.verticalPipe.forEach(pattern => { // The vertical pipe pattern
+                        console.log(pattern);
+                    });
                 }
 
 
