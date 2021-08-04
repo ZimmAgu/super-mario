@@ -47,7 +47,11 @@ class Jump extends Trait {
         }
 
         if (this.engageTime > 0) {
-            object.velocity.y = -this.jumpVelocity
+            const absoluteObjectVelocity = Math.abs(object.velocity.x);
+            const SPEEDBOOST = 0.3;
+
+
+            object.velocity.y = -(this.jumpVelocity + absoluteObjectVelocity * SPEEDBOOST);  // Mario will jump higher when he has more speed to run
             this.engageTime -= elapsedTime;
         }
 
