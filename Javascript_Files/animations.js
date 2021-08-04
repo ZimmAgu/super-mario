@@ -13,7 +13,7 @@ const marioRunningRight = createAnimation(
         'normal mario run right 2',
         'normal mario run right 3'
     ], 
-    10
+    12
 );
 
 const marioRunningLeft = createAnimation(
@@ -22,7 +22,7 @@ const marioRunningLeft = createAnimation(
         'normal mario run left 2',
         'normal mario run left 3'
     ],
-    10
+    12
 );
 
 

@@ -8,7 +8,7 @@ class Move extends Trait {
         this.movementDirection = 0; // How long the jump lasts
         this.acceleration = 400;    // How fast mario speeds up
         this.decceleration = 300;   // How fast mario slows down
-        this.drag = 1/9000;         // The "wind resistance" that prevents mario from having infinite speed. This if the denominator as the max speed that mario can go  
+        this.drag = 1/8000;         // The "wind resistance" that prevents mario from having infinite speed. This if the denominator as the max speed that mario can go  
 
         this.distance = 0;
         this.heading = 1;
