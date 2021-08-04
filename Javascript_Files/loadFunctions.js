@@ -64,6 +64,11 @@ function loadSpriteSheet (spriteSetName) {
                 }
 
 
+                if (spriteSheetInfo.patterns) {
+                    console.log(spriteSheetInfo.patterns);
+                }
+
+
                 return sprites
             })
 }
