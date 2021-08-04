@@ -33,11 +33,11 @@ function routeFrame (object) {
     let sign = Math.sign(object.move.movementDirection)
 
 
-    if (!object.jump.jumpIsReady && sign === 1) {
+    if (!object.jump.jumpIsReady && object.move.heading === 1) {
         return 'jump facing right';
     }
 
-    if (!object.jump.jumpIsReady && sign === -1) {
+    if (!object.jump.jumpIsReady && object.move.heading !== 1) {
         return 'jump facing left';
     }
 
