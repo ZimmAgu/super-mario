@@ -5,7 +5,7 @@ import Matrix from "./Matrix.js";
 
 class Level {
     constructor () {
-        this.gravity = 200;
+        this.gravity = 1500;
         this.totalTime = 0;
 
         this.layer = new LayeredImages();

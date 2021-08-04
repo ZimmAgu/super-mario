@@ -6,8 +6,8 @@ class Jump extends Trait {
         super('jump');
 
         this.jumpIsReady = false;
-        this.duration = 0.5; // How long the jump lasts
-        this.jumpVelocity = 200;
+        this.duration = 0.3; // How long the jump lasts
+        this.jumpVelocity = 350;
         this.engageTime = 0;
 
         this.requestTime = 0;   // The request time and the grace period give the user a certain amount of time before the land on the ground to press the jump button again & trigger another jump
