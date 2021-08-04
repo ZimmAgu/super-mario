@@ -54,9 +54,9 @@
         },
 
         {
-            "pattern" : "pipe",
+            "pattern" : "pipe4h",
             "dimensions": [
-                [15, 1, 7, 1]
+                [15, 1, 5, 1]
             ]
         } 
     ],
@@ -65,7 +65,92 @@
 
 
     "patterns" : {
-        "pipe" : {
+        "pipe1h" : {
+            "pieces" : [
+                { 
+                    "pattern" : "vertical pipe cap",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 0, 1]
+                    ]
+                },
+                { 
+                    "pattern" : "vertical pipe section",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 0, 1]
+                    ]
+                }
+            ]
+        },
+
+        "pipe2h" : {
+            "pieces" : [
+                { 
+                    "pattern" : "vertical pipe cap",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 0, 1]
+                    ]
+                },
+                { 
+                    "pattern" : "vertical pipe section",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 0, 1],
+                        [0, 1, 1, 1]
+                    ]
+                }
+            ]
+        },
+
+        "pipe3h" : {
+            "pieces" : [
+                { 
+                    "pattern" : "vertical pipe cap",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 0, 1]
+                    ]
+                },
+                { 
+                    "pattern" : "vertical pipe section",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 0, 1],
+                        [0, 1, 1, 1],
+                        [0, 1, 2, 1]
+                    ]
+                }
+            ]
+        },
+
+        "pipe4h" : {
+            "pieces" : [
+                { 
+                    "pattern" : "vertical pipe cap",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 0, 1]
+                    ]
+                },
+                { 
+                    "pattern" : "vertical pipe section",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 0, 1],
+                        [0, 1, 1, 1],
+                        [0, 1, 2, 1],
+                        [0, 1, 3, 1]
+                    ]
+                }
+            ]
+        },
+
+
+
+
+        "vertical pipe cap" : {
             "pieces" : [
                 {
                     "name" : "upper left vert pipe",
@@ -80,18 +165,11 @@
                     "dimensions" : [
                         [2, 1, 1, 1]
                     ]
-                },
-                { 
-                    "pattern" : "addPipeHeight",
-                    "type" : "solid",
-                    "dimensions" : [
-                        [0, 1, 0, 1],
-                        [0, 1, 1, 1]
-                    ]
                 }
             ]
         },
-        "addPipeHeight" : {
+
+        "vertical pipe section" : {
             "pieces" : [ 
                 {
                     "name" : "lower left vert pipe",
