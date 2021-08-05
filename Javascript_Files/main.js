@@ -19,8 +19,9 @@ const camera = new Camera();
 Promise.all([   // Will make the Spritesheet and world textures load at the same time instead of one after another
     loadLevel('1-1'),
     loadMario()
-]).then(([level, mario]) => {   // The image parameter is what is returned from the loadBackgroundSprites() function. The level parameter is what is returned from the loadLevel() function
+]).then(([level, createMario]) => {   // The image parameter is what is returned from the loadBackgroundSprites() function. The level parameter is what is returned from the loadLevel() function
 
+    const mario = createMario;
     level.objects.add(mario);
     
     level.layer.imageLayers.push(
