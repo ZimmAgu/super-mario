@@ -97,8 +97,9 @@
         ],
 
 
-        
+
         "regularCloud" : [
+
             {
                 "name" : "upper left regular cloud",
                 "xPosition" : 0,
@@ -136,7 +137,7 @@
                 "onScreenHeight" : 32
             },
             {
-                "name" : "lower middle regular cloud",
+                "name" : "lower right regular cloud",
                 "xPosition" : 32,
                 "yPosition" : 336,
                 "onScreenWidth" : 32,

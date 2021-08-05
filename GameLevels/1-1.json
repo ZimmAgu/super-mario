@@ -47,23 +47,23 @@
         },
 
         {
-            "name" : "upper left regular cloud",
-            "dimensions" : [
-                [0, 1, 0, 1]
-            ]
-        },
-
-        {
             "name" : "chance",
-            "dimensions": [
+            "dimensions" : [
                 [6, 1, 7, 1]
             ]
         },
 
         {
             "pattern" : "pipe3h",
-            "dimensions": [
+            "dimensions" : [
                 [16, 1, 6, 1]
+            ]
+        },
+
+        {
+            "pattern" : "regular cloud",
+            "dimensions" : [
+                [1, 1, 1, 1]
             ]
         } 
     ],
@@ -72,6 +72,46 @@
 
 
     "patterns" : {
+        "vertical pipe cap" : {
+            "pieces" : [
+                {
+                    "name" : "upper left vert pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [1, 1, 1, 1]
+                    ]
+                },
+                {
+                    "name" : "upper right vert pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [2, 1, 1, 1]
+                    ]
+                }
+            ]
+        },
+
+        "vertical pipe section" : {
+            "pieces" : [ 
+                {
+                    "name" : "lower left vert pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [1, 1, 2, 1]
+                    ]
+                },
+                {
+                    "name" : "lower right vert pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [2, 1, 2, 1]
+                    ]
+                }
+            ]
+        },
+
+
+        
         "pipe1h" : {
             "pieces" : [
                 { 
@@ -132,43 +172,43 @@
             ]
         },
 
-
-
-
-
-        "vertical pipe cap" : {
+        "regular cloud" : {
             "pieces" : [
+                { 
+                    "name" : "upper left regular cloud",
+                    "dimensions" : [
+                        [0, 1, 0, 1]
+                    ]
+                },
                 {
-                    "name" : "upper left vert pipe",
-                    "type" : "solid",
+                    "name" : "upper middle regular cloud",
+                    "dimensions" : [
+                        [1, 1, 0, 1]
+                    ]
+                },
+                {
+                    "name" : "upper right regular cloud",
+                    "dimensions" : [
+                        [2, 1, 0, 1]
+                    ]
+                },
+
+                {
+                    "name" : "lower left regular cloud",
+                    "dimensions" : [
+                        [0, 1, 1, 1]
+                    ]
+                },
+                {
+                    "name" : "lower middle regular cloud",
                     "dimensions" : [
                         [1, 1, 1, 1]
                     ]
                 },
                 {
-                    "name" : "upper right vert pipe",
-                    "type" : "solid",
+                    "name" : "lower right regular cloud",
                     "dimensions" : [
                         [2, 1, 1, 1]
-                    ]
-                }
-            ]
-        },
-
-        "vertical pipe section" : {
-            "pieces" : [ 
-                {
-                    "name" : "lower left vert pipe",
-                    "type" : "solid",
-                    "dimensions" : [
-                        [1, 1, 2, 1]
-                    ]
-                },
-                {
-                    "name" : "lower right vert pipe",
-                    "type" : "solid",
-                    "dimensions" : [
-                        [2, 1, 2, 1]
                     ]
                 }
             ]

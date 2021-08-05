@@ -171,6 +171,7 @@ function applyDimensions (marioLevel, backgroundBlock, patterns, xStart, xLength
             const derivedY = screenRows + offsetY;
             
             if (backgroundBlock.pattern) {
+                console.log(backgroundBlock)
                 const patternBackgrounds = patterns[backgroundBlock.pattern].pieces
                 loadTheBlocks(marioLevel, patternBackgrounds, patterns, derivedX, derivedY);
             } else {
