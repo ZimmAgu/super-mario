@@ -103,21 +103,21 @@
             {
                 "name" : "upper left regular cloud",
                 "xPosition" : 0,
-                "yPosition" : 320,
+                "yPosition" : 320.5,
                 "onScreenWidth" : 32,
                 "onScreenHeight" : 32
             },
             {
                 "name" : "upper middle regular cloud",
                 "xPosition" : 16,
-                "yPosition" : 320,
+                "yPosition" : 320.4,
                 "onScreenWidth" : 32,
                 "onScreenHeight" : 32
             },
             {
                 "name" : "upper right regular cloud",
-                "xPosition" : 32,
-                "yPosition" : 320,
+                "xPosition" : 31.8,
+                "yPosition" : 320.5,
                 "onScreenWidth" : 32,
                 "onScreenHeight" : 32
             },
@@ -132,7 +132,7 @@
             {
                 "name" : "lower middle regular cloud",
                 "xPosition" : 16,
-                "yPosition" : 336,
+                "yPosition" : 335,
                 "onScreenWidth" : 32,
                 "onScreenHeight" : 32
             },

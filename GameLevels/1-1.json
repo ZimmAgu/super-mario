@@ -37,8 +37,12 @@
                         
                         [10, 2, 0, 7]
                     ]
-                },
-
+                }
+            ]
+        },
+        
+        {
+            "blocks" : [
                 {
                     "name" : "brick",
                     "type" : "solid",
@@ -50,16 +54,12 @@
 
                 {
                     "name" : "chance",
+                    "type" : "solid",
                     "dimensions" : [
-                        [6, 1, 7, 1],
-                        [1, 1, 1, 1]
+                        [6, 1, 7, 1]
                     ]
-                }
-            ]
-        },
-        
-        {
-            "blocks" : [
+                },
+
                {
                     "pattern" : "pipe3h",
                     "dimensions" : [
