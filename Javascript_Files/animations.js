@@ -27,7 +27,7 @@ const marioRunningLeft = createAnimation(
 
 
 
-function routeFrame (object) {
+function routeMarioFrame (object) {
     
     
     let sign = Math.sign(object.move.movementDirection)
@@ -74,4 +74,4 @@ function routeFrame (object) {
 }  
 
 
-export { createAnimation, routeFrame };
+export { createAnimation, routeMarioFrame };

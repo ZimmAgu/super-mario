@@ -8,7 +8,7 @@ import OnScreenObject from "../Classes/onScreenObjects.js";
 
 // Javascript File Imports
 import { loadSpriteSheet } from "../loadFunctions.js"
-import { routeFrame } from "../animations.js"
+import { routeMarioFrame } from "../animations.js"
 
 
 
@@ -41,10 +41,10 @@ function createMario (sprite) {
     
 
 
-    routeFrame(mario);  // Adds all of the mario animation frames
+    routeMarioFrame(mario);  // Adds all of the mario animation frames
 
     mario.drawObject = (context) => { // Draws the mario animations to the screen
-        sprite.drawTheSprite(routeFrame(mario), context, 0, 0);
+        sprite.drawTheSprite(routeMarioFrame(mario), context, 0, 0);
     }
 
     return mario;

@@ -17,6 +17,7 @@ function createGoomba(sprite) {
     goomba.size.setVector(32, 42.6);
     goomba.position.setVector(70, 100);
 
+
     return goomba
 }
 
