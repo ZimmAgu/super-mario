@@ -3,7 +3,7 @@
     "spriteWidth" : "15.5",
     "spriteHeight" : "17",
     
-    "marioFrames" : [
+    "frames" : [
         {
             "name" : "normal mario idle right",
             "xPosition" : "275",

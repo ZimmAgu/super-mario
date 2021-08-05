@@ -45,8 +45,8 @@ function loadSpriteSheet (spriteSetName) {
                     });
                 }
 
-                if (spriteSheetInfo.marioFrames) { // marioFrams located in mario.json
-                    spriteSheetInfo.marioFrames.forEach(frame => {
+                if (spriteSheetInfo.frames) { // frames located in mario.json, goomba.json
+                    spriteSheetInfo.frames.forEach(frame => {
                         sprites.saveTheSprite(
                                     frame.name,
                                     frame.xPosition,

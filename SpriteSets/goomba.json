@@ -1,0 +1,32 @@
+{
+    "imageURL" : "Spritesheet_Images/characters.png",
+    "spriteWidth" : "18",
+    "spriteHeight" : "18",
+
+    "frames" : [
+        {
+            "name" : "goomba walking right",
+            "xPosition" : "295",
+            "yPosition" : "185",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6" 
+        },
+
+        {
+            "name" : "goomba walking left",
+            "xPosition" : "314",
+            "yPosition" : "185",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6" 
+        },
+
+        {
+            "name" : "squashed goomba",
+            "xPosition" : "276",
+            "yPosition" : "185",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6"
+        }
+    ]
+
+}
