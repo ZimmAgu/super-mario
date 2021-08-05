@@ -133,15 +133,18 @@ function loadLevel (levelName) {    // Loads the current levels from the request
     .then(([levelSpecifications, backgroundSprites]) => {
         const currentLevel = new Level();
 
+        
         const collisionGrid = createCollisionGrid(levelSpecifications.layers[0].blocks, levelSpecifications.patterns);
         currentLevel.setCollisionGrid(collisionGrid);
 
-        const backgroundGrid = createBackgroundGrid(levelSpecifications.layers[0].blocks, levelSpecifications.patterns);
 
        
-
-        const backgroundLayer = drawBackground(currentLevel, backgroundGrid, backgroundSprites);
-        currentLevel.layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
+        levelSpecifications.layers.forEach(layer => {
+            const backgroundGrid = createBackgroundGrid(layer.blocks, levelSpecifications.patterns);
+            const backgroundLayer = drawBackground(currentLevel, backgroundGrid, backgroundSprites);
+            currentLevel.layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
+        })
+        
     
         const marioDrawing = drawSpriteLayer(currentLevel.objects); // Draws mario to the screen
         currentLevel.layer.imageLayers.push(marioDrawing);  // Adds mario to the array of layers

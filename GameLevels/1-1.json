@@ -53,9 +53,13 @@
                     "dimensions" : [
                         [6, 1, 7, 1]
                     ]
-                },
-
-                {
+                }
+            ]
+        },
+        
+        {
+            "blocks" : [
+               {
                     "pattern" : "pipe3h",
                     "dimensions" : [
                         [16, 1, 6, 1]
@@ -67,7 +71,7 @@
                     "dimensions" : [
                         [1, 1, 1, 1]
                     ]
-                }
+                } 
             ]
         }
     ],
