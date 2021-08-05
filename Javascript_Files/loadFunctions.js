@@ -133,10 +133,10 @@ function loadLevel (levelName) {    // Loads the current levels from the request
     .then(([levelSpecifications, backgroundSprites]) => {
         const currentLevel = new Level();
 
-        const collisionGrid = createCollisionGrid(levelSpecifications.blocks, levelSpecifications.patterns);
+        const collisionGrid = createCollisionGrid(levelSpecifications.layers[0].blocks, levelSpecifications.patterns);
         currentLevel.setCollisionGrid(collisionGrid);
 
-        const backgroundGrid = createBackgroundGrid(levelSpecifications.blocks, levelSpecifications.patterns);
+        const backgroundGrid = createBackgroundGrid(levelSpecifications.layers[0].blocks, levelSpecifications.patterns);
 
        
 

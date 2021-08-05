@@ -1,67 +1,77 @@
 {
     "spriteSetName" : "overworld",
     
-    "blocks" : [
+    "layers" : [
         {
-            "name" : "sky",
-            "type" : "sky",
-            "dimensions": [
-                [0, 4000, 0, 13]
-            ]
-        }, 
+           "blocks" : [
+                {
+                    "name" : "sky",
+                    "type" : "sky",
+                    "dimensions": [
+                        [0, 4000, 0, 13]
+                    ]
+                }, 
 
-        {
-            "name" : "ground",
-            "type" : "solid",
-            "dimensions": [
-                [0, 4000, 11, 2]
-            ]
-        },
+                {
+                    "name" : "ground",
+                    "type" : "solid",
+                    "dimensions": [
+                        [0, 4000, 11, 2]
+                    ]
+                },
 
-        { 
-            "name" : "sky",
-            "dimensions": [
-                [14, 2, 11, 2]
-            ]
-        },
+                { 
+                    "name" : "sky",
+                    "dimensions": [
+                        [14, 2, 11, 2]
+                    ]
+                },
 
-        { 
-            "name" : "ground",
-            "type" : "solid",
-            "dimensions": [
-                [2, 3, 11, 1],
+                { 
+                    "name" : "ground",
+                    "type" : "solid",
+                    "dimensions": [
+                        [2, 3, 11, 1],
 
-                [2, 5, 11, 4],
-                
-                [10, 2, 0, 7]
-            ]
-        },
+                        [2, 5, 11, 4],
+                        
+                        [10, 2, 0, 7]
+                    ]
+                },
 
-        {
-            "name" : "brick",
-            "type" : "solid",
-            "dimensions" : [
-                [5, 3, 7, 1],
-                [25, 10, 7, 1]
-            ]
-        },
+                {
+                    "name" : "brick",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [5, 3, 7, 1],
+                        [25, 10, 7, 1]
+                    ]
+                },
 
-        {
-            "name" : "chance",
-            "dimensions" : [
-                [6, 1, 7, 1]
-            ]
-        },
+                {
+                    "name" : "chance",
+                    "dimensions" : [
+                        [6, 1, 7, 1]
+                    ]
+                },
 
-        {
-            "pattern" : "pipe3h",
-            "dimensions" : [
-                [16, 1, 6, 1]
+                {
+                    "pattern" : "pipe3h",
+                    "dimensions" : [
+                        [16, 1, 6, 1]
+                    ]
+                },
+
+                {
+                    "pattern" : "regular cloud",
+                    "dimensions" : [
+                        [1, 1, 1, 1]
+                    ]
+                }
             ]
         }
-
-      
     ],
+    
 
 
 
