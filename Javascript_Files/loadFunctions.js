@@ -151,9 +151,22 @@ function loadLevel (levelName) {    // Loads the current levels from the request
 
 
 function loadTheBlocks (level, blocks, patterns, offsetX = 0, offsetY = 0) {
-    blocks.forEach(background => {
-        background.dimensions.forEach( ([colStart, colLength, rowStart, rowLength]) => {              // The array stuffed in the parameter is where the dimensions from the levels JSON files will be stored
-            applyDimensions(level, background, patterns, colStart, colLength, rowStart, rowLength, offsetX, offsetY);
+    blocks.forEach(block => {
+        block.dimensions.forEach( ([colStart, colLength, rowStart, rowLength]) => {              // The array stuffed in the parameter is where the dimensions from the levels JSON files will be stored
+            for (const {screenColumns, screenRows} of expandRange(colStart, colLength, rowStart, rowLength)) { 
+                const derivedX = screenColumns + offsetX;
+                const derivedY = screenRows + offsetY;
+                
+                if (block.pattern) {
+                    const patternBlocks = patterns[block.pattern].pieces
+                    loadTheBlocks(level, patternBlocks, patterns, derivedX, derivedY);
+                } else {
+                    level.blocks.setMatrix(derivedX, derivedY, {
+                        name: block.name,
+                        type: block.type
+                    }) 
+                }
+            }  
         })
     })
 }
@@ -175,25 +188,5 @@ function expandRange (xStart, xLength, yStart, yLength) {
     return coordinates
 }
 
-
-function applyDimensions (marioLevel, block, patterns, xStart, xLength, yStart, yLength, offsetX, offsetY) {    // Made specifically for the loadTheBlocks function
-   
-    for (const {screenColumns, screenRows} of expandRange(xStart, xLength, yStart, yLength)) { 
-            const derivedX = screenColumns + offsetX;
-            const derivedY = screenRows + offsetY;
-            
-            if (block.pattern) {
-                const patternBlocks = patterns[block.pattern].pieces
-                loadTheBlocks(marioLevel, patternBlocks, patterns, derivedX, derivedY);
-            } else {
-                marioLevel.blocks.setMatrix(derivedX, derivedY, {
-                    name: block.name,
-                    type: block.type
-                }) 
-            }
-    }        
-        
-    
-}
 
 export { loadJSON, loadImage, loadLevel, loadSpriteSheet};
