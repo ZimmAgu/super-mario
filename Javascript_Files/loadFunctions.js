@@ -155,7 +155,7 @@ function loadTheBlocks (level, blocks, patterns, offsetX = 0, offsetY = 0) {
 
     blocks.forEach(block => {
         block.dimensions.forEach( ([colStart, colLength, rowStart, rowLength]) => {              // The array stuffed in the parameter is where the dimensions from the levels JSON files will be stored
-            for (const {screenColumns, screenRows} of screenCoordinates(colStart, colLength, rowStart, rowLength)) { 
+            for (const {screenColumns, screenRows} of itemDimensions(block.dimensions)) { 
                 const derivedX = screenColumns + offsetX;
                 const derivedY = screenRows + offsetY;
                 
@@ -176,8 +176,7 @@ function loadTheBlocks (level, blocks, patterns, offsetX = 0, offsetY = 0) {
 
 
 
-function* screenCoordinates (xStart, xLength, yStart, yLength) {
-    const coordinates = []
+function* loopOverCoordinates (xStart, xLength, yStart, yLength) {
 
     const xEnd = xStart + xLength;
     const yEnd = yStart + yLength;
@@ -188,15 +187,21 @@ function* screenCoordinates (xStart, xLength, yStart, yLength) {
         }
     }
 
-    return coordinates
+}
+
+function screenCoordinates (dimensions) {
+    const  [colStart, colLength, rowStart, rowLength] = dimensions;
+    return loopOverCoordinates(colStart, colLength, rowStart, rowLength)
 }
 
 
-// function loopOverDimensions (dimensions) {
-//     for (const range of dimensions) {
-//         for const it
-//     }
-// }
+function* itemDimensions (dimensions) {
+    for (const range of dimensions) {
+        for (const item of screenCoordinates(range)) {
+            yield item;
+        }
+    }
+}
 
 
 export { loadJSON, loadImage, loadLevel, loadSpriteSheet};
