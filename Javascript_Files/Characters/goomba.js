@@ -1,3 +1,6 @@
+// Class Imports
+import OnScreenObject from "../Classes/onScreenObjects.js";
+
 import { loadSpriteSheet } from "../loadFunctions.js";
 
 
@@ -10,7 +13,11 @@ function loadGoomba () {
 
 
 function createGoomba(sprite) {
-    console.log(sprite)
+    const goomba = new OnScreenObject();
+    goomba.size.setVector(32, 42.6);
+    goomba.position.setVector(70, 100);
+
+    return goomba
 }
 
 

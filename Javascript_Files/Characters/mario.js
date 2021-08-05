@@ -26,7 +26,9 @@ function loadMario () {
 function createMario (sprite) {
     const mario = new OnScreenObject(); 
 
-    mario.size.setVector(32, 42.6);
+    mario.size.setVector(32, 42.6);      // Sets the on screen size of marion
+    mario.position.setVector(64, 100);   // Sets the starting position of mario on the screen
+
     mario.addTrait(new Move())
     mario.addTrait(new Jump());  
 
@@ -37,9 +39,9 @@ function createMario (sprite) {
         mario.move.drag = turboOn ? FASTDRAG : SLOWDRAG;
     }
     
-    routeFrame(mario);
 
-    mario.position.setVector(64, 100);   // Sets the position of mario
+
+    routeFrame(mario);  // Adds all of the mario animation frames
 
     mario.drawObject = (context) => { // Draws the mario animations to the screen
         sprite.drawTheSprite(routeFrame(mario), context, 0, 0);

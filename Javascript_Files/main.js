@@ -27,6 +27,9 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
     
     const mario = createMario;
     level.objects.add(mario);
+
+    const goomba = createGoomba;
+    console.log(goomba)
     
     level.layer.imageLayers.push(
         createCollisionLayer(level),
