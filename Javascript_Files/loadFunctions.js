@@ -131,7 +131,12 @@ function loadLevel (levelName) {    // Loads the current levels from the request
     .then(([levelSpecifications, backgroundSprites]) => {
         const currentLevel = new Level();
 
-        loadTheBlocks(currentLevel, levelSpecifications.blocks, levelSpecifications.patterns)
+        for (const {block, x, y} of loadTheBlocks(levelSpecifications.blocks, levelSpecifications.patterns)) {
+            currentLevel.blocks.setMatrix(x, y, {
+                name: block.name,
+                type: block.type
+            })
+        }
 
         const backgroundLayer = drawBackground(currentLevel, backgroundSprites);
         currentLevel.layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
@@ -150,7 +155,8 @@ function loadLevel (levelName) {    // Loads the current levels from the request
 
 
 
-function loadTheBlocks (level, blocks, patterns, ) {
+function loadTheBlocks (blocks, patterns, ) {
+    const expandedBlocks = [];
 
     function loopOverBlocks (blocks, offsetX, offsetY) {
         for (const block of blocks) { 
@@ -162,16 +168,19 @@ function loadTheBlocks (level, blocks, patterns, ) {
                     const patternBlocks = patterns[block.pattern].pieces
                     loopOverBlocks(patternBlocks, derivedX, derivedY);
                 } else {
-                    level.blocks.setMatrix(derivedX, derivedY, {
-                        name: block.name,
-                        type: block.type
-                    }) 
+                    expandedBlocks.push({
+                        block,
+                        x: derivedX,
+                        y: derivedY
+                    })
                 }
             }  
         }
     }
       
     loopOverBlocks(blocks, 0, 0);
+
+    return expandedBlocks;
 }
 
 
