@@ -5,7 +5,7 @@ import Timer from "./Classes/timer.js";
 
 
 //Javascript File imports
-import createMario from "./createMario.js";
+import loadMario from "./Characters/mario.js";
 import { loadLevel } from "./loadFunctions.js";
 import { createCameraLayer, createCollisionLayer } from "./drawTheLayers.js";
 import { userInput } from "./userInput.js";
@@ -18,7 +18,7 @@ const camera = new Camera();
 
 Promise.all([   // Will make the Spritesheet and world textures load at the same time instead of one after another
     loadLevel('1-1'),
-    createMario()
+    loadMario()
 ]).then(([level, mario]) => {   // The image parameter is what is returned from the loadBackgroundSprites() function. The level parameter is what is returned from the loadLevel() function
 
     level.objects.add(mario);

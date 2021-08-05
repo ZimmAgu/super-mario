@@ -1,21 +1,21 @@
 "use strict";
 // Trait Imports
-import Move from "./Classes/MoveTrait.js";
-import Jump from "./Classes/jumpTrait.js";
+import Move from "../Classes/MoveTrait.js";
+import Jump from "../Classes/jumpTrait.js";
 
 // Class Imports
-import OnScreenObject from "./Classes/onScreenObjects.js";
+import OnScreenObject from "../Classes/onScreenObjects.js";
 
 // Javascript File Imports
-import { loadSpriteSheet } from "./loadFunctions.js"
-import { routeFrame } from "./animations.js"
+import { loadSpriteSheet } from "../loadFunctions.js"
+import { routeFrame } from "../animations.js"
 
 
 
 const FASTDRAG = 1/10000;
 const SLOWDRAG = 1/2000;
 
-function createMario () {
+function loadMario () {
     return loadSpriteSheet('mario') 
             .then(marioSprite => {
         const mario = new OnScreenObject(); 
@@ -42,4 +42,4 @@ function createMario () {
     })
 }
 
-export default createMario;
+export default loadMario;
