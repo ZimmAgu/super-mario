@@ -160,29 +160,40 @@ function loadTheBlocks (level, blocks, patterns, offsetX = 0, offsetY = 0) {
 
 
 
+function expandRange (xStart, xLength, yStart, yLength) {
+    const coordinates = []
 
-function applyDimensions (marioLevel, backgroundBlock, patterns, xStart, xLength, yStart, yLength, offsetX, offsetY) {    // Made specifically for the loadTheBlocks function
     const xEnd = xStart + xLength;
     const yEnd = yStart + yLength;
 
     for (let screenColumns = xStart; screenColumns < xEnd; screenColumns++) {       // This for loop represents how wide the sprite will be drawn on the canvas
         for (let screenRows = yStart; screenRows < yEnd; screenRows++) {            // This loop represents how tall the sprite will be drawn on the canvas
+            coordinates.push({screenColumns, screenRows}) // Pushing these coordinates to an array will allow me to replace the double for loops in the applydimensions function
+        }
+    }
+
+    return coordinates
+}
+
+
+function applyDimensions (marioLevel, block, patterns, xStart, xLength, yStart, yLength, offsetX, offsetY) {    // Made specifically for the loadTheBlocks function
+   
+    for (const {screenColumns, screenRows} of expandRange(xStart, xLength, yStart, yLength)) { 
             const derivedX = screenColumns + offsetX;
             const derivedY = screenRows + offsetY;
             
-            if (backgroundBlock.pattern) {
-                const patternBlocks = patterns[backgroundBlock.pattern].pieces
+            if (block.pattern) {
+                const patternBlocks = patterns[block.pattern].pieces
                 loadTheBlocks(marioLevel, patternBlocks, patterns, derivedX, derivedY);
             } else {
                 marioLevel.blocks.setMatrix(derivedX, derivedY, {
-                    name: backgroundBlock.name,
-                    type: backgroundBlock.type
+                    name: block.name,
+                    type: block.type
                 }) 
             }
-            
-            
-        }
-    } 
+    }        
+        
+    
 }
 
 export { loadJSON, loadImage, loadLevel, loadSpriteSheet};
