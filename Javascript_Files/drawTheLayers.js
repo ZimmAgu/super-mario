@@ -6,7 +6,7 @@ import Matrix from "./Classes/Matrix.js";
 function drawBackground (gameLevel, blocks, allSprites) {    // Combines the background images together into one single background
     const backgroundLayer = document.createElement("canvas");  // A new canvas is specifically for the background so I have more control over the size of the background instead of just locking it in the html file 
     backgroundLayer.width = 600;
-    backgroundLayer.height = 416;
+    backgroundLayer.height = 420;
     const backgroundLayerContext = backgroundLayer.getContext('2d');
 
 
@@ -15,9 +15,17 @@ function drawBackground (gameLevel, blocks, allSprites) {    // Combines the bac
    
     function updateDrawing (startOfDrawing, endOfDrawing) {
         const SPRITE_RATIO = 2
-        
+
+        backgroundLayerContext.clearRect(
+                                                0, 
+                                                0,
+                                                backgroundLayer.width,
+                                                backgroundLayer.height
+                                            )
 
         for (let screenColumns = startOfDrawing; screenColumns < endOfDrawing; screenColumns++) {
+            
+            
             const columnGrid = blocks.grid[screenColumns];
 
             if (columnGrid) {
