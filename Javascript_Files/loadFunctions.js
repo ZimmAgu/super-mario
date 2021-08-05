@@ -150,26 +150,28 @@ function loadLevel (levelName) {    // Loads the current levels from the request
 
 
 
-function loadTheBlocks (level, blocks, patterns, offsetX = 0, offsetY = 0) {
+function loadTheBlocks (level, blocks, patterns, ) {
 
-
-    for (const block of blocks) { 
-        for (const {screenColumns, screenRows} of itemDimensions(block.dimensions)) { 
-            const derivedX = screenColumns + offsetX;
-            const derivedY = screenRows + offsetY;
-            
-            if (block.pattern) {
-                const patternBlocks = patterns[block.pattern].pieces
-                loadTheBlocks(level, patternBlocks, patterns, derivedX, derivedY);
-            } else {
-                level.blocks.setMatrix(derivedX, derivedY, {
-                    name: block.name,
-                    type: block.type
-                }) 
-            }
-        }  
-    }  
-
+    function loopOverBlocks (blocks, offsetX, offsetY) {
+        for (const block of blocks) { 
+            for (const {screenColumns, screenRows} of itemDimensions(block.dimensions)) { 
+                const derivedX = screenColumns + offsetX;
+                const derivedY = screenRows + offsetY;
+                
+                if (block.pattern) {
+                    const patternBlocks = patterns[block.pattern].pieces
+                    loopOverBlocks(patternBlocks, derivedX, derivedY);
+                } else {
+                    level.blocks.setMatrix(derivedX, derivedY, {
+                        name: block.name,
+                        type: block.type
+                    }) 
+                }
+            }  
+        }
+    }
+      
+    loopOverBlocks(blocks, 0, 0);
 }
 
 
