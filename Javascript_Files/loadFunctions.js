@@ -9,6 +9,8 @@ import { drawBackground } from "./drawTheLayers.js";
 import Level from "./Classes/Level.js";
 import { drawSpriteLayer } from "./drawTheLayers.js";
 import { createAnimation } from "./animations.js"
+import Matrix from "./Classes/Matrix.js";
+
 
 
 
@@ -131,14 +133,14 @@ function loadLevel (levelName) {    // Loads the current levels from the request
     .then(([levelSpecifications, backgroundSprites]) => {
         const currentLevel = new Level();
 
-        for (const {block, x, y} of loadTheBlocks(levelSpecifications.blocks, levelSpecifications.patterns)) {
-            currentLevel.blocks.setMatrix(x, y, {
-                name: block.name,
-                type: block.type
-            })
-        }
+        const collisionGrid = createCollisionGrid(levelSpecifications.blocks, levelSpecifications.patterns);
+        currentLevel.setCollisionGrid(collisionGrid);
 
-        const backgroundLayer = drawBackground(currentLevel, backgroundSprites);
+        const backgroundGrid = createBackgroundGrid(levelSpecifications.blocks, levelSpecifications.patterns);
+
+       
+
+        const backgroundLayer = drawBackground(currentLevel, backgroundGrid, backgroundSprites);
         currentLevel.layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
     
         const marioDrawing = drawSpriteLayer(currentLevel.objects); // Draws mario to the screen
@@ -148,6 +150,35 @@ function loadLevel (levelName) {    // Loads the current levels from the request
     })
 }
 
+
+
+
+function createCollisionGrid (blocks, patterns) {
+    const grid = new Matrix();
+    
+
+    for (const {block, x, y} of loadTheBlocks(blocks, patterns)) {
+        grid.setMatrix(x, y, {
+            type: block.type
+        })
+    }
+
+    return grid;
+}
+
+
+function createBackgroundGrid (blocks, patterns) {
+    const grid = new Matrix();
+    
+
+    for (const {block, x, y} of loadTheBlocks(blocks, patterns)) {
+        grid.setMatrix(x, y, {
+            name: block.name
+        })
+    }
+
+    return grid;
+}
 
 
 

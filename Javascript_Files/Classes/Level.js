@@ -1,7 +1,6 @@
 "use strict";
 import BlockCollider from "./BlockCollider.js";
 import LayeredImages from "./layerTheImages.js";
-import Matrix from "./Matrix.js";
 
 class Level {
     constructor () {
@@ -10,9 +9,12 @@ class Level {
 
         this.layer = new LayeredImages();
         this.objects = new Set(); // Sets are like maps but they don't allow duplicates to be added to it
-        this.blocks = new Matrix();
         
-        this.blockCollider = new BlockCollider(this.blocks);
+        this.blockCollider = null;
+    }
+
+    setCollisionGrid (matrix) {
+        this.blockCollider = new BlockCollider(matrix)
     }
 
     updateLevel (refreshRate) {

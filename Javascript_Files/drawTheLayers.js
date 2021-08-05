@@ -1,28 +1,20 @@
 "use strict";
+import BlockResolver from "./Classes/BlockResolver.js";
 import Matrix from "./Classes/Matrix.js";
 
 
-function drawBackground (gameLevel, allSprites) {    // Combines the background images together into one single background
+function drawBackground (gameLevel, blocks, allSprites) {    // Combines the background images together into one single background
     const backgroundLayer = document.createElement("canvas");  // A new canvas is specifically for the background so I have more control over the size of the background instead of just locking it in the html file 
     backgroundLayer.width = 600;
     backgroundLayer.height = 416;
     const backgroundLayerContext = backgroundLayer.getContext('2d');
 
-    const blocks = gameLevel.blocks;
-    const blockResolver = gameLevel.blockCollider.blocks
-    
-    let startOfDrawing;
-    let endOfDrawing;
-    function updateDrawing (drawFrom, drawTo) {
-        const SPRITE_RATIO = 2
-        
-        // if (drawFrom == startOfDrawing && drawTo == endOfDrawing) { // If the camera has not moved the image is not redrawn
-        //     return
-        // }
 
-        // If the camera is moved then the start and end of the drawing are redifined and the canvas is redrawn
-        startOfDrawing = drawFrom; 
-        endOfDrawing = drawTo;
+    const blockResolver = new BlockResolver(blocks);
+    
+   
+    function updateDrawing (startOfDrawing, endOfDrawing) {
+        const SPRITE_RATIO = 2
         
 
         for (let screenColumns = startOfDrawing; screenColumns < endOfDrawing; screenColumns++) {
@@ -34,6 +26,7 @@ function drawBackground (gameLevel, allSprites) {    // Combines the background 
                     const onScreenColumnSize = screenColumns * SPRITE_RATIO;
                     const onScreenRowSize   = screenRows * SPRITE_RATIO;
                     const start = startOfDrawing * SPRITE_RATIO
+
                     if (allSprites.animation.has(block.name)) {
                         allSprites.drawAnimation(
                                         block.name, 

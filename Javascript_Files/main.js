@@ -26,7 +26,7 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
     level.layer.imageLayers.push(
         createCollisionLayer(level),
         createCameraLayer(camera)
-        );
+    );
     
     const input = userInput(mario);
 

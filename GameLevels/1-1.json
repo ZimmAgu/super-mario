@@ -58,14 +58,9 @@
             "dimensions" : [
                 [16, 1, 6, 1]
             ]
-        },
+        }
 
-        {
-            "pattern" : "regular cloud",
-            "dimensions" : [
-                [2, 1, 1, 1]
-            ]
-        } 
+      
     ],
 
 
