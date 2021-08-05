@@ -1,7 +1,7 @@
 {
     "spriteSetName" : "overworld",
     
-    "backgrounds" : [
+    "blocks" : [
         {
             "name" : "sky",
             "type" : "sky",
@@ -63,7 +63,7 @@
         {
             "pattern" : "regular cloud",
             "dimensions" : [
-                [1, 1, 1, 1]
+                [2, 1, 1, 1]
             ]
         } 
     ],

@@ -131,7 +131,7 @@ function loadLevel (levelName) {    // Loads the current levels from the request
     .then(([levelSpecifications, backgroundSprites]) => {
         const currentLevel = new Level();
 
-        loadTheBlocks(currentLevel, levelSpecifications.backgrounds, levelSpecifications.patterns)
+        loadTheBlocks(currentLevel, levelSpecifications.blocks, levelSpecifications.patterns)
 
         const backgroundLayer = drawBackground(currentLevel, backgroundSprites);
         currentLevel.layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
@@ -150,8 +150,8 @@ function loadLevel (levelName) {    // Loads the current levels from the request
 
 
 
-function loadTheBlocks (level, backgrounds, patterns, offsetX = 0, offsetY = 0) {
-    backgrounds.forEach(background => {
+function loadTheBlocks (level, blocks, patterns, offsetX = 0, offsetY = 0) {
+    blocks.forEach(background => {
         background.dimensions.forEach( ([colStart, colLength, rowStart, rowLength]) => {              // The array stuffed in the parameter is where the dimensions from the levels JSON files will be stored
             applyDimensions(level, background, patterns, colStart, colLength, rowStart, rowLength, offsetX, offsetY);
         })
@@ -171,9 +171,8 @@ function applyDimensions (marioLevel, backgroundBlock, patterns, xStart, xLength
             const derivedY = screenRows + offsetY;
             
             if (backgroundBlock.pattern) {
-                console.log(backgroundBlock)
-                const patternBackgrounds = patterns[backgroundBlock.pattern].pieces
-                loadTheBlocks(marioLevel, patternBackgrounds, patterns, derivedX, derivedY);
+                const patternBlocks = patterns[backgroundBlock.pattern].pieces
+                loadTheBlocks(marioLevel, patternBlocks, patterns, derivedX, derivedY);
             } else {
                 marioLevel.blocks.setMatrix(derivedX, derivedY, {
                     name: backgroundBlock.name,

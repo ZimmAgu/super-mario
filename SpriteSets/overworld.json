@@ -89,7 +89,7 @@
             },
             {
                 "name" : "lower right vert pipe",
-                "xPosition" : 15,
+                "xPosition" : 16,
                 "yPosition" : 144,
                 "onScreenWidth" : 32,
                 "onScreenHeight" : 32
