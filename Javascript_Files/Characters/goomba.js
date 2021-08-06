@@ -7,7 +7,7 @@ import { loadSpriteSheet } from "../loadFunctions.js";
 import { routeGoombaFrame } from "../Animations/goombaAnimations.js"
 
 // Trait Imports
-import GoombaWalk from "../Traits/GoombaWalk.js";
+import EnemyWalk from "../Traits/EnemyWalk.js";
 
 
 function loadGoomba () {
@@ -24,7 +24,7 @@ function createGoomba(sprite) {
     goomba.size.setVector(32, 42.6);
     goomba.position.setVector(190, 100);
     
-    goomba.addTrait(new GoombaWalk());
+    goomba.addTrait(new EnemyWalk());
    
 
 

@@ -1,9 +1,9 @@
 "use strict";
 import Trait from "./Traits.js";
 
-class GoombaWalk extends Trait {
+class EnemyWalk extends Trait {
     constructor () {
-        super('goombaWalk');
+        super('enemyWalk');
 
         this.walkSpeed = 30;
     }
@@ -24,4 +24,4 @@ class GoombaWalk extends Trait {
     }
 }
 
-export default GoombaWalk
+export default EnemyWalk;

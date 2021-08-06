@@ -6,6 +6,8 @@ import OnScreenObject from "../Classes/onScreenObjects.js";
 import { loadSpriteSheet } from "../loadFunctions.js";
 import { routeKoopaFrame } from "../Animations/koopaAnimations.js"
 
+// Trait Imports
+import EnemyWalk from "../Traits/EnemyWalk.js";
 
 function loadKoopa () {
     return loadSpriteSheet('koopa')
@@ -21,6 +23,8 @@ function createKoopa (sprite) {
 
     koopa.size.setVector(32, 42.6);
     koopa.position.setVector(550, 100);
+
+    koopa.addTrait(new EnemyWalk());
 
     routeKoopaFrame();
 
