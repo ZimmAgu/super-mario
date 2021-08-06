@@ -86,7 +86,6 @@ const goombaWalking = createAnimation(
 
 
 function routeGoombaFrame (object) {
-    console.log(object.lifetime)
     return goombaWalking(object.lifetime);
 }
 
