@@ -1,5 +1,5 @@
 "use strict";
-import { createAnimation } from "../animations.js";
+import { createAnimation } from "../createAnimation.js";
 
 
 
