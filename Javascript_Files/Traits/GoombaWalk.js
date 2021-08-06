@@ -11,6 +11,16 @@ class GoombaWalk extends Trait {
     updateTrait (object) {
         object.velocity.x = this.walkSpeed
     }
+
+    obstruct (object, side) {
+        if (side === 'left') {   
+            this.walkSpeed = -this.walkSpeed    // If the goomba hits the left side of a block its walk speed will be reversed
+        }
+
+        if (side == 'right') {
+            this.walkSpeed = -this.walkSpeed    // If the goomba hits the right side of a block its walk speed will be reversed
+        }
+    }
 }
 
 export default GoombaWalk
