@@ -1,9 +1,9 @@
 "use strict";
 import Trait from "./Traits.js";
 
-class EnemyWalk extends Trait {
+class PendelumWalk extends Trait {
     constructor () {
-        super('enemyWalk');
+        super('pendelumWalk');
 
         this.walkSpeed = 30;
     }
@@ -24,4 +24,4 @@ class EnemyWalk extends Trait {
     }
 }
 
-export default EnemyWalk;
+export default PendelumWalk;
