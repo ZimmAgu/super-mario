@@ -6,9 +6,11 @@ class GoombaWalk extends Trait {
         super('goombaWalk');
 
         this.walkSpeed = 30;
+        this.lifetime = 0;
     }
 
-    updateTrait (object) {
+    updateTrait (object, elapsedTime) {
+        object.lifetime += elapsedTime;
         object.velocity.x = this.walkSpeed
     }
 

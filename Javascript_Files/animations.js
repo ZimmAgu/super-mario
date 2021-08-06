@@ -76,8 +76,18 @@ function routeMarioFrame (object) {
 
 
 
+const goombaWalking = createAnimation(
+    [
+        "goomba walking right",
+        "goomba walking left",
+    ],
+    0.2
+);
+
+
 function routeGoombaFrame (object) {
-    return 'goomba walking right'
+    console.log(object.lifetime)
+    return goombaWalking(object.lifetime);
 }
 
 

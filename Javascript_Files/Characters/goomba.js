@@ -20,9 +20,13 @@ function loadGoomba () {
 
 function createGoomba(sprite) {
     const goomba = new OnScreenObject();
+
     goomba.size.setVector(32, 42.6);
     goomba.position.setVector(190, 100);
+    
     goomba.addTrait(new GoombaWalk());
+    goomba.lifetime = goomba.traits[0].lifetime;
+
 
     routeGoombaFrame(goomba);
 
