@@ -71,7 +71,13 @@ function routeMarioFrame (object) {
         }
         return 'normal mario idle left'
     }
-}  
+} 
 
 
-export { createAnimation, routeMarioFrame };
+
+function routeGoombaFrame (object) {
+    return 'goomba walking right'
+}
+
+
+export { createAnimation, routeMarioFrame,  routeGoombaFrame};
