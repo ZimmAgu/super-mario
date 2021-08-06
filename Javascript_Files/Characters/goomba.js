@@ -3,7 +3,7 @@
 import OnScreenObject from "../Classes/onScreenObjects.js";
 
 // Javascript File Imports 
-import { loadSpriteSheet } from "../LoadFunctions/loadFunctions.js";
+import loadSpriteSheet from "../LoadFunctions/loadSpriteSheet.js"
 import { routeGoombaFrame } from "../Animations/goombaAnimations.js"
 
 // Trait Imports

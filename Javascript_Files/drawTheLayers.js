@@ -116,17 +116,17 @@ function createCollisionLayer (level) {
         resolvedBlocks.clear();
 
         level.objects.forEach(onScreenObject => {
-            context.strokeStyle = 'green';
-            context.beginPath();
+            // context.strokeStyle = 'green';
+            // context.beginPath();
 
-            context.rect(
-                        onScreenObject.position.x - camera.position.x, 
-                        onScreenObject.position.y - camera.position.y, 
-                        onScreenObject.size.x,
-                        onScreenObject.size.y
-                    );
+            // context.rect(
+            //             onScreenObject.position.x - camera.position.x, 
+            //             onScreenObject.position.y - camera.position.y, 
+            //             onScreenObject.size.x,
+            //             onScreenObject.size.y
+            //         );
 
-            context.stroke();
+            // context.stroke();
         })
     };
 }

@@ -7,7 +7,7 @@ import Jump from "../Traits/Jump.js";
 import OnScreenObject from "../Classes/onScreenObjects.js";
 
 // Javascript File Imports
-import { loadSpriteSheet } from "../LoadFunctions/loadFunctions.js"
+import loadSpriteSheet from "../LoadFunctions/loadSpriteSheet.js"
 import { routeMarioFrame } from "../Animations/marioAnimations.js"
 
 

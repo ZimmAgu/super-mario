@@ -9,7 +9,7 @@ import loadGoomba from "./Characters/goomba.js";
 import loadKoopa from "./Characters/koopa.js";
 
 //Javascript File imports
-import { loadLevel } from "./LoadFunctions/loadFunctions.js";
+import loadLevel from "./LoadFunctions/loadLevel.js"
 import { createCameraLayer, createCollisionLayer } from "./drawTheLayers.js";
 import { userInput } from "./userInput.js";
 import mouseControl from "./mouseDebugger.js";
