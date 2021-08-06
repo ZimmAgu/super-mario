@@ -34,6 +34,7 @@ Promise.all([   // Will make the Spritesheet and world textures load at the same
     level.objects.add(goomba)
 
     const koopa = createKoopa;
+    level.objects.add(koopa)
 
     level.layer.imageLayers.push(
         createCollisionLayer(level),
