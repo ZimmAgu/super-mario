@@ -3,13 +3,11 @@
 import Camera from "./Classes/Camera.js";
 import Timer from "./Classes/timer.js";
 
-// Character Imports
-import loadMario from "./Characters/mario.js";
-import loadGoomba from "./Characters/goomba.js";
-import loadKoopa from "./Characters/koopa.js";
+// Load Function Imports
+import loadLevel from "./LoadFunctions/loadLevel.js"
+import loadCharacters from "./LoadFunctions/loadCharacters.js";
 
 //Javascript File imports
-import loadLevel from "./LoadFunctions/loadLevel.js"
 import { createCameraLayer, createCollisionLayer } from "./drawTheLayers.js";
 import { userInput } from "./userInput.js";
 import mouseControl from "./mouseDebugger.js";
@@ -21,10 +19,8 @@ const camera = new Camera();
 
 Promise.all([   // Will make the Spritesheet and world textures load at the same time instead of one after another
     loadLevel('1-1'),
-    loadMario(),
-    loadGoomba(),
-    loadKoopa()
-]).then(([level, createMario, createGoomba, createKoopa]) => {   // The image parameter is what is returned from the loadBackgroundSprites() function. The level parameter is what is returned from the loadLevel() function
+    loadCharacters()
+]).then(([level, [createMario, createGoomba, createKoopa]]) => {   // The image parameter is what is returned from the loadBackgroundSprites() function. The level parameter is what is returned from the loadLevel() function
 
     
     const mario = createMario;
