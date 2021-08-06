@@ -26,10 +26,10 @@ function createKoopa (sprite) {
 
     koopa.addTrait(new PendelumWalk());
 
-    routeKoopaFrame();
+    routeKoopaFrame(koopa);
 
     koopa.drawObject = (context) => { // Draws the mario animations to the screen
-        sprite.drawTheSprite(routeKoopaFrame(), context, 0, 0);
+        sprite.drawTheSprite(routeKoopaFrame(koopa), context, 0, 0);
     }
 
     return koopa

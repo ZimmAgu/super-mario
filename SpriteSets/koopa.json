@@ -50,6 +50,54 @@
             "yPosition" : "206",
             "onScreenWidth" : "32",
             "onScreenHeight" : "42.6" 
+        },
+
+        {
+            "name" : "koopa left 1",
+            "xPosition" : "238",
+            "yPosition" : "206",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6" 
+        },
+
+        {
+            "name" : "koopa left 2",
+            "xPosition" : "219",
+            "yPosition" : "206",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6" 
+        },
+
+        {
+            "name" : "koopa left 3",
+            "xPosition" : "200",
+            "yPosition" : "206",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6" 
+        },
+
+        {
+            "name" : "koopa left 4",
+            "xPosition" : "181",
+            "yPosition" : "206",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6" 
+        },
+
+        {
+            "name" : "koopa left 5",
+            "xPosition" : "162",
+            "yPosition" : "206",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6" 
+        },
+
+        {
+            "name" : "koopa left 6",
+            "xPosition" : "143",
+            "yPosition" : "206",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6" 
         }
     ]
 }
