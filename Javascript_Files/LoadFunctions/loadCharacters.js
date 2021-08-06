@@ -8,11 +8,14 @@ import loadKoopa from "../Characters/koopa.js";
 
 
 function loadCharacters () {
+    const characterSpawner = {}
+
     return Promise.all([
-        loadMario(),
-        loadGoomba(),
-        loadKoopa()
+        loadMario().then(character => characterSpawner['mario'] = character),
+        loadGoomba().then(character => characterSpawner['goomba'] = character),
+        loadKoopa().then(character => characterSpawner['koopa'] = character)
     ])
+    .then(() => characterSpawner)
 }
 
 export default loadCharacters;

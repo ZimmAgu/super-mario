@@ -20,16 +20,15 @@ const camera = new Camera();
 Promise.all([   // Will make the Spritesheet and world textures load at the same time instead of one after another
     loadLevel('1-1'),
     loadCharacters()
-]).then(([level, [createMario, createGoomba, createKoopa]]) => {   // The image parameter is what is returned from the loadBackgroundSprites() function. The level parameter is what is returned from the loadLevel() function
+]).then(([level, character]) => {   // The image parameter is what is returned from the loadBackgroundSprites() function. The level parameter is what is returned from the loadLevel() function
 
-    
-    const mario = createMario;
+    const mario = character.mario;
     level.objects.add(mario);
 
-    const goomba = createGoomba;
+    const goomba = character.goomba;
     level.objects.add(goomba)
 
-    const koopa = createKoopa;
+    const koopa = character.koopa;
     level.objects.add(koopa)
 
     level.layer.imageLayers.push(
