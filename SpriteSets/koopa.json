@@ -8,96 +8,96 @@
             "name" : "koopa right 1",
             "xPosition" : "257",
             "yPosition" : "206",
-            "onScreenWidth" : "32",
-            "onScreenHeight" : "42.6" 
+            "onScreenWidth" : "40",
+            "onScreenHeight" : "53.2" 
         },
 
         {
             "name" : "koopa right 2",
             "xPosition" : "276",
             "yPosition" : "206",
-            "onScreenWidth" : "32",
-            "onScreenHeight" : "42.6" 
+            "onScreenWidth" : "40",
+            "onScreenHeight" : "53.2" 
         },
 
         {
             "name" : "koopa right 3",
             "xPosition" : "295",
             "yPosition" : "206",
-            "onScreenWidth" : "32",
-            "onScreenHeight" : "42.6" 
+            "onScreenWidth" : "40",
+            "onScreenHeight" : "53.2" 
         },
 
         {
             "name" : "koopa right 4",
             "xPosition" : "315",
             "yPosition" : "206",
-            "onScreenWidth" : "32",
-            "onScreenHeight" : "42.6" 
+            "onScreenWidth" : "40",
+            "onScreenHeight" : "53.2" 
         },
 
         {
             "name" : "koopa right 5",
             "xPosition" : "333",
             "yPosition" : "206",
-            "onScreenWidth" : "32",
-            "onScreenHeight" : "42.6" 
+            "onScreenWidth" : "40",
+            "onScreenHeight" : "53.2" 
         },
 
         {
             "name" : "koopa right 6",
             "xPosition" : "352",
             "yPosition" : "206",
-            "onScreenWidth" : "32",
-            "onScreenHeight" : "42.6" 
+            "onScreenWidth" : "40",
+            "onScreenHeight" : "53.2" 
         },
 
         {
             "name" : "koopa left 1",
             "xPosition" : "238",
             "yPosition" : "206",
-            "onScreenWidth" : "32",
-            "onScreenHeight" : "42.6" 
+            "onScreenWidth" : "40",
+            "onScreenHeight" : "53.2" 
         },
 
         {
             "name" : "koopa left 2",
             "xPosition" : "219",
             "yPosition" : "206",
-            "onScreenWidth" : "32",
-            "onScreenHeight" : "42.6" 
+            "onScreenWidth" : "40",
+            "onScreenHeight" : "53.2" 
         },
 
         {
             "name" : "koopa left 3",
             "xPosition" : "200",
             "yPosition" : "206",
-            "onScreenWidth" : "32",
-            "onScreenHeight" : "42.6" 
+            "onScreenWidth" : "40",
+            "onScreenHeight" : "53.2" 
         },
 
         {
             "name" : "koopa left 4",
             "xPosition" : "181",
             "yPosition" : "206",
-            "onScreenWidth" : "32",
-            "onScreenHeight" : "42.6" 
+            "onScreenWidth" : "40",
+            "onScreenHeight" : "53.2" 
         },
 
         {
             "name" : "koopa left 5",
             "xPosition" : "162",
             "yPosition" : "206",
-            "onScreenWidth" : "32",
-            "onScreenHeight" : "42.6" 
+            "onScreenWidth" : "40",
+            "onScreenHeight" : "53.2" 
         },
 
         {
             "name" : "koopa left 6",
             "xPosition" : "143",
             "yPosition" : "206",
-            "onScreenWidth" : "32",
-            "onScreenHeight" : "42.6" 
+            "onScreenWidth" : "40",
+            "onScreenHeight" : "53.2" 
         }
     ]
 }

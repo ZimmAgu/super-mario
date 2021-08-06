@@ -22,7 +22,7 @@ function createKoopa (sprite) {
     const koopa = new OnScreenObject
 
     koopa.size.setVector(32, 42.6);
-    koopa.position.setVector(550, 100);
+    koopa.position.setVector(150, 100);
 
     koopa.addTrait(new PendelumWalk());
 
