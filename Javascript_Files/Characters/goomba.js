@@ -4,7 +4,7 @@ import OnScreenObject from "../Classes/onScreenObjects.js";
 
 // Javascript File Imports 
 import { loadSpriteSheet } from "../loadFunctions.js";
-import {routeGoombaFrame} from "../animations.js"
+import { routeGoombaFrame } from "../Animations/goombaAnimations.js"
 
 // Trait Imports
 import GoombaWalk from "../Traits/GoombaWalk.js";

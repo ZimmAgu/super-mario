@@ -8,7 +8,7 @@ import OnScreenObject from "../Classes/onScreenObjects.js";
 
 // Javascript File Imports
 import { loadSpriteSheet } from "../loadFunctions.js"
-import { routeMarioFrame } from "../animations.js"
+import { routeMarioFrame } from "../Animations/marioAnimations.js"
 
 
 

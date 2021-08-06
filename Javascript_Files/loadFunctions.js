@@ -47,7 +47,6 @@ function loadSpriteSheet (spriteSetName) {
 
                 if (spriteSheetInfo.frames) { // frames located in mario.json, goomba.json, koopa.json
                     spriteSheetInfo.frames.forEach(frame => {
-                        console.log(frame)
                         sprites.saveTheSprite(
                                     frame.name,
                                     frame.xPosition,

@@ -16,7 +16,12 @@ function loadKoopa () {
 
 
 function createKoopa (sprite) {
+    const koopa = new OnScreenObject
 
+    koopa.size.setVector(32, 42.6);
+    koopa.position.setVector(300, 100);
+
+    
 }
 
 
