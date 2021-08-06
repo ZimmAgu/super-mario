@@ -3,7 +3,7 @@
 import OnScreenObject from "../Classes/onScreenObjects.js";
 
 // Javascript File Imports 
-import { loadSpriteSheet } from "../loadFunctions.js";
+import { loadSpriteSheet } from "../LoadFunctions/loadFunctions.js";
 import { routeKoopaFrame } from "../Animations/koopaAnimations.js"
 
 // Trait Imports
@@ -21,8 +21,8 @@ function loadKoopa () {
 function createKoopa (sprite) {
     const koopa = new OnScreenObject
 
-    koopa.size.setVector(32, 42.6);
-    koopa.position.setVector(150, 100);
+    koopa.size.setVector(40, 53.2);
+    koopa.position.setVector(570, 100);
 
     koopa.addTrait(new PendelumWalk());
 

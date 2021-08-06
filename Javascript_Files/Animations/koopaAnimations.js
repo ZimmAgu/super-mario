@@ -1,5 +1,5 @@
 "use strict";
-import { createAnimation } from "../createAnimation.js";
+import { createAnimation } from "./createAnimation.js";
 
 
 const koopaWalkingRight = createAnimation(

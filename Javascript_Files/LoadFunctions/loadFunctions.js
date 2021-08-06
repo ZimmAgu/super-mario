@@ -3,13 +3,13 @@
     This file is responsible for loading all of the things 
     that require functionality to be processed
 */
-import SpriteSheet from "./Classes/spritesheetClass.js";
+import SpriteSheet from "../Classes/spritesheetClass.js";
 
-import { drawBackground } from "./drawTheLayers.js";
-import Level from "./Classes/Level.js";
-import { drawSpriteLayer } from "./drawTheLayers.js";
-import { createAnimation } from "./createAnimation.js"
-import Matrix from "./Classes/Matrix.js";
+import { drawBackground } from "../drawTheLayers.js";
+import Level from "../Classes/Level.js";
+import { drawSpriteLayer } from "../drawTheLayers.js";
+import { createAnimation } from "../Animations/createAnimation.js"
+import Matrix from "../Classes/Matrix.js";
 
 
 
