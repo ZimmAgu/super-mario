@@ -2,8 +2,12 @@
 // Class Imports
 import OnScreenObject from "../Classes/onScreenObjects.js";
 
+// Javascript File Imports 
 import { loadSpriteSheet } from "../loadFunctions.js";
 import {routeGoombaFrame} from "../animations.js"
+
+// Trait Imports
+import GoombaWalk from "../Traits/GoombaWalk.js";
 
 
 function loadGoomba () {
@@ -18,7 +22,7 @@ function createGoomba(sprite) {
     const goomba = new OnScreenObject();
     goomba.size.setVector(32, 42.6);
     goomba.position.setVector(190, 100);
-    goomba.velocity.x += +30;
+    goomba.addTrait(new GoombaWalk());
 
     routeGoombaFrame(goomba);
 
