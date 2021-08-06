@@ -1,7 +1,7 @@
 "use strict";
 // Trait Imports
-import Move from "../Traits/MoveTrait.js";
-import Jump from "../Traits/jumpTrait.js";
+import Move from "../Traits/Move.js";
+import Jump from "../Traits/Jump.js";
 
 // Class Imports
 import OnScreenObject from "../Classes/onScreenObjects.js";
