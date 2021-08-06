@@ -1,3 +1,4 @@
+"use strict";
 
 function mouseControl (canvas, object, camera) {
     let previousEvent;

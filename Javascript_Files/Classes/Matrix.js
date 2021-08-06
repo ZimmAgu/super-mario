@@ -1,3 +1,4 @@
+"use strict";
 class Matrix {
     constructor () {
         this.grid = [];

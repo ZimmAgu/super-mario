@@ -1,3 +1,4 @@
+"use strict";
 class BlockResolver {
     constructor (matrix, blockSize = 32) {
         this.matrix = matrix;

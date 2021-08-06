@@ -1,3 +1,4 @@
+"use strict";
 import Vector from "./Vector.js"
 
 class Camera {

@@ -1,3 +1,4 @@
+"use strict";
 import BlockResolver from "./BlockResolver.js";
 
 class BlockCollider {

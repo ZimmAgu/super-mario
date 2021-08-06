@@ -1,3 +1,4 @@
+"use strict";
 // Class Imports
 import OnScreenObject from "../Classes/onScreenObjects.js";
 
