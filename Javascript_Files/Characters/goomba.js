@@ -15,8 +15,9 @@ function loadGoomba () {
 
 function createGoomba(sprite) {
     const goomba = new OnScreenObject();
-    goomba.size.setVector(64, 42.6);
-    goomba.position.setVector(200, 100);
+    goomba.size.setVector(32, 42.6);
+    goomba.position.setVector(190, 100);
+    goomba.velocity.x += +30;
 
     routeGoombaFrame(goomba);
 
