@@ -12,7 +12,8 @@ import {createCollisionGrid, createBackgroundGrid} from "./createGrids.js"
 import loadJSON from "./loadJSON.js";
 import loadSpriteSheet from "./loadSpriteSheet.js";
 
-function loadLevel (levelName) {    // Loads the current levels from the requested JSON file in the GameLevels folder. The level is determined the parameter
+
+function loadLevel (levelName, characterSpawner) {    // Loads the current levels from the requested JSON file in the GameLevels folder. The level is determined the parameter
     return loadJSON(`/GameLevels/${levelName}.json`)
                 .then(levelSpecification => Promise.all([
         levelSpecification,
@@ -23,7 +24,7 @@ function loadLevel (levelName) {    // Loads the current levels from the request
 
         loadCollisionGrid(currentLevel, levelSpecifications);
         loadLevelBackground(currentLevel, levelSpecifications, backgroundSprites);
-        drawMarioOnLevel(currentLevel);
+        drawCharacters(currentLevel, characterSpawner);
 
         return currentLevel;
     })
@@ -54,9 +55,10 @@ function loadLevelBackground (level, levelSpecs, sprites) {
 
 
 
-function drawMarioOnLevel (level) {
-    const marioDrawing = drawSpriteLayer(level.objects); // Draws mario to the screen
-    level.layer.imageLayers.push(marioDrawing);  // Adds mario to the array of layers
+function drawCharacters (level, characterSpawner) {
+
+    const characterDrawings = drawSpriteLayer(level.objects); // Draws mario to the screen
+    level.layer.imageLayers.push(characterDrawings);  // Adds mario to the array of layers
 }
 
 export default loadLevel;
