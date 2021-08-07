@@ -6,7 +6,7 @@ class CharacterCollisions {
     } 
 
     checkForCharacter (character) {
-        
+    
     }
 
 }
