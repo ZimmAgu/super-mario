@@ -9,7 +9,9 @@ class GoombaBehavior extends Trait {
     }
 
     collides (goomba, otherCharacter) {
-        goomba.pendelumWalk.walkSpeed = 0;
+        if (otherCharacter.stomp) { // Mario is the only character with a trait named stomp so the goomba will only react to a collision with mario. Not any other characters
+           goomba.pendelumWalk.walkSpeed = 0; 
+        }
     }
 }
 

@@ -1,7 +1,8 @@
 "use strict";
 // Trait Imports
-import Move from "../Traits/Move.js";
 import Jump from "../Traits/Jump.js";
+import Move from "../Traits/Move.js";
+import Stomp from "../Traits/Stomp.js";
 
 // Class Imports
 import OnScreenObject from "../Classes/onScreenObjects.js";
@@ -31,6 +32,7 @@ function createMario (sprite) {
 
     mario.addTrait(new Move());
     mario.addTrait(new Jump());  
+    mario.addTrait(new Stomp());
 
     
     mario.move.drag = SLOWDRAG;
