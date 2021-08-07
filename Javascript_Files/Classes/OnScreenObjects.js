@@ -16,6 +16,9 @@ class OnScreenObject {
         this.traits = []; // Each on screen object will have an array where all of their traits are stored                
     }
 
+    collides (otherCharacter) {
+    }
+
     obstruct (side) {
         this.traits.forEach(trait => {
             trait.obstruct(this, side)    // Each trait class will have a function named update trait
