@@ -10,7 +10,7 @@ class OnScreenObject {
         this.position = new Vector(0, 0);   // The current positions of marion
         this.velocity = new Vector(0, 0);   // How fast mario is moving in the x & y direction
         this.size = new Vector()
-        this.hitBox = new Hitbox(this.position, this.size);
+        this.hitbox = new Hitbox(this.position, this.size);
 
         this.lifetime = 0;
         this.traits = []; // Each on screen object will have an array where all of their traits are stored                

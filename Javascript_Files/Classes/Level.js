@@ -23,7 +23,6 @@ class Level {
 
     updateLevel (refreshRate) {
         this.objects.forEach(object => {
-
             object.updateTrait(refreshRate);
 
             object.position.x += (object.velocity.x * refreshRate);

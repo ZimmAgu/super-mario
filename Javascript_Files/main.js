@@ -30,7 +30,6 @@ async function main () {
     const mario = characterSpawner.mario;
     level.objects.add(mario);
 
-    console.log(mario)
     level.layer.imageLayers.push(
         createCollisionLayer(level),
         createCameraLayer(camera)
