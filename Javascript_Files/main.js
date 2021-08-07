@@ -30,12 +30,6 @@ async function main () {
     const mario = character.mario;
     level.objects.add(mario);
 
-    const goomba = character.goomba;
-    level.objects.add(goomba)
-
-    const koopa = character.koopa;
-    level.objects.add(koopa)
-
     level.layer.imageLayers.push(
         createCollisionLayer(level),
         createCameraLayer(camera)
