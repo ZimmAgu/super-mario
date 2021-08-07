@@ -5,7 +5,7 @@ class CharacterCollisions {
         this.characters = characters;
     } 
 
-    checkCharacter (character) {
+    checkForCharacter (character) {
         
     }
 

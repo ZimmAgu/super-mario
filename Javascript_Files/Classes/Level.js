@@ -32,6 +32,8 @@ class Level {
             object.position.y += (object.velocity.y * refreshRate);
             this.blockCollisions.checkForY(object);
 
+            this.characterCollisions.checkForCharacter(object);
+
             object.velocity.y += (this.gravity * refreshRate);
         })
         this.totalTime += refreshRate;
