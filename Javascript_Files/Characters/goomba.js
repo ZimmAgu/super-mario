@@ -7,6 +7,7 @@ import loadSpriteSheet from "../LoadFunctions/loadSpriteSheet.js"
 import { routeGoombaFrame } from "../Animations/goombaAnimations.js"
 
 // Trait Imports
+import GoombaBehavior from "../Traits/GoombaBehavior.js";
 import PendelumWalk from "../Traits/PendelumWalk.js";
 
 
@@ -25,6 +26,7 @@ function createGoomba(sprite) {
     
     
     goomba.addTrait(new PendelumWalk());
+    goomba.addTrait(new GoombaBehavior());
    
 
 
