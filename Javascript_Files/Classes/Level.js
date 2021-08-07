@@ -11,9 +11,9 @@ class Level {
         this.totalTime = 0;
 
         this.layer = new LayeredImages();
-        this.characters = new Set(); // Sets are like maps but they don't allow duplicates to be added to it
+        this.objects = new Set(); // Sets are like maps but they don't allow duplicates to be added to it
         
-        this.characterCollisions = new CharacterCollisions(this.characters);
+        this.characterCollisions = new CharacterCollisions(this.objects);
         this.blockCollisions = null;
     }
 
@@ -22,17 +22,17 @@ class Level {
     }
 
     updateLevel (refreshRate) {
-        this.characters.forEach(character => {
+        this.objects.forEach(object => {
 
-            character.updateTrait(refreshRate);
+            object.updateTrait(refreshRate);
 
-            character.position.x += (character.velocity.x * refreshRate);
-            this.blockCollisions.checkForX(character);
+            object.position.x += (object.velocity.x * refreshRate);
+            this.blockCollisions.checkForX(object);
 
-            character.position.y += (character.velocity.y * refreshRate);
-            this.blockCollisions.checkForY(character);
+            object.position.y += (object.velocity.y * refreshRate);
+            this.blockCollisions.checkForY(object);
 
-            character.velocity.y += (this.gravity * refreshRate);
+            object.velocity.y += (this.gravity * refreshRate);
         })
         this.totalTime += refreshRate;
     }

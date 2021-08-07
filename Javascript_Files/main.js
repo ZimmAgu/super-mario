@@ -28,7 +28,7 @@ async function main () {
     const level = await loadLevel('1-1', characterSpawner);
 
     const mario = characterSpawner.mario;
-    level.characters.add(mario);
+    level.objects.add(mario);
 
     level.layer.imageLayers.push(
         createCollisionLayer(level),
