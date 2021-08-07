@@ -1,5 +1,5 @@
 "use strict";
-import BlockCollider from "./BlockCollider.js";
+import BlockCollisions from "./BlockCollisions.js";
 import LayeredImages from "./layerTheImages.js";
 
 class Level {
@@ -10,11 +10,11 @@ class Level {
         this.layer = new LayeredImages();
         this.objects = new Set(); // Sets are like maps but they don't allow duplicates to be added to it
         
-        this.blockCollider = null;
+        this.blockCollisions = null;
     }
 
     setCollisionGrid (matrix) {
-        this.blockCollider = new BlockCollider(matrix)
+        this.blockCollisions = new BlockCollisions(matrix)
     }
 
     updateLevel (refreshRate) {
@@ -23,10 +23,10 @@ class Level {
             object.updateTrait(refreshRate);
 
             object.position.x += (object.velocity.x * refreshRate);
-            this.blockCollider.checkForX(object);
+            this.blockCollisions.checkForX(object);
 
             object.position.y += (object.velocity.y * refreshRate);
-            this.blockCollider.checkForY(object);
+            this.blockCollisions.checkForY(object);
 
             object.velocity.y += (this.gravity * refreshRate);
         })

@@ -8,7 +8,7 @@ const BLOCKSIDES = {
     RIGHT: 'right'
 }
 
-class BlockCollider {
+class BlockCollisions {
     constructor (blockMatrix) {
         this.blocks = new BlockResolver(blockMatrix);
     }
@@ -93,4 +93,4 @@ class BlockCollider {
 }
 
 
-export default BlockCollider;
+export default BlockCollisions;
