@@ -17,6 +17,9 @@ class OnScreenObject {
     }
 
     collides (otherCharacter) {
+        this.traits.forEach(trait => {
+            trait.collides(this, otherCharacter)    // Each trait class will have a function named update trait
+        })
     }
 
     obstruct (side) {

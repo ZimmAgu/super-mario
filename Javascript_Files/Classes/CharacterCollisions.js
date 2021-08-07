@@ -12,7 +12,6 @@ class CharacterCollisions {
             }
 
             if (character.hitbox.overlaps(otherCharacter.hitbox)) { // If the hitboxes of two character overlap, then the character collision function of both characters are ran
-                console.log('hello')
                 character.collides(otherCharacter);
                 otherCharacter.collides(character)
             }

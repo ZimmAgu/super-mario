@@ -4,12 +4,16 @@ class Trait {
         this.traitName = traitName;
     }
 
+    collides (character, otherCharacter) {
+
+    }
+
     obstruct () {
         
     }
 
     updateTrait () {
-        console.warn('Update trait has not been written yet')
+
     }
 }
 
