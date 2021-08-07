@@ -67,10 +67,10 @@ function drawCharacters (level, levelSpecs, characterSpawner) {
 
         newCharacter.position.setVector(x, y);
 
-        level.objects.add(newCharacter)
+        level.characters.add(newCharacter)
     })
 
-    const characterDrawings = drawSpriteLayer(level.objects); // Draws mario to the screen
+    const characterDrawings = drawSpriteLayer(level.characters); // Draws mario to the screen
     level.layer.imageLayers.push(characterDrawings);  // Adds mario to the array of layers
 }
 

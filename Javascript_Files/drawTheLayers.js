@@ -115,7 +115,7 @@ function createCollisionLayer (level) {
         });
         resolvedBlocks.clear();
 
-        level.objects.forEach(onScreenObject => {
+        level.characters.forEach(onScreenObject => {
             // context.strokeStyle = 'green';
             // context.beginPath();
 

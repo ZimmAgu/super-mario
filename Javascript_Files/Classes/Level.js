@@ -1,6 +1,9 @@
 "use strict";
+
+// Class Imports
 import BlockCollisions from "./BlockCollisions.js";
-import LayeredImages from "./layerTheImages.js";
+import CharacterCollisions from "./CharacterCollisions.js";
+import LayeredImages from "./LayerTheImages.js";
 
 class Level {
     constructor () {
@@ -8,8 +11,9 @@ class Level {
         this.totalTime = 0;
 
         this.layer = new LayeredImages();
-        this.objects = new Set(); // Sets are like maps but they don't allow duplicates to be added to it
+        this.characters = new Set(); // Sets are like maps but they don't allow duplicates to be added to it
         
+        this.characterCollisions = new CharacterCollisions(this.characters);
         this.blockCollisions = null;
     }
 
@@ -18,17 +22,17 @@ class Level {
     }
 
     updateLevel (refreshRate) {
-        this.objects.forEach(object => {
+        this.characters.forEach(character => {
 
-            object.updateTrait(refreshRate);
+            character.updateTrait(refreshRate);
 
-            object.position.x += (object.velocity.x * refreshRate);
-            this.blockCollisions.checkForX(object);
+            character.position.x += (character.velocity.x * refreshRate);
+            this.blockCollisions.checkForX(character);
 
-            object.position.y += (object.velocity.y * refreshRate);
-            this.blockCollisions.checkForY(object);
+            character.position.y += (character.velocity.y * refreshRate);
+            this.blockCollisions.checkForY(character);
 
-            object.velocity.y += (this.gravity * refreshRate);
+            character.velocity.y += (this.gravity * refreshRate);
         })
         this.totalTime += refreshRate;
     }

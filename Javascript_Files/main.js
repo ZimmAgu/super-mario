@@ -23,12 +23,12 @@ const camera = new Camera();
 
 
 async function main () {
-    const character = await loadCharacters();
+    const characterSpawner = await loadCharacters();
 
-    const level = await loadLevel('1-1', character);
+    const level = await loadLevel('1-1', characterSpawner);
 
-    const mario = character.mario;
-    level.objects.add(mario);
+    const mario = characterSpawner.mario;
+    level.characters.add(mario);
 
     level.layer.imageLayers.push(
         createCollisionLayer(level),
