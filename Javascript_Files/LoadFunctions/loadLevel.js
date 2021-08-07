@@ -21,27 +21,42 @@ function loadLevel (levelName) {    // Loads the current levels from the request
     .then(([levelSpecifications, backgroundSprites]) => {
         const currentLevel = new Level();
 
-        const mergedBlocks = levelSpecifications.layers.reduce((mergedBlocks, layespecifications) => {
-            return mergedBlocks.concat(layespecifications.blocks)
-        }, [])
-        
-        const collisionGrid = createCollisionGrid(mergedBlocks, levelSpecifications.patterns);
-        currentLevel.setCollisionGrid(collisionGrid);
-
-
-       
-        levelSpecifications.layers.forEach(layer => {
-            const backgroundGrid = createBackgroundGrid(layer.blocks, levelSpecifications.patterns);
-            const backgroundLayer = drawBackground(currentLevel, backgroundGrid, backgroundSprites);
-            currentLevel.layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
-        })
-        
-    
-        const marioDrawing = drawSpriteLayer(currentLevel.objects); // Draws mario to the screen
-        currentLevel.layer.imageLayers.push(marioDrawing);  // Adds mario to the array of layers
+        loadCollisionGrid(currentLevel, levelSpecifications);
+        loadLevelBackground(currentLevel, levelSpecifications, backgroundSprites);
+        drawMarioOnLevel(currentLevel);
 
         return currentLevel;
     })
+}
+
+
+
+
+function loadCollisionGrid (level, levelSpecs) {
+    const mergedBlocks = levelSpecs.layers.reduce((mergedBlocks, layespecifications) => {
+        return mergedBlocks.concat(layespecifications.blocks)
+    }, [])
+    
+    const collisionGrid = createCollisionGrid(mergedBlocks, levelSpecs.patterns);
+    level.setCollisionGrid(collisionGrid);
+}
+
+
+
+
+function loadLevelBackground (level, levelSpecs, sprites) {
+    levelSpecs.layers.forEach(layer => {
+        const backgroundGrid = createBackgroundGrid(layer.blocks, levelSpecs.patterns);
+        const backgroundLayer = drawBackground(level, backgroundGrid, sprites);
+        level.layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
+    })
+}
+
+
+
+function drawMarioOnLevel (level) {
+    const marioDrawing = drawSpriteLayer(level.objects); // Draws mario to the screen
+    level.layer.imageLayers.push(marioDrawing);  // Adds mario to the array of layers
 }
 
 export default loadLevel;
