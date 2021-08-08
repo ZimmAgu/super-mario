@@ -43,7 +43,12 @@ class KoopaBehavior extends Trait {
         }
 
         if (this.state === KOOPATSTATE.PANIC) {         // If mario runs into Koopas shell when koopa is in panic mode mario will die
-            otherCharacter.ableToDie.dies();
+            const travelDirection = Math.sign(koopa.velocity.x);
+            const impactDirection = Math.sign(koopa.position.x - otherCharacter.position.x)
+
+            if (travelDirection !== 0 && travelDirection !== impactDirection) {
+                otherCharacter.ableToDie.dies();   
+            }
         }
     }
 
