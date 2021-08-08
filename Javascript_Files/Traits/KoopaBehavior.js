@@ -5,7 +5,8 @@ import Trait from "./Traits.js";
 
 const KOOPATSTATE = {
     WALKING: 'walking',
-    HIDING: 'hiding'
+    HIDING: 'hiding',
+    PANIC: 'panic'
 }
 
 class KoopaBehavior extends Trait {
@@ -15,6 +16,7 @@ class KoopaBehavior extends Trait {
         this.state = KOOPATSTATE.WALKING;
         this.hideTime = 0;
         this.hideDuration = 5;
+        this.panicSpeed = 400;
     }
 
     collides (koopa, otherCharacter) {
@@ -32,24 +34,35 @@ class KoopaBehavior extends Trait {
     }
 
     handleShellPush (koopa, otherCharacter) {
-        if (this.state === KOOPATSTATE.WALKING) {
+        if (this.state === KOOPATSTATE.WALKING) {       // If mario is on the ground and runs into a walking Koopa mario will die
             otherCharacter.ableToDie.dies(); 
         } 
 
-        if (this.state === KOOPATSTATE.HIDING) {
-            koopa.pendelumWalk.walkEnabled = true; 
-            koopa.pendelumWalk.walkSpeed = 400;
+        if (this.state === KOOPATSTATE.HIDING) {        // If maario is on the ground and runs into Koopa in a shell Koopa will go into panic mode and his shell will be pushed around the screen
+            this.panicKoopa(koopa, otherCharacter);
+        }
+
+        if (this.state === KOOPATSTATE.PANIC) {         // If mario runs into Koopas shell when koopa is in panic mode mario will die
+            otherCharacter.ableToDie.dies();
         }
     }
 
     handleDeath (koopa, otherCharacter) {
-        if (this.state === KOOPATSTATE.WALKING) {
+        if (this.state === KOOPATSTATE.WALKING) {       // If mario jumps on Koopa while Koopa is walking around Koopa will go into his shell 
             this.hideKoopa(koopa);
-        } else if (this.state === KOOPATSTATE.HIDING) {
+        } else if (this.state === KOOPATSTATE.HIDING) { // If mario jumps on Koopa while Koopa is in his shell Koopa dies
             koopa.velocity.setVector(200, -200);
             koopa.canCollide = false;
-            koopa.ableToDie.dies();                // The koopas death trait will be set to true
+            koopa.ableToDie.dies();                
+        } else if (this.state === KOOPATSTATE.PANIC) {  // If mario jumps on Koopas shell while hes in panic mode, Koopa goes back into regular hiding mode
+            this.hideKoopa(koopa);
         }
+    }
+
+    panicKoopa (koopa, otherCharacter) {
+        this.state = KOOPATSTATE.PANIC;
+        koopa.pendelumWalk.walkEnabled = true; 
+        koopa.pendelumWalk.walkSpeed = this.panicSpeed * Math.sign(otherCharacter.velocity.x);
     }
 
     hideKoopa (koopa) {
@@ -68,7 +81,7 @@ class KoopaBehavior extends Trait {
     }
 
     updateTrait (koopa, elapsedTime) {
-        if (this.state === KOOPATSTATE.HIDING) {
+        if (this.state === KOOPATSTATE.HIDING || this.state === KOOPATSTATE.PANIC ) {
             this.hideTime += elapsedTime;
 
             if (this.hideTime > this.hideDuration) {
