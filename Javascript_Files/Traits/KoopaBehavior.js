@@ -91,7 +91,7 @@ class KoopaBehavior extends Trait {
 
             if (this.hideTime > this.hideDuration) {
                 this.unhideKoopa(koopa);
-                koopa.pendelumWalk.walkSpeed = 30;
+                koopa.pendelumWalk.walkSpeed = 30 * Math.sign(koopa.pendelumWalk.walkSpeed);
             }
         }
     }
