@@ -17,7 +17,6 @@ class GoombaBehavior extends Trait {
             if (otherCharacter.velocity.y > goomba.velocity.y) {
                 goomba.pendelumWalk.walkSpeed = 0;      // The goomba will stop in place
                 goomba.ableToDie.dies();                // The goombas death trait will be set to true
-                otherCharacter.stomp.bounceUpward()    
             } else {
                 otherCharacter.ableToDie.dies();        // Mario dies if he collides with the goomba but he isn't falling
             }

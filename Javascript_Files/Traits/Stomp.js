@@ -4,12 +4,18 @@ import Trait from "./Traits.js";
 class Stomp extends Trait {
     constructor () {
         super('stomp');
-        this.bounce = false;
         this.bounceSpeed = 500;
     }
 
-    bounceUpward () {
-        this.bounce = true;
+    bounceUpward (mario, otherCharacter) {
+        mario.hitbox.bottom = otherCharacter.hitbox.top;
+        mario.velocity.y += -this.bounceSpeed;
+    }
+
+    collides (mario, otherCharacter) {
+        if (otherCharacter.ableToDie && mario.velocity.y > otherCharacter.velocity.y) {
+            this.bounceUpward(mario, otherCharacter);
+        }
     }
 
     updateTrait (object) {

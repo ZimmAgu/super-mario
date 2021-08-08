@@ -28,7 +28,6 @@ class KoopaBehavior extends Trait {
 
     handleDeath (koopa, otherCharacter) {
         if (this.state == 'walking') {
-            otherCharacter.stomp.bounceUpward()
             // koopa.ableToDie.dies();                // The koopas death trait will be set to true
             this.hideKoopa(koopa);
         }
