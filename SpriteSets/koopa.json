@@ -5,7 +5,7 @@
 
     "frames" : [
         {
-            "name" : "koopa right 1",
+            "name" : "winged koopa walking right 1",
             "xPosition" : "257",
             "yPosition" : "206",
             "onScreenWidth" : "40",
@@ -13,7 +13,7 @@
         },
 
         {
-            "name" : "koopa right 2",
+            "name" : "winged koopa walking right 2",
             "xPosition" : "276",
             "yPosition" : "206",
             "onScreenWidth" : "40",
@@ -21,7 +21,7 @@
         },
 
         {
-            "name" : "koopa right 3",
+            "name" : "koopa walking right 1",
             "xPosition" : "295",
             "yPosition" : "206",
             "onScreenWidth" : "40",
@@ -29,15 +29,16 @@
         },
 
         {
-            "name" : "koopa right 4",
+            "name" : "koopa walking right 2",
             "xPosition" : "315",
             "yPosition" : "206",
             "onScreenWidth" : "40",
             "onScreenHeight" : "53.2" 
         },
 
+        
         {
-            "name" : "koopa right 5",
+            "name" : "koopa hiding right 1",
             "xPosition" : "333",
             "yPosition" : "206",
             "onScreenWidth" : "40",
@@ -45,15 +46,17 @@
         },
 
         {
-            "name" : "koopa right 6",
+            "name" : "koopa hiding right 2",
             "xPosition" : "352",
             "yPosition" : "206",
             "onScreenWidth" : "40",
             "onScreenHeight" : "53.2" 
         },
 
+
+
         {
-            "name" : "koopa left 1",
+            "name" : "winged koopa walking left 1",
             "xPosition" : "238",
             "yPosition" : "206",
             "onScreenWidth" : "40",
@@ -61,7 +64,7 @@
         },
 
         {
-            "name" : "koopa left 2",
+            "name" : "winged koopa walking left 2",
             "xPosition" : "219",
             "yPosition" : "206",
             "onScreenWidth" : "40",
@@ -69,7 +72,7 @@
         },
 
         {
-            "name" : "koopa left 3",
+            "name" : "koopa walking left 1",
             "xPosition" : "200",
             "yPosition" : "206",
             "onScreenWidth" : "40",
@@ -77,7 +80,7 @@
         },
 
         {
-            "name" : "koopa left 4",
+            "name" : "koopa walking left 2",
             "xPosition" : "181",
             "yPosition" : "206",
             "onScreenWidth" : "40",
@@ -85,7 +88,7 @@
         },
 
         {
-            "name" : "koopa left 5",
+            "name" : "koopa hiding left 1",
             "xPosition" : "162",
             "yPosition" : "206",
             "onScreenWidth" : "40",
@@ -93,7 +96,7 @@
         },
 
         {
-            "name" : "koopa left 6",
+            "name" : "koopa hiding left 2",
             "xPosition" : "143",
             "yPosition" : "206",
             "onScreenWidth" : "40",

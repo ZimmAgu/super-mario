@@ -4,16 +4,16 @@ import { createAnimation } from "./createAnimation.js";
 
 const koopaWalkingRight = createAnimation(
     [
-        "koopa right 3",
-        "koopa right 4"
+        "koopa walking right 1",
+        "koopa walking right 2"
     ],
     0.2
 )
 
 const koopaWalkingLeft = createAnimation(
     [
-        "koopa left 3",
-        "koopa left 4"
+        "koopa walking left 1",
+        "koopa walking left 2"
     ],
     0.2
 )
