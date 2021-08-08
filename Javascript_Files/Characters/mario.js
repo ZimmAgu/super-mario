@@ -17,6 +17,7 @@ import AbleToDie from "../Traits/AbleToDie.js";
 const FASTDRAG = 1/10000;
 const SLOWDRAG = 1/2000;
 
+
 function loadMario () {
     return loadSpriteSheet('mario') 
             .then(marioSprite => {

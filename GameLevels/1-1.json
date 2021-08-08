@@ -230,12 +230,12 @@
     "characters" : [
         {
             "name": "goomba",
-            "position" : [570, 100]
+            "position" : [190, 100]
         },
 
         {
             "name" : "koopa",
-            "position" : [120, 100]
+            "position" : [570, 100]
         }
     ]
 }
