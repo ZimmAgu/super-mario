@@ -19,6 +19,10 @@ const koopaWalkingLeft = createAnimation(
 )
 
 function routeKoopaFrame (object) {
+    if (object.ableToDie.isDead == true) {
+        return 'koopa hiding left 2'
+    }
+
     if (object.velocity.x > 0){
         return koopaWalkingRight(object.lifetime)    
     } else {
