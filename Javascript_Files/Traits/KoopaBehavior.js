@@ -8,6 +8,8 @@ class KoopaBehavior extends Trait {
         super('behavior')
 
         this.state = 'walking'
+        this.hideTime = 0;
+        this.hideDuration = 5;
     }
 
     collides (koopa, otherCharacter) {
@@ -27,16 +29,34 @@ class KoopaBehavior extends Trait {
     handleDeath (koopa, otherCharacter) {
         if (this.state == 'walking') {
             otherCharacter.stomp.bounceUpward()
-            koopa.ableToDie.dies();                // The koopas death trait will be set to true
+            // koopa.ableToDie.dies();                // The koopas death trait will be set to true
             this.hideKoopa(koopa);
         }
     }
 
     hideKoopa (koopa) {
-        koopa.velocity.x = 0;
-        koopa.pendelumWalk.walkSpeed = 0;
+        koopa.velocity.x = 0;                   // Stops koopa from moving any further
+
+        koopa.pendelumWalk.walkEnabled = false; // Sets the pendlum walks speed to 0
+
         this.state = 'hiding';
-        console.log(this.state);
+
+        this.hideTime = 0;
+    }
+
+    unhideKoopa (koopa) {
+        koopa.pendelumWalk.walkEnabled = true;
+        this.state = 'walking'
+    }
+
+    updateTrait (koopa, elapsedTime) {
+        if (this.state === 'hiding') {
+            this.hideTime += elapsedTime;
+
+            if (this.hideTime > this.hideDuration) {
+                this.unhideKoopa(koopa);
+            }
+        }
     }
 }
 

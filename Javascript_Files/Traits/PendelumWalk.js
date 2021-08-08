@@ -4,13 +4,15 @@ import Trait from "./Traits.js";
 class PendelumWalk extends Trait {
     constructor () {
         super('pendelumWalk');
-
         this.walkSpeed = 30;
+        this.walkEnabled = true;
     }
 
     updateTrait (object, elapsedTime) {
         object.lifetime += elapsedTime;
-        object.velocity.x = this.walkSpeed
+        if (this.walkEnabled) {
+            object.velocity.x = this.walkSpeed
+        }
     }
 
     obstruct (object, side) {
