@@ -16,6 +16,11 @@ class AbleToDie extends Trait {
         this.isDead = true;
     }
 
+    respawn () {
+        this.isDead = false;
+        this.timeOfDeath = 0;
+    }
+
     updateTrait (object, elapsedTime, level) {
         if (this.isDead) {
             this.timeOfDeath += elapsedTime

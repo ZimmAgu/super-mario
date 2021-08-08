@@ -11,6 +11,7 @@ import loadLevel from "./LoadFunctions/loadLevel.js"
 //Javascript File imports
 import { createCameraLayer, createCollisionLayer } from "./drawTheLayers.js";
 import { userInput } from "./userInput.js";
+import createSpawnPoint from "./spawnPoint.js";
 import mouseControl from "./mouseDebugger.js";
 
 
@@ -29,6 +30,10 @@ async function main () {
 
     const mario = characterSpawner.mario;
     level.objects.add(mario);
+
+    const spawnPoint = createSpawnPoint(mario);
+    level.objects.add(spawnPoint);
+
 
     level.layer.imageLayers.push(
         createCollisionLayer(level),

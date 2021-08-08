@@ -40,6 +40,10 @@ class OnScreenObject {
         })
     }
 
+    drawObject () {
+        
+    }
+
 }
 
 export default OnScreenObject;
