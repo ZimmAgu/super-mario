@@ -35,7 +35,8 @@ class KoopaBehavior extends Trait {
         if (this.state === KOOPATSTATE.WALKING) {
             this.hideKoopa(koopa);
         } else if (this.state === KOOPATSTATE.HIDING) {
-            koopa.velocity.setVector(100, -200);
+            koopa.velocity.setVector(200, -200);
+            koopa.canCollide = false;
             koopa.ableToDie.dies();                // The koopas death trait will be set to true
         }
     }

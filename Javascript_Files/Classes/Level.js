@@ -26,17 +26,27 @@ class Level {
             object.updateTrait(refreshRate, this);
 
             object.position.x += (object.velocity.x * refreshRate);
-            this.blockCollisions.checkForX(object);
+
+            if (object.canCollide) {
+                this.blockCollisions.checkForX(object);
+            }
+            
 
             object.position.y += (object.velocity.y * refreshRate);
-            this.blockCollisions.checkForY(object);
+
+            if (object.canCollide) {
+                this.blockCollisions.checkForY(object);
+            }
+            
 
 
             object.velocity.y += (this.gravity * refreshRate);
         })
 
         this.objects.forEach(object => {
-            this.characterCollisions.checkForCharacter(object); // All of the character collisions need to be updated at the same time so this was moved to a seperate loop
+            if (object.canCollide) {
+                this.characterCollisions.checkForCharacter(object); // All of the character collisions need to be updated at the same time so this was moved to a seperate loop
+            }
         })
         this.totalTime += refreshRate;
     }
