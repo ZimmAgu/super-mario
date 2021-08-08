@@ -18,8 +18,24 @@ const koopaWalkingLeft = createAnimation(
     0.2
 )
 
+const koopaWakingUp = createAnimation(
+    [
+        "koopa hiding left 1",
+        "koopa hiding left 2"
+    ],
+    0.2
+)
+
 function routeKoopaFrame (object) {
-    if (object.behavior.state == 'hiding' || object.behavior.state == 'panic') {
+    if (object.behavior.state == 'hiding') {
+        if (object.behavior.hideTime > 3) {
+            return koopaWakingUp(object.behavior.hideTime);
+        }
+
+        return 'koopa hiding left 2'
+    }
+
+    if (object.behavior.state == 'panic') {
         return 'koopa hiding left 2'
     }
 
