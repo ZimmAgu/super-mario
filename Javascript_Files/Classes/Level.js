@@ -23,7 +23,7 @@ class Level {
 
     updateLevel (refreshRate) {
         this.objects.forEach(object => {
-            object.updateTrait(refreshRate);
+            object.updateTrait(refreshRate, this);
 
             object.position.x += (object.velocity.x * refreshRate);
             this.blockCollisions.checkForX(object);
