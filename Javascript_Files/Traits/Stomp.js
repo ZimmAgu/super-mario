@@ -4,7 +4,7 @@ import Trait from "./Traits.js";
 class Stomp extends Trait {
     constructor () {
         super('stomp');
-        this.bounceSpeed = 500;
+        this.bounceSpeed = 1000;
     }
 
     bounceUpward (mario, otherCharacter) {
@@ -18,12 +18,6 @@ class Stomp extends Trait {
         }
     }
 
-    updateTrait (object) {
-        if (this.bounce) {
-            object.velocity.y = -this.bounceSpeed; // If the bounce method is called the object will fly upward at bounceSpeed
-            this.bounce = false
-        }
-    }
 }
 
 export default Stomp;

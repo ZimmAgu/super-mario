@@ -3,11 +3,16 @@
 // Trait Imports
 import Trait from "./Traits.js";
 
+const KOOPATSTATE = {
+    WALKING: 'walking',
+    HIDING: 'hiding'
+}
+
 class KoopaBehavior extends Trait {
     constructor () {
         super('behavior')
 
-        this.state = 'walking'
+        this.state = KOOPATSTATE.WALKING;
         this.hideTime = 0;
         this.hideDuration = 5;
     }
@@ -27,9 +32,10 @@ class KoopaBehavior extends Trait {
     }
 
     handleDeath (koopa, otherCharacter) {
-        if (this.state == 'walking') {
-            // koopa.ableToDie.dies();                // The koopas death trait will be set to true
+        if (this.state === KOOPATSTATE.WALKING) {
             this.hideKoopa(koopa);
+        } else if (this.state === KOOPATSTATE.HIDING) {
+            koopa.ableToDie.dies();                // The koopas death trait will be set to true
         }
     }
 
@@ -37,19 +43,19 @@ class KoopaBehavior extends Trait {
         koopa.velocity.x = 0;                   // Stops koopa from moving any further
 
         koopa.pendelumWalk.walkEnabled = false; // Sets the pendlum walks speed to 0
-
-        this.state = 'hiding';
+        
+        this.state = KOOPATSTATE.HIDING;
 
         this.hideTime = 0;
     }
 
     unhideKoopa (koopa) {
         koopa.pendelumWalk.walkEnabled = true;
-        this.state = 'walking'
+        this.state = KOOPATSTATE.WALKING
     }
 
     updateTrait (koopa, elapsedTime) {
-        if (this.state === 'hiding') {
+        if (this.state === KOOPATSTATE.HIDING) {
             this.hideTime += elapsedTime;
 
             if (this.hideTime > this.hideDuration) {
