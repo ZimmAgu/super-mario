@@ -19,7 +19,7 @@ const koopaWalkingLeft = createAnimation(
 )
 
 function routeKoopaFrame (object) {
-    if (object.ableToDie.isDead == true) {
+    if (object.behavior.state == 'hiding') {
         return 'koopa hiding left 2'
     }
 
