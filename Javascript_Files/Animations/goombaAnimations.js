@@ -13,6 +13,10 @@ const goombaWalking = createAnimation(
 
 
 function routeGoombaFrame (object) {
+    if (object.ableToDie.isDead == true) {
+        return 'squashed goomba'
+    }
+
     return goombaWalking(object.lifetime);
 }
 
