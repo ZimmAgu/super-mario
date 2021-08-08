@@ -26,8 +26,19 @@ class KoopaBehavior extends Trait {
             if (otherCharacter.velocity.y > koopa.velocity.y) {
                 this.handleDeath(koopa, otherCharacter)
             } else {
-                otherCharacter.ableToDie.dies();        // Mario dies if he collides with the koopa but he isn't falling
+                this.handleShellPush(koopa, otherCharacter);        // Mario dies if he collides with the koopa but he isn't falling
             }
+        }
+    }
+
+    handleShellPush (koopa, otherCharacter) {
+        if (this.state === KOOPATSTATE.WALKING) {
+            otherCharacter.ableToDie.dies(); 
+        } 
+
+        if (this.state === KOOPATSTATE.HIDING) {
+            koopa.pendelumWalk.walkEnabled = true; 
+            koopa.pendelumWalk.walkSpeed = 400;
         }
     }
 
@@ -62,6 +73,7 @@ class KoopaBehavior extends Trait {
 
             if (this.hideTime > this.hideDuration) {
                 this.unhideKoopa(koopa);
+                koopa.pendelumWalk.walkSpeed = 30;
             }
         }
     }
