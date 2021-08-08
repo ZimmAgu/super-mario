@@ -52,9 +52,7 @@ async function main () {
         level.updateLevel(refreshRate);
         level.layer.drawTheLayer(context, camera);
 
-        if (mario.position.x > 100) {
-            camera.position.x = mario.position.x - 100;
-        }
+        camera.position.x = Math.max(0, mario.position.x - 100);
     }
 
     marioTimer.startTimer();
