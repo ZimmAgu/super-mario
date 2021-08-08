@@ -10,6 +10,7 @@ import OnScreenObject from "../Classes/onScreenObjects.js";
 // Javascript File Imports
 import loadSpriteSheet from "../LoadFunctions/loadSpriteSheet.js"
 import { routeMarioFrame } from "../Animations/marioAnimations.js"
+import AbleToDie from "../Traits/AbleToDie.js";
 
 
 
@@ -33,7 +34,7 @@ function createMario (sprite) {
     mario.addTrait(new Move());
     mario.addTrait(new Jump());  
     mario.addTrait(new Stomp());
-
+    mario.addTrait(new AbleToDie());
     
     mario.move.drag = SLOWDRAG;
 
