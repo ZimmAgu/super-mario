@@ -29,7 +29,6 @@ function createMario (sprite) {
     const mario = new OnScreenObject(); 
 
     mario.size.setVector(32, 42.6);      // Sets the on screen size of marion
-    mario.position.setVector(64, 100);   // Sets the starting position of mario on the screen
 
     mario.addTrait(new Move());
     mario.addTrait(new Jump());  

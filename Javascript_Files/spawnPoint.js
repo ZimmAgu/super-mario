@@ -8,13 +8,13 @@ import PlayerControl from "./Traits/PlayerControl.js"
 
 function createSpawnPoint (player) {
     const spawnPoint = new OnScreenObject();
-    spawnPoint.position.setVector(0,0);
+    spawnPoint.position.setVector(0, 0);
     spawnPoint.size.setVector(32, 32);
 
     const playerControl = new PlayerControl();
-    playerControl.checkPoint.setVector(0, 0);
 
     playerControl.setPlayer(player);
+    playerControl.checkPoint.setVector(64, 64);
     
     spawnPoint.addTrait(playerControl);
 

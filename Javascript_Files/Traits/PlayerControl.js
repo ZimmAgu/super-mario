@@ -20,6 +20,7 @@ class PlayerControl extends Trait {
     updateTrait (object, elapsedTime, level) { 
         if (!level.objects.has(this.player)) {      // If the level no longer has a player
             this.player.ableToDie.respawn();        // then the player is brought back to life 
+            this.player.position.setVector(this.checkPoint.x, this.checkPoint.y);
             level.objects.add(this.player); 
         } 
     }
