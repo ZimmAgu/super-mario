@@ -1,0 +1,10 @@
+body {
+    background-color: black;
+    margin: 0;
+}
+
+#gameScreen {
+    display: block;
+    height: 100vh;
+    margin: auto;
+}
