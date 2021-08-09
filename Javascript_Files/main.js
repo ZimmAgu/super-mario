@@ -4,8 +4,8 @@ import Camera from "./Classes/Camera.js";
 import Timer from "./Classes/timer.js";
 
 // Draw The Layers Imports
-import createCameraLayer from "./DrawTheLayers/createCameraLayer.js"
-import createCollisionLayer from "./DrawTheLayers/ createCollisionLayer.js"
+import drawCameraLayer from "./DrawTheLayers/drawCameraLayer.js"
+import drawCollisionLayer from "./DrawTheLayers/drawCollisionLayer.js"
 
 // Load Function Imports
 import loadCharacters from "./LoadFunctions/loadCharacters.js";
@@ -39,8 +39,8 @@ async function main () {
 
 
     level.layer.imageLayers.push(
-        createCollisionLayer(level),
-        createCameraLayer(camera)
+        drawCollisionLayer(level),
+        drawCameraLayer(camera)
     );
 
     const input = userInput(mario);

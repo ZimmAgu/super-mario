@@ -1,7 +1,7 @@
 "use strict";
 
 
-function createCameraLayer (cameraToDraw) {
+function drawCameraLayer (cameraToDraw) {
     return (context, fromCamera) => {
         // context.strokeStyle = 'purple';
         //     context.beginPath();
@@ -19,4 +19,4 @@ function createCameraLayer (cameraToDraw) {
 }
 
 
-export default createCameraLayer;
+export default drawCameraLayer;

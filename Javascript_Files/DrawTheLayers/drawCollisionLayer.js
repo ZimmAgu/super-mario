@@ -3,7 +3,7 @@
 // Class Imports
 import Matrix from "../Classes/Matrix.js";
 
-function createCollisionLayer (level) {
+function drawCollisionLayer (level) {
     const blockResolver = level.blockCollisions.blocks;
     const blockSize = blockResolver.blockSize;
 
@@ -47,4 +47,4 @@ function createCollisionLayer (level) {
     };
 }
 
-export default createCollisionLayer;
+export default drawCollisionLayer;
