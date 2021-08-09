@@ -1,0 +1,780 @@
+{
+    "imageURL" : "Spritesheet_Images/font.png",
+    "spriteWidth" : "8",
+    "spriteHeight" : "8",
+
+    "specialCharacters" : [
+        {
+            "name" : "!",
+            "xPosition" : "8",
+            "yPosition" : "0",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16" 
+        },
+
+        {
+            "name" : "apostrophe",
+            "xPosition" : "16",
+            "yPosition" : "0",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16" 
+        },
+
+        {
+            "name" : "#",
+            "xPosition" : "24",
+            "yPosition" : "0",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16" 
+        },
+
+        {
+            "name" : "$",
+            "xPosition" : "32",
+            "yPosition" : "0",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16" 
+        },
+
+        {
+            "name" : "%",
+            "xPosition" : "40",
+            "yPosition" : "0",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "&",
+            "xPosition" : "48",
+            "yPosition" : "0",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "right quote",
+            "xPosition" : "56",
+            "yPosition" : "0",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "(",
+            "xPosition" : "64",
+            "yPosition" : "0",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : ")",
+            "xPosition" : "72",
+            "yPosition" : "0",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "*",
+            "xPosition" : "80",
+            "yPosition" : "0",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "+",
+            "xPosition" : "88",
+            "yPosition" : "0",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : ",",
+            "xPosition" : "96",
+            "yPosition" : "0",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "-",
+            "xPosition" : "104",
+            "yPosition" : "0",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : ".",
+            "xPosition" : "112",
+            "yPosition" : "0",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "/",
+            "xPosition" : "120",
+            "yPosition" : "0",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : ":",
+            "xPosition" : "80",
+            "yPosition" : "8",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : ";",
+            "xPosition" : "88",
+            "yPosition" : "8",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "left arrow",
+            "xPosition" : "96",
+            "yPosition" : "8",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "=",
+            "xPosition" : "104",
+            "yPosition" : "8",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "right arrow",
+            "xPosition" : "112",
+            "yPosition" : "8",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "?",
+            "xPosition" : "120",
+            "yPosition" : "8",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "coin character",
+            "xPosition" : "0",
+            "yPosition" : "16",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "[",
+            "xPosition" : "8",
+            "yPosition" : "24",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "backslash",
+            "xPosition" : "96",
+            "yPosition" : "24",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "]",
+            "xPosition" : "104",
+            "yPosition" : "24",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "^",
+            "xPosition" : "112",
+            "yPosition" : "24",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "_",
+            "xPosition" : "120",
+            "yPosition" : "24",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "left quote",
+            "xPosition" : "0",
+            "yPosition" : "32",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "left quote",
+            "xPosition" : "0",
+            "yPosition" : "32",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        }
+    ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "letters" : [
+        {
+            "name" : "A",
+            "xPosition" : "8",
+            "yPosition" : "16",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "B",
+            "xPosition" : "16",
+            "yPosition" : "16",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "C",
+            "xPosition" : "24",
+            "yPosition" : "16",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "D",
+            "xPosition" : "32",
+            "yPosition" : "16",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "E",
+            "xPosition" : "40",
+            "yPosition" : "16",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "E",
+            "xPosition" : "40",
+            "yPosition" : "16",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "F",
+            "xPosition" : "48",
+            "yPosition" : "16",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "G",
+            "xPosition" : "56",
+            "yPosition" : "16",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "H",
+            "xPosition" : "64",
+            "yPosition" : "16",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "I",
+            "xPosition" : "72",
+            "yPosition" : "16",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "J",
+            "xPosition" : "80",
+            "yPosition" : "16",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "K",
+            "xPosition" : "88",
+            "yPosition" : "16",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "L",
+            "xPosition" : "96",
+            "yPosition" : "16",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "L",
+            "xPosition" : "96",
+            "yPosition" : "16",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "M",
+            "xPosition" : "104",
+            "yPosition" : "16",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "N",
+            "xPosition" : "112",
+            "yPosition" : "16",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "O",
+            "xPosition" : "120",
+            "yPosition" : "16",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "P",
+            "xPosition" : "0",
+            "yPosition" : "24",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "Q",
+            "xPosition" : "8",
+            "yPosition" : "24",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "R",
+            "xPosition" : "16",
+            "yPosition" : "24",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "S",
+            "xPosition" : "24",
+            "yPosition" : "24",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "T",
+            "xPosition" : "32",
+            "yPosition" : "24",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "U",
+            "xPosition" : "40",
+            "yPosition" : "24",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "V",
+            "xPosition" : "48",
+            "yPosition" : "24",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "W",
+            "xPosition" : "56",
+            "yPosition" : "24",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "X",
+            "xPosition" : "64",
+            "yPosition" : "24",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "Y",
+            "xPosition" : "72",
+            "yPosition" : "24",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "Z",
+            "xPosition" : "72",
+            "yPosition" : "24",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+
+
+
+
+
+
+
+        {
+            "name" : "a",
+            "xPosition" : "8",
+            "yPosition" : "32",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "b",
+            "xPosition" : "16",
+            "yPosition" : "32",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "c",
+            "xPosition" : "24",
+            "yPosition" : "32",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "d",
+            "xPosition" : "32",
+            "yPosition" : "32",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "e",
+            "xPosition" : "40",
+            "yPosition" : "32",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "f",
+            "xPosition" : "48",
+            "yPosition" : "32",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "g",
+            "xPosition" : "56",
+            "yPosition" : "32",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "h",
+            "xPosition" : "64",
+            "yPosition" : "32",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "i",
+            "xPosition" : "72",
+            "yPosition" : "32",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "j",
+            "xPosition" : "80",
+            "yPosition" : "32",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "k",
+            "xPosition" : "88",
+            "yPosition" : "32",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "l",
+            "xPosition" : "96",
+            "yPosition" : "32",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "m",
+            "xPosition" : "104",
+            "yPosition" : "32",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "n",
+            "xPosition" : "112",
+            "yPosition" : "32",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "o",
+            "xPosition" : "120",
+            "yPosition" : "32",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "p",
+            "xPosition" : "0",
+            "yPosition" : "40",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "q",
+            "xPosition" : "8",
+            "yPosition" : "40",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "r",
+            "xPosition" : "16",
+            "yPosition" : "40",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "s",
+            "xPosition" : "24",
+            "yPosition" : "40",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "t",
+            "xPosition" : "32",
+            "yPosition" : "40",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "u",
+            "xPosition" : "40",
+            "yPosition" : "40",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "v",
+            "xPosition" : "48",
+            "yPosition" : "40",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "w",
+            "xPosition" : "56",
+            "yPosition" : "40",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "x",
+            "xPosition" : "64",
+            "yPosition" : "40",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "y",
+            "xPosition" : "72",
+            "yPosition" : "40",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "z",
+            "xPosition" : "80",
+            "yPosition" : "40",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        }
+    ],
+
+
+
+
+
+
+
+    "numbers" : [
+        {
+            "name" : "0",
+            "xPosition" : "0",
+            "yPosition" : "8",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "1",
+            "xPosition" : "8",
+            "yPosition" : "8",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "2",
+            "xPosition" : "16",
+            "yPosition" : "8",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "3",
+            "xPosition" : "24",
+            "yPosition" : "8",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "4",
+            "xPosition" : "32",
+            "yPosition" : "8",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "5",
+            "xPosition" : "40",
+            "yPosition" : "8",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "6",
+            "xPosition" : "48",
+            "yPosition" : "8",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "7",
+            "xPosition" : "56",
+            "yPosition" : "8",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "8",
+            "xPosition" : "64",
+            "yPosition" : "8",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        },
+
+        {
+            "name" : "9",
+            "xPosition" : "72",
+            "yPosition" : "8",
+            "onScreenWidth" : "16",
+            "onScreenHeight" : "16"
+        }
+    ]
+}
