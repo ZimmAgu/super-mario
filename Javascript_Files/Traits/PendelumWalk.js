@@ -4,7 +4,7 @@ import Trait from "./Traits.js";
 class PendelumWalk extends Trait {
     constructor () {
         super('pendelumWalk');
-        this.walkSpeed = 30;
+        this.walkSpeed = -30;
         this.walkEnabled = true;
     }
 

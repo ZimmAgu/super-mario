@@ -46,6 +46,12 @@ class OnScreenObject {
         
     }
 
+    finalize () {
+        this.traits.forEach(trait => {
+            trait.finalize();    // some trait classed will have a function named update finalize
+        })
+    }
+
 }
 
 export default OnScreenObject;

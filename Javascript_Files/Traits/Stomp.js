@@ -13,8 +13,12 @@ class Stomp extends Trait {
     }
 
     collides (mario, otherCharacter) {
-        if (otherCharacter.ableToDie && mario.velocity.y > otherCharacter.velocity.y) {
-            this.bounceUpward(mario, otherCharacter);
+        if (!otherCharacter.ableToDie || otherCharacter.ableToDie.isDead) {
+            return;
+        }
+
+        if (mario.velocity.y > otherCharacter.velocity.y) {
+            this.bounceUpward(mario, otherCharacter);   
         }
     }
 

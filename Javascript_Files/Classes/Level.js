@@ -48,6 +48,13 @@ class Level {
                 this.characterCollisions.checkForCharacter(object); // All of the character collisions need to be updated at the same time so this was moved to a seperate loop
             }
         })
+
+        this.objects.forEach(object => {
+            object.finalize();  // All of the task it the Traits queue are ran at this moment
+        })
+
+
+
         this.totalTime += refreshRate;
     }
 }

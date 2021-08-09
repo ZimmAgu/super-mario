@@ -13,7 +13,7 @@ class AbleToDie extends Trait {
     }
 
     dies () {
-        this.isDead = true;
+        this.queue(() => this.isDead = true);   // Queues a death to happen
     }
 
     respawn () {
