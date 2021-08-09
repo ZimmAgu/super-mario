@@ -5,6 +5,7 @@ body {
 
 #gameScreen {
     display: block;
+    image-rendering: pixelated;
     height: 100vh;
     margin: auto;
 }
