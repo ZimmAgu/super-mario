@@ -3,9 +3,9 @@
 // Class Imports
 import Level from "../Classes/Level.js";
 
-// Javascript File Imports
-import { drawBackground } from "../drawTheLayers.js";
-import { drawSpriteLayer } from "../drawTheLayers.js";
+// Draw the Layers Function
+import  drawBackground  from "../DrawTheLayers/drawBackground.js";
+import  drawSpriteLayer  from "../DrawTheLayers/drawSpriteLayer.js";
 
 // Load Function Imports
 import {createCollisionGrid, createBackgroundGrid} from "./createGrids.js"

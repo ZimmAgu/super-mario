@@ -3,13 +3,16 @@
 import Camera from "./Classes/Camera.js";
 import Timer from "./Classes/timer.js";
 
+// Draw The Layers Imports
+import createCameraLayer from "./DrawTheLayers/createCameraLayer.js"
+import createCollisionLayer from "./DrawTheLayers/ createCollisionLayer.js"
+
 // Load Function Imports
 import loadCharacters from "./LoadFunctions/loadCharacters.js";
 import loadLevel from "./LoadFunctions/loadLevel.js"
 
 
 //Javascript File imports
-import { createCameraLayer, createCollisionLayer } from "./drawTheLayers.js";
 import { userInput } from "./userInput.js";
 import createSpawnPoint from "./spawnPoint.js";
 import mouseControl from "./mouseDebugger.js";
