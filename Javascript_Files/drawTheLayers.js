@@ -5,8 +5,8 @@ import Matrix from "./Classes/Matrix.js";
 
 function drawBackground (gameLevel, blocks, allSprites) {    // Combines the background images together into one single background
     const backgroundLayer = document.createElement("canvas");  // A new canvas is specifically for the background so I have more control over the size of the background instead of just locking it in the html file 
-    backgroundLayer.width = 600;
-    backgroundLayer.height = 420;
+    backgroundLayer.width = 672;
+    backgroundLayer.height = 416;
     const backgroundLayerContext = backgroundLayer.getContext('2d');
 
 

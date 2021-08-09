@@ -26,7 +26,9 @@ class AbleToDie extends Trait {
             this.timeOfDeath += elapsedTime
 
             if (this.timeOfDeath > this.timeOfRemoval) {
-                level.objects.delete(object);
+                this.queue(() => {
+                    level.objects.delete(object); 
+                })
             }
         }
     }
