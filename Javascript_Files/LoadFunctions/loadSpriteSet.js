@@ -23,68 +23,90 @@ function loadSpriteSet (spriteSetName) {
                                             spriteSheetInfo.spriteHeight
                                         );
 
-                if (spriteSheetInfo.blocks) { // Blocks located in overworld.json
-                    spriteSheetInfo.blocks.forEach(sprite => {
-                        sprites.saveTheSprite(
-                                    sprite.name,
-                                    sprite.xPosition,
-                                    sprite.yPosition,
-                                    sprite.onScreenWidth,
-                                    sprite.onScreenHeight
-                                );
-                    });
-                }
-
-                if (spriteSheetInfo.frames) { // frames located in mario.json, goomba.json, koopa.json
-                    spriteSheetInfo.frames.forEach(frame => {
-                        sprites.saveTheSprite(
-                                    frame.name,
-                                    frame.xPosition,
-                                    frame.yPosition,
-                                    frame.onScreenWidth,
-                                    frame.onScreenHeight
-                                );  
-                    });
-                }
-
-
-                if (spriteSheetInfo.animations) { // animations located in overworld.json
-                    spriteSheetInfo.animations.forEach(anim => {
-                        const animation = createAnimation(anim.frames, anim.frameLength)
-                        sprites.defineAnimation(anim.name, animation)
-                    });
-                }
-
-
-                if (spriteSheetInfo.patterns) { // patterns located in overworld.json
-
-                    spriteSheetInfo.patterns.verticalPipe.forEach(piece => { // The vertical pipe pattern
-                        sprites.saveTheSprite(
-                            piece.name,
-                            piece.xPosition,
-                            piece.yPosition,
-                            piece.onScreenWidth,
-                            piece.onScreenHeight
-                        );
-                    });
-
-
-                    spriteSheetInfo.patterns.regularCloud.forEach(piece => {
-                        sprites.saveTheSprite(
-                            piece.name,
-                            piece.xPosition,
-                            piece.yPosition,
-                            piece.onScreenWidth,
-                            piece.onScreenHeight
-                        );
-                    })
-                }
-
-
-
+                loadOverWorldBlocks(spriteSheetInfo, sprites);
+                loadOverworldBlockAnimations(spriteSheetInfo, sprites);
+                loadCharacterAnimations(spriteSheetInfo, sprites);
+                loadPatterns(spriteSheetInfo, sprites);
 
                 return sprites
             })
+}
+
+
+
+
+
+function loadOverWorldBlocks (spriteSheetInfo, sprites) {
+    if (spriteSheetInfo.blocks) { // Blocks located in overworld.json
+        spriteSheetInfo.blocks.forEach(sprite => {
+            sprites.saveTheSprite(
+                        sprite.name,
+                        sprite.xPosition,
+                        sprite.yPosition,
+                        sprite.onScreenWidth,
+                        sprite.onScreenHeight
+                    );
+        });
+    }
+}
+
+
+
+
+
+
+function loadOverworldBlockAnimations (spriteSheetInfo, sprites) {
+    if (spriteSheetInfo.animations) { // animations located in overworld.json
+        spriteSheetInfo.animations.forEach(anim => {
+            const animation = createAnimation(anim.frames, anim.frameLength)
+            sprites.defineAnimation(anim.name, animation)
+        });
+    }
+}
+
+
+
+function loadCharacterAnimations (spriteSheetInfo, sprites) {
+    if (spriteSheetInfo.frames) { // frames located in mario.json, goomba.json, koopa.json
+        spriteSheetInfo.frames.forEach(frame => {
+            sprites.saveTheSprite(
+                        frame.name,
+                        frame.xPosition,
+                        frame.yPosition,
+                        frame.onScreenWidth,
+                        frame.onScreenHeight
+                    );  
+        });
+    }
+}
+
+
+
+
+function loadPatterns (spriteSheetInfo, sprites) {
+    if (spriteSheetInfo.patterns) { // patterns located in overworld.json
+
+        spriteSheetInfo.patterns.verticalPipe.forEach(piece => { // The vertical pipe pattern
+            sprites.saveTheSprite(
+                piece.name,
+                piece.xPosition,
+                piece.yPosition,
+                piece.onScreenWidth,
+                piece.onScreenHeight
+            );
+        });
+
+
+        spriteSheetInfo.patterns.regularCloud.forEach(piece => {
+            sprites.saveTheSprite(
+                piece.name,
+                piece.xPosition,
+                piece.yPosition,
+                piece.onScreenWidth,
+                piece.onScreenHeight
+            );
+        })
+    }
 }
 
 export default loadSpriteSet;
