@@ -33,6 +33,8 @@ async function main () {
         loadFont()
     ]);
 
+    console.log(font);
+
     const level = await loadLevel('1-1', characterSpawner);
 
     const mario = characterSpawner.mario;
@@ -56,8 +58,10 @@ async function main () {
     const marioTimer = new Timer(1/60);
 
     marioTimer.updateMario = (refreshRate) => {
-        level.updateLevel(refreshRate);
+        level.updateLevel(refreshRate);     // Constantly updates the level
         level.layer.drawTheLayer(context, camera);
+
+        font.drawTheSprite("A", context, 0, 0);
 
         camera.position.x = Math.max(0, mario.position.x - 100);
     }

@@ -5,7 +5,7 @@ import loadSpriteSet from "./loadSpriteSet.js";
 function loadFont () {
     return loadSpriteSet('font') 
             .then(fonts => {
-        console.log(fonts);
+        return fonts
     })
 }
 
