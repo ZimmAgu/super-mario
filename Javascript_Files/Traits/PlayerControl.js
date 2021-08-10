@@ -11,6 +11,8 @@ class PlayerControl extends Trait {
         super('playerControl');
         this.player = null;
         this.checkPoint = new Vector(0, 0);
+
+        this.countdown = 400;
     }
 
     setPlayer (object) {        // Will be used to the player to Mario
@@ -22,7 +24,9 @@ class PlayerControl extends Trait {
             this.player.ableToDie.respawn();        // then the player is brought back to life 
             this.player.position.setVector(this.checkPoint.x, this.checkPoint.y);
             level.objects.add(this.player); 
-        } 
+        } else {
+            this.countdown -= elapsedTime;
+        }
     }
 
     drawObject () {

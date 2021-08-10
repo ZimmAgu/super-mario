@@ -44,6 +44,7 @@ async function main () {
     level.objects.add(spawnPoint);
 
 
+
     level.layer.imageLayers.push(
         drawCollisionLayer(level),
         drawCameraLayer(camera)
@@ -61,7 +62,7 @@ async function main () {
         level.updateLevel(refreshRate);     // Constantly updates the level
         level.layer.drawTheLayer(context, camera);
 
-        drawDashboardLayer(font, context);
+        drawDashboardLayer(font, context, spawnPoint.playerControl.countdown);
 
         camera.position.x = Math.max(0, mario.position.x - 100);
     }

@@ -123,6 +123,18 @@ function loadFonts (spriteSheetInfo, sprites) {
             );
         });
     }
+
+    if (spriteSheetInfo.numbers) {
+        spriteSheetInfo.numbers.forEach(number => {
+            sprites.saveTheSprite(
+                number.name,
+                number.xPosition,
+                number.yPosition,
+                number.onScreenWidth,
+                number.onScreenHeight
+            );
+        });
+    }
 }
 
 export default loadSpriteSet;
