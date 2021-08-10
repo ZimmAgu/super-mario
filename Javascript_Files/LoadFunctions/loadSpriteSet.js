@@ -27,6 +27,7 @@ function loadSpriteSet (spriteSetName) {
                 loadOverworldBlockAnimations(spriteSheetInfo, sprites);
                 loadCharacterAnimations(spriteSheetInfo, sprites);
                 loadPatterns(spriteSheetInfo, sprites);
+                loadFonts(spriteSheetInfo, sprites);
 
                 return sprites
             })
@@ -38,13 +39,13 @@ function loadSpriteSet (spriteSetName) {
 
 function loadOverWorldBlocks (spriteSheetInfo, sprites) {
     if (spriteSheetInfo.blocks) { // Blocks located in overworld.json
-        spriteSheetInfo.blocks.forEach(sprite => {
+        spriteSheetInfo.blocks.forEach(block => {
             sprites.saveTheSprite(
-                        sprite.name,
-                        sprite.xPosition,
-                        sprite.yPosition,
-                        sprite.onScreenWidth,
-                        sprite.onScreenHeight
+                        block.name,
+                        block.xPosition,
+                        block.yPosition,
+                        block.onScreenWidth,
+                        block.onScreenHeight
                     );
         });
     }
@@ -106,6 +107,21 @@ function loadPatterns (spriteSheetInfo, sprites) {
                 piece.onScreenHeight
             );
         })
+    }
+}
+
+
+function loadFonts (spriteSheetInfo, sprites) {
+    if (spriteSheetInfo.letters) {
+        spriteSheetInfo.letters.forEach(letter => {
+            sprites.saveTheSprite(
+                letter.name,
+                letter.xPosition,
+                letter.yPosition,
+                letter.onScreenWidth,
+                letter.onScreenHeight
+            );
+        });
     }
 }
 

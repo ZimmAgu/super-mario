@@ -10,6 +10,7 @@ import drawCollisionLayer from "./DrawTheLayers/drawCollisionLayer.js"
 // Load Function Imports
 import loadCharacters from "./LoadFunctions/loadCharacters.js";
 import loadLevel from "./LoadFunctions/loadLevel.js"
+import loadFont from "./LoadFunctions/loadFont.js";
 
 
 //Javascript File imports
@@ -27,7 +28,10 @@ const camera = new Camera();
 
 
 async function main () {
-    const characterSpawner = await loadCharacters();
+    const [characterSpawner, font] = await Promise.all([ 
+        loadCharacters(),
+        loadFont()
+    ]);
 
     const level = await loadLevel('1-1', characterSpawner);
 
