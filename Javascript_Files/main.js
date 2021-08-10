@@ -6,6 +6,7 @@ import Timer from "./Classes/timer.js";
 // Draw The Layers Imports
 import drawCameraLayer from "./DrawTheLayers/drawCameraLayer.js"
 import drawCollisionLayer from "./DrawTheLayers/drawCollisionLayer.js"
+import drawDashboardLayer from "./DrawTheLayers/drawDashboardLayer.js";
 
 // Load Function Imports
 import loadCharacters from "./LoadFunctions/loadCharacters.js";
@@ -61,7 +62,7 @@ async function main () {
         level.updateLevel(refreshRate);     // Constantly updates the level
         level.layer.drawTheLayer(context, camera);
 
-        font.drawTheSprite("A", context, 0, 0);
+        drawDashboardLayer(font, context);
 
         camera.position.x = Math.max(0, mario.position.x - 100);
     }
