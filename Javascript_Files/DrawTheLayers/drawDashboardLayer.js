@@ -17,6 +17,10 @@ function drawDashboardLayer (font, context, countDown) {
     font.printWord("MARIO", context, 32, DASHBOARDLINES.LINE1);
     font.printWord(scoreBoard, context, 32, DASHBOARDLINES.LINE2);
 
+    font.printWord("@", context, 160, DASHBOARDLINES.LINE2);
+    font.printWord("x00", context, 180, DASHBOARDLINES.LINE2);
+
+
 
     font.printWord("WORLD", context, 256, DASHBOARDLINES.LINE1);
     font.printWord("1-1", context, 256, DASHBOARDLINES.LINE2);

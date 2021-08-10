@@ -17,11 +17,11 @@ function drawBackground (gameLevel, blocks, allSprites) {    // Combines the bac
         const SPRITE_RATIO = 2
 
         backgroundLayerContext.clearRect(
-                                                0, 
-                                                0,
-                                                backgroundLayer.width,
-                                                backgroundLayer.height
-                                            )
+                                            0, 
+                                            0,
+                                            backgroundLayer.width,
+                                            backgroundLayer.height
+                                        )
 
         for (let screenColumns = startOfDrawing; screenColumns < endOfDrawing; screenColumns++) {
             

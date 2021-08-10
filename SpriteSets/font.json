@@ -173,7 +173,7 @@
         },
 
         {
-            "name" : "coin character",
+            "name" : "@",
             "xPosition" : "0",
             "yPosition" : "16",
             "onScreenWidth" : "16",
@@ -667,7 +667,7 @@
 
         {
             "name" : "x",
-            "xPosition" : "64",
+            "xPosition" : "64.5",
             "yPosition" : "40",
             "onScreenWidth" : "16",
             "onScreenHeight" : "16"
