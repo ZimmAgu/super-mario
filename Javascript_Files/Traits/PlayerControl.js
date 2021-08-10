@@ -25,7 +25,12 @@ class PlayerControl extends Trait {
             this.player.position.setVector(this.checkPoint.x, this.checkPoint.y);
             level.objects.add(this.player); 
         } else {
-            this.countdown -= (elapsedTime * 2);
+            if (this.countdown > 1) {
+                this.countdown -= (elapsedTime * 2);    // If there is still time to count down then count down
+            } else {
+                this.player.ableToDie.dies();           // If the countdwon gets to 0 then mario dies;
+            }
+            
         }
     }
 

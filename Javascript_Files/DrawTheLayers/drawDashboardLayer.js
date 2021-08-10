@@ -19,6 +19,7 @@ function drawDashboardLayer (font, context, countDown) {
 
 
     font.printWord("WORLD", context, 256, DASHBOARDLINES.LINE1);
+    font.printWord("1-1", context, 256, DASHBOARDLINES.LINE2);
 
 
     font.printWord("TIME", context, 384, DASHBOARDLINES.LINE1);

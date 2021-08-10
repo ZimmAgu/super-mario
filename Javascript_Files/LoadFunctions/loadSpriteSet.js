@@ -135,6 +135,19 @@ function loadFonts (spriteSheetInfo, sprites) {
             );
         });
     }
+
+
+    if (spriteSheetInfo.specialCharacters) {
+        spriteSheetInfo.specialCharacters.forEach(specChar => {
+            sprites.saveTheSprite(
+                specChar.name,
+                specChar.xPosition,
+                specChar.yPosition,
+                specChar.onScreenWidth,
+                specChar.onScreenHeight
+            );
+        });
+    }
 }
 
 export default loadSpriteSet;
