@@ -10,7 +10,9 @@ const scoreBoard = SCORE.toString().padStart(6, '0');
 
 
 
-function drawDashboardLayer (font, context, countDown) {
+function drawDashboardLayer (font, context, countDown, score) {
+    const scoreBoard = score.toString().padStart(6, '0');
+    
     const time = Math.floor(countDown);
     const timeDisplay = time.toString().padStart(3, '0')
 

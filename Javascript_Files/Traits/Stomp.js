@@ -5,6 +5,7 @@ class Stomp extends Trait {
     constructor () {
         super('stomp');
         this.bounceSpeed = 1000;
+        this.score = 0
     }
 
     bounceUpward (mario, otherCharacter) {
@@ -18,6 +19,7 @@ class Stomp extends Trait {
         }
 
         if (mario.velocity.y > otherCharacter.velocity.y) {
+            this.score += 100;
             this.bounceUpward(mario, otherCharacter);   
         }
     }

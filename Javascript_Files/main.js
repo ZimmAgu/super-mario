@@ -62,7 +62,12 @@ async function main () {
         level.updateLevel(refreshRate);     // Constantly updates the level
         level.layer.drawTheLayer(context, camera);
 
-        drawDashboardLayer(font, context, spawnPoint.playerControl.countdown);
+        drawDashboardLayer(
+                            font, 
+                            context, 
+                            spawnPoint.playerControl.countdown,
+                            mario.stomp.score
+                        );
 
         camera.position.x = Math.max(0, mario.position.x - 100);
     }
