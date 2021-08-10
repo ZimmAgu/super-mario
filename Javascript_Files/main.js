@@ -34,7 +34,6 @@ async function main () {
         loadFont()
     ]);
 
-    console.log(font);
 
     const level = await loadLevel('1-1', characterSpawner);
 
