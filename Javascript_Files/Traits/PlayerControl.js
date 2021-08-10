@@ -25,7 +25,7 @@ class PlayerControl extends Trait {
             this.player.position.setVector(this.checkPoint.x, this.checkPoint.y);
             level.objects.add(this.player); 
         } else {
-            this.countdown -= elapsedTime;
+            this.countdown -= (elapsedTime * 2);
         }
     }
 
