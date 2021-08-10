@@ -10,14 +10,14 @@ import  drawSpriteLayer  from "../DrawTheLayers/drawSpriteLayer.js";
 // Load Function Imports
 import {createCollisionGrid, createBackgroundGrid} from "./createGrids.js"
 import loadJSON from "./loadJSON.js";
-import loadSpriteSheet from "./loadSpriteSheet.js";
+import loadSpriteSet from "./loadSpriteSet.js";
 
 
 function loadLevel (levelName, characterSpawner) {    // Loads the current levels from the requested JSON file in the GameLevels folder. The level is determined the parameter
     return loadJSON(`/GameLevels/${levelName}.json`)
                 .then(levelSpecification => Promise.all([
         levelSpecification,
-        loadSpriteSheet(levelSpecification.spriteSetName)    
+        loadSpriteSet(levelSpecification.spriteSetName)    
     ]))
     .then(([levelSpecifications, backgroundSprites]) => {
         const currentLevel = new Level();

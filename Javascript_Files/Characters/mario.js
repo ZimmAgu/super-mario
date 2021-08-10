@@ -8,7 +8,7 @@ import Stomp from "../Traits/Stomp.js";
 import OnScreenObject from "../Classes/onScreenObjects.js";
 
 // Javascript File Imports
-import loadSpriteSheet from "../LoadFunctions/loadSpriteSheet.js"
+import loadSpriteSet from "../LoadFunctions/loadSpriteSet.js"
 import { routeMarioFrame } from "../Animations/marioAnimations.js"
 import AbleToDie from "../Traits/AbleToDie.js";
 
@@ -19,7 +19,7 @@ const SLOWDRAG = 1/2000;
 
 
 function loadMario () {
-    return loadSpriteSheet('mario') 
+    return loadSpriteSet('mario') 
             .then(marioSprite => {
         return createMario(marioSprite);
     })

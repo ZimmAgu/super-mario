@@ -3,7 +3,7 @@
 import OnScreenObject from "../Classes/onScreenObjects.js";
 
 // Javascript File Imports 
-import loadSpriteSheet from "../LoadFunctions/loadSpriteSheet.js"
+import loadSpriteSet from "../LoadFunctions/loadSpriteSet.js"
 import { routeGoombaFrame } from "../Animations/goombaAnimations.js"
 
 // Trait Imports
@@ -13,7 +13,7 @@ import PendelumWalk from "../Traits/PendelumWalk.js";
 
 
 function loadGoomba () {
-    return loadSpriteSheet('goomba') 
+    return loadSpriteSet('goomba') 
             .then(goombaSprite => {
         return createGoomba(goombaSprite);
     })

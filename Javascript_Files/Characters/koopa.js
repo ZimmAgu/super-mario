@@ -3,7 +3,7 @@
 import OnScreenObject from "../Classes/onScreenObjects.js";
 
 // Javascript File Imports 
-import loadSpriteSheet from "../LoadFunctions/loadSpriteSheet.js"
+import loadSpriteSet from "../LoadFunctions/loadSpriteSet.js"
 import { routeKoopaFrame } from "../Animations/koopaAnimations.js"
 
 // Trait Imports
@@ -13,7 +13,7 @@ import PendelumWalk from "../Traits/PendelumWalk.js";
 
 
 function loadKoopa () {
-    return loadSpriteSheet('koopa')
+    return loadSpriteSet('koopa')
             .then(koopaSprite => {
         return createKoopa(koopaSprite);
     })

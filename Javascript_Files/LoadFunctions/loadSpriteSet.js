@@ -10,7 +10,7 @@ import SpriteSheet from "../Classes/spritesheetClass.js";
 import loadJSON from "./loadJSON.js"
 import loadImage from "./loadImage.js"
 
-function loadSpriteSheet (spriteSetName) {
+function loadSpriteSet (spriteSetName) {
     return loadJSON(`/SpriteSets/${spriteSetName}.json`)
             .then(spriteSheetInfo => Promise.all ([
                 spriteSheetInfo,
@@ -87,4 +87,4 @@ function loadSpriteSheet (spriteSetName) {
             })
 }
 
-export default loadSpriteSheet;
+export default loadSpriteSet;
