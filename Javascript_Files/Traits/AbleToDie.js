@@ -14,8 +14,6 @@ class AbleToDie extends Trait {
 
     dies () {
         this.queue(() => this.isDead = true);   // Queues a death to happen
-
-        
     }
 
     respawn (character) {
