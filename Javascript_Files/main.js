@@ -9,6 +9,7 @@ import drawCollisionLayer from "./DrawTheLayers/drawCollisionLayer.js"
 import drawDashboardLayer from "./DrawTheLayers/drawDashboardLayer.js";
 
 // Load Function Imports
+import loadAudio from "./LoadFunctions/loadAudio.js";
 import loadCharacters from "./LoadFunctions/loadCharacters.js";
 import loadLevel from "./LoadFunctions/loadLevel.js"
 import loadFont from "./LoadFunctions/loadFont.js";
@@ -24,7 +25,11 @@ import mouseControl from "./mouseDebugger.js";
 const canvas = document.getElementById("gameScreen");
 const context = canvas.getContext("2d");
 
-const camera = new Camera();
+
+const camera = new Camera();                // Class that deals with showing what the user sees on screen
+const audioContext = new AudioContext();    // high-level JavaScript API for processing and synthesizing audio in web applications 
+const marioTimer = new Timer(1/60);         // Class that deals with real time
+
 
 
 
@@ -34,29 +39,36 @@ async function main () {
         loadFont()
     ]);
 
+    loadAudio('SoundFX/marioJumpAudio.ogg', audioContext)
+        .then(audioFile => {
+            console.log(audioFile)
+            const source = audioContext.createBufferSource();
+            source.connect(audioContext.destination);
+            source.buffer = audioFile;
+            source.start(0);
+        })
 
-    const level = await loadLevel('1-1', characterSpawner);
+    const level = await loadLevel('1-1', characterSpawner); // Loads the current level that the user will be playing in
 
-    const mario = characterSpawner.mario;
+    const mario = characterSpawner.mario;   // Adds mario to the level
     level.objects.add(mario);
 
-    const spawnPoint = createSpawnPoint(mario);
+    const spawnPoint = createSpawnPoint(mario); // Adds the spawn point of mario to the level as an object
     level.objects.add(spawnPoint);
 
 
-
-    level.layer.imageLayers.push(
+    level.layer.imageLayers.push(  
         drawCollisionLayer(level),
         drawCameraLayer(camera)
     );
 
-    const input = userInput(mario);
+    const input = userInput(mario); // These are the keyboard controls that the user will use to control mario
+    input.keyboardEventListener(window);
 
-    mouseControl(canvas, mario, camera)
+    mouseControl(canvas, mario, camera);
 
-    input.keyboardEventListener(window)
+    
 
-    const marioTimer = new Timer(1/60);
 
     marioTimer.updateMario = (refreshRate) => {
         level.updateLevel(refreshRate);     // Constantly updates the level
@@ -75,4 +87,11 @@ async function main () {
     marioTimer.startTimer();
 }
 
-main();
+const start = () => {
+    window.removeEventListener('click', start);
+   
+}
+main(); 
+window.addEventListener('click', start)
+
+
