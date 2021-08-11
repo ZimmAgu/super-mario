@@ -44,8 +44,12 @@ async function main () {
     loadAudio('SoundFX/marioJumpAudio.ogg', audioContext)
         .then(audioFile => {
             soundBoard.addAudio('jump', audioFile);
-            soundBoard.playAudio('jump');
         })
+    loadAudio('SoundFX/marioStompAudio.ogg', audioContext)
+        .then(audioFile => {
+            soundBoard.addAudio('stomp', audioFile);
+        })
+
 
     const level = await loadLevel('1-1', characterSpawner); // Loads the current level that the user will be playing in
 

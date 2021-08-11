@@ -6,6 +6,8 @@ class Stomp extends Trait {
         super('stomp');
         this.bounceSpeed = 1000;
         this.score = 0
+
+        this.enemyStomped = false;
     }
 
     bounceUpward (mario, otherCharacter) {
@@ -21,6 +23,15 @@ class Stomp extends Trait {
         if (mario.velocity.y > otherCharacter.velocity.y) {
             this.score += 100;
             this.bounceUpward(mario, otherCharacter);   
+            this.enemyStomped = true;
+        }
+    }
+
+
+    updateTrait (object, elapsedTime, level, soundBoard) {
+        if (this.enemyStomped) {
+            soundBoard.playAudio('stomp');
+            this.enemyStomped = false;
         }
     }
 
