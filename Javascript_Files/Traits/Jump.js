@@ -35,10 +35,10 @@ class Jump extends Trait {
     }
 
 
-    updateTrait (object, elapsedTime) {             // Holds all of the functionality of a jump
-
+    updateTrait (object, elapsedTime, level, soundBoard) {             // Holds all of the functionality of a jump
         if (this.requestTime > 0) {                 // If the jump button is pressed  and the user is in the air then the jump funcitonality is triggered 
             if (this.jumpIsReady) {
+                soundBoard.playAudio('jump');       // When mario jumps a jump sound effect will play
                 this.engageTime = this.duration;    // Starts the jump by giving the update function the condition to change the velocity
                 this.requestTime = 0;
             }

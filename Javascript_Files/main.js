@@ -70,7 +70,7 @@ async function main () {
 
 
     marioTimer.updateMario = (refreshRate) => {
-        level.updateLevel(refreshRate);     // Constantly updates the level
+        level.updateLevel(refreshRate, soundBoard);     // Constantly updates the level
         level.layer.drawTheLayer(context, camera);
 
         drawDashboardLayer(
