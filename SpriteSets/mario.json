@@ -87,9 +87,18 @@
             "onScreenWidth" : "32",
             "onScreenHeight" : "42.6" 
         },
+
         {
             "name" : "jump facing left",
             "xPosition" : "142",
+            "yPosition" : "43",
+            "onScreenWidth" : "32",
+            "onScreenHeight" : "42.6"
+        },
+
+        {
+            "name" : "mario death",
+            "xPosition" : "485",
             "yPosition" : "43",
             "onScreenWidth" : "32",
             "onScreenHeight" : "42.6"

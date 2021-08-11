@@ -14,9 +14,12 @@ class AbleToDie extends Trait {
 
     dies () {
         this.queue(() => this.isDead = true);   // Queues a death to happen
+
+        
     }
 
-    respawn () {
+    respawn (character) {
+        character.canCollide = true;
         this.isDead = false;
         this.timeOfDeath = 0;
     }
@@ -24,7 +27,6 @@ class AbleToDie extends Trait {
     updateTrait (object, elapsedTime, level) {
         if (this.isDead) {
             this.timeOfDeath += elapsedTime
-
             if (this.timeOfDeath > this.timeOfRemoval) {
                 this.queue(() => {
                     level.objects.delete(object); 

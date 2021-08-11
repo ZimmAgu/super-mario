@@ -13,6 +13,7 @@ import loadSoundBoard from "../LoadFunctions/loadSoundBoard.js";
 
 // Trait Imports
 import Jump from "../Traits/Jump.js";
+import MarioBehavior from "../Traits/MarioBehavior.js";
 import Move from "../Traits/Move.js";
 import Stomp from "../Traits/Stomp.js";
 
@@ -37,6 +38,7 @@ function createMario (sprite, audio) {
 
     mario.size.setVector(32, 42.6);      // Sets the on screen size of marion
 
+    mario.addTrait(new MarioBehavior());
     mario.addTrait(new Move());
     mario.addTrait(new Jump());  
     mario.addTrait(new Stomp());

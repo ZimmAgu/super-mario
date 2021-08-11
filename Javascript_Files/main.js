@@ -81,11 +81,7 @@ async function main () {
     marioTimer.startTimer();
 }
 
-const start = () => {
-    window.removeEventListener('click', start);
-    main(); 
-}
+main();
 
-window.addEventListener('click', start)
 
 
