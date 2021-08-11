@@ -36,9 +36,9 @@ class OnScreenObject {
     }
 
 
-    updateTrait (elapsedTime, level, soundBoard) {
+    updateTrait (elapsedTime, level) {
         this.traits.forEach(trait => {
-            trait.updateTrait(this, elapsedTime, level, soundBoard)    // Each trait class will have a function named update trait
+            trait.updateTrait(this, elapsedTime, level)    // Each trait class will have a function named update trait
         })
     }
 

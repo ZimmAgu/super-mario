@@ -7,7 +7,7 @@ import loadKoopa from "../Characters/koopa.js";
 
 
 
-function loadCharacters () {
+function loadCharacters (audioContext) {
     const characterSpawner = {}
 
     function addCharacter (name) {
@@ -15,9 +15,9 @@ function loadCharacters () {
     }
 
     return Promise.all([
-        loadMario().then(addCharacter('mario')),
-        loadGoomba().then(addCharacter('goomba')),
-        loadKoopa().then(addCharacter('koopa'))
+        loadMario(audioContext).then(addCharacter('mario')),
+        loadGoomba(audioContext).then(addCharacter('goomba')),
+        loadKoopa(audioContext).then(addCharacter('koopa'))
     ])
     .then(() => characterSpawner)
 }

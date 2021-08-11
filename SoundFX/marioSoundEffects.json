@@ -1,0 +1,11 @@
+{ 
+    "soundFX" : {
+        "jump" : {
+            "url" : "SoundFX/marioJumpAudio.ogg"
+        },
+
+        "stomp" : {
+            "url" : "SoundFX/marioStompAudio.ogg"
+        }
+    }
+}

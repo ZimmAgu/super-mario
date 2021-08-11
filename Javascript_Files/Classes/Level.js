@@ -21,9 +21,9 @@ class Level {
         this.blockCollisions = new BlockCollisions(matrix)
     }
 
-    updateLevel (refreshRate, soundBoard) {
+    updateLevel (refreshRate) {
         this.objects.forEach(object => {
-            object.updateTrait(refreshRate, this, soundBoard);
+            object.updateTrait(refreshRate, this);
 
             object.position.x += (object.velocity.x * refreshRate);
 

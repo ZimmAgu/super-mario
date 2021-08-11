@@ -28,9 +28,9 @@ class Stomp extends Trait {
     }
 
 
-    updateTrait (object, elapsedTime, level, soundBoard) {
+    updateTrait (object, elapsedTime) {
         if (this.enemyStomped) {
-            soundBoard.playAudio('stomp');
+            object.audio.playAudio('stomp');
             this.enemyStomped = false;
         }
     }

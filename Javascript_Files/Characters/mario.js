@@ -1,8 +1,4 @@
 "use strict";
-// Trait Imports
-import Jump from "../Traits/Jump.js";
-import Move from "../Traits/Move.js";
-import Stomp from "../Traits/Stomp.js";
 
 // Class Imports
 import OnScreenObject from "../Classes/onScreenObjects.js";
@@ -12,22 +8,33 @@ import loadSpriteSet from "../LoadFunctions/loadSpriteSet.js"
 import { routeMarioFrame } from "../Animations/marioAnimations.js"
 import AbleToDie from "../Traits/AbleToDie.js";
 
+// Load Function Imports
+import loadSoundBoard from "../LoadFunctions/loadSoundBoard.js";
 
+// Trait Imports
+import Jump from "../Traits/Jump.js";
+import Move from "../Traits/Move.js";
+import Stomp from "../Traits/Stomp.js";
 
 const FASTDRAG = 1/10000;
 const SLOWDRAG = 1/2000;
 
 
-function loadMario () {
-    return loadSpriteSet('mario') 
-            .then(marioSprite => {
-        return createMario(marioSprite);
+function loadMario (audioContext) {
+    return Promise.all([
+        loadSpriteSet('mario'),
+        loadSoundBoard('marioSoundEffects', audioContext)
+    ]) 
+    .then(([marioSprite, marioAudio]) => {
+        return createMario(marioSprite, marioAudio) 
     })
 }
 
 
-function createMario (sprite) {
+function createMario (sprite, audio) {
+    console.log(audio)
     const mario = new OnScreenObject(); 
+    mario.audio = audio;
 
     mario.size.setVector(32, 42.6);      // Sets the on screen size of marion
 

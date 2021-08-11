@@ -14,6 +14,7 @@ import loadAudio from "./LoadFunctions/loadAudio.js";
 import loadCharacters from "./LoadFunctions/loadCharacters.js";
 import loadLevel from "./LoadFunctions/loadLevel.js"
 import loadFont from "./LoadFunctions/loadFont.js";
+import loadSoundBoard from "./LoadFunctions/loadSoundBoard.js";
 
 
 //Javascript File imports
@@ -37,19 +38,10 @@ const marioTimer = new Timer(1/60);         // Class that deals with real time
 
 async function main () {
     const [characterSpawner, font] = await Promise.all([ 
-        loadCharacters(),
-        loadFont()
+        loadCharacters(audioContext),
+        loadFont(),
+        loadSoundBoard('marioSoundEffects', audioContext)
     ]);
-
-    loadAudio('SoundFX/marioJumpAudio.ogg', audioContext)
-        .then(audioFile => {
-            soundBoard.addAudio('jump', audioFile);
-        })
-    loadAudio('SoundFX/marioStompAudio.ogg', audioContext)
-        .then(audioFile => {
-            soundBoard.addAudio('stomp', audioFile);
-        })
-
 
     const level = await loadLevel('1-1', characterSpawner); // Loads the current level that the user will be playing in
 
@@ -74,7 +66,7 @@ async function main () {
 
 
     marioTimer.updateMario = (refreshRate) => {
-        level.updateLevel(refreshRate, soundBoard);     // Constantly updates the level
+        level.updateLevel(refreshRate);     // Constantly updates the level
         level.layer.drawTheLayer(context, camera);
 
         drawDashboardLayer(
