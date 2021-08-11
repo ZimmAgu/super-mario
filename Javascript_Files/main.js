@@ -1,6 +1,7 @@
 "use strict";
 // Class Imports
 import Camera from "./Classes/Camera.js";
+import SoundBoard from "./Classes/SoundBoard.js";
 import Timer from "./Classes/timer.js";
 
 // Draw The Layers Imports
@@ -28,6 +29,7 @@ const context = canvas.getContext("2d");
 
 const camera = new Camera();                // Class that deals with showing what the user sees on screen
 const audioContext = new AudioContext();    // high-level JavaScript API for processing and synthesizing audio in web applications 
+const soundBoard = new SoundBoard(audioContext);
 const marioTimer = new Timer(1/60);         // Class that deals with real time
 
 
@@ -41,11 +43,8 @@ async function main () {
 
     loadAudio('SoundFX/marioJumpAudio.ogg', audioContext)
         .then(audioFile => {
-            console.log(audioFile)
-            const source = audioContext.createBufferSource();
-            source.connect(audioContext.destination);
-            source.buffer = audioFile;
-            source.start(0);
+            soundBoard.addAudio('jump', audioFile);
+            soundBoard.playAudio('jump');
         })
 
     const level = await loadLevel('1-1', characterSpawner); // Loads the current level that the user will be playing in
@@ -89,9 +88,9 @@ async function main () {
 
 const start = () => {
     window.removeEventListener('click', start);
-   
+    main(); 
 }
-main(); 
+
 window.addEventListener('click', start)
 
 
