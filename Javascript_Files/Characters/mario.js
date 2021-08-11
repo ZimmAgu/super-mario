@@ -22,8 +22,8 @@ const SLOWDRAG = 1/2000;
 
 function loadMario (audioContext) {
     return Promise.all([
-        loadSpriteSet('mario'),
-        loadSoundBoard('marioSoundEffects', audioContext)
+        loadSpriteSet('mario'), // Loads the mario spirites
+        loadSoundBoard('marioSoundEffects', audioContext)   // Loads the mario sounds
     ]) 
     .then(([marioSprite, marioAudio]) => {
         return createMario(marioSprite, marioAudio) 
@@ -32,9 +32,8 @@ function loadMario (audioContext) {
 
 
 function createMario (sprite, audio) {
-    console.log(audio)
     const mario = new OnScreenObject(); 
-    mario.audio = audio;
+    mario.audio = audio; // Attach the mario soundboard the the "audio" property
 
     mario.size.setVector(32, 42.6);      // Sets the on screen size of marion
 

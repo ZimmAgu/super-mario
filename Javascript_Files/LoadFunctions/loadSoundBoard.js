@@ -15,7 +15,7 @@ import loadJSON from "./loadJSON.js";
 function loadSoundBoard (fileName, audioContext) {
     const soundBoard = new SoundBoard(audioContext);
 
-    return loadJSON(`SoundFX/${fileName}.json`)
+    return loadJSON(`SoundFX/${fileName}.json`) // Parses JSON file
         .then (audioSheet => {
             const soundEffects = audioSheet.soundFX
             const listOfSounds = [];
@@ -32,7 +32,7 @@ function loadSoundBoard (fileName, audioContext) {
                 listOfSounds.push(sound);
             })
 
-            return Promise.all(listOfSounds).then(() => soundBoard)
+            return Promise.all(listOfSounds).then(() => soundBoard) // Returns a soundBoard with all of the sounds from the JSON file ready to play
     })
 }
 

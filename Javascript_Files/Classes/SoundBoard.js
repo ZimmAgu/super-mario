@@ -2,8 +2,8 @@
 
 
 class SoundBoard {
-    constructor (context) {
-        this.context = context;
+    constructor (audioContext) {
+        this.audioContext = audioContext;
         this.audioBuffers = new Map();
     }
 
@@ -12,8 +12,8 @@ class SoundBoard {
     }
 
     playAudio (name) {
-        const source = this.context.createBufferSource();
-        source.connect(this.context.destination);
+        const source = this.audioContext.createBufferSource();
+        source.connect(this.audioContext.destination);
         source.buffer = this.audioBuffers.get(name);
         source.start(0);
     }

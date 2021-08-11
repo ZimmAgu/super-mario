@@ -30,7 +30,6 @@ const context = canvas.getContext("2d");
 
 const camera = new Camera();                // Class that deals with showing what the user sees on screen
 const audioContext = new AudioContext();    // high-level JavaScript API for processing and synthesizing audio in web applications 
-const soundBoard = new SoundBoard(audioContext);
 const marioTimer = new Timer(1/60);         // Class that deals with real time
 
 
