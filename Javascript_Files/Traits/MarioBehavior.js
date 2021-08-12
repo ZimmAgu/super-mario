@@ -11,6 +11,11 @@ class MarioBehavior extends Trait {
     }
 
     collides (mario, otherCharacter) {
+
+        if (mario.solid.obstructEnabled == false) {
+            return
+        }
+
         if (mario.ableToDie.isDead) {
             this.handleDeath(mario, otherCharacter)
         }
@@ -19,7 +24,7 @@ class MarioBehavior extends Trait {
 
     handleDeath (mario, otherCharacter) {
         mario.velocity.y = -800;
-        mario.canCollide = false;
+        mario.solid.obstructEnabled = false;
     }
 }
 

@@ -13,6 +13,10 @@ class GoombaBehavior extends Trait {
             return;    // If the goomba is already dead then mario can not bounce on it anymore
         }
 
+        if (otherCharacter.solid.obstructEnabled == false) {
+            return;
+        }
+
         if (otherCharacter.stomp) {                     // Mario is the only character with a trait named stomp so the goomba will only react to a collision with mario. Not any other characters
             if (otherCharacter.velocity.y > goomba.velocity.y) {
                 goomba.pendelumWalk.walkSpeed = 0;      // The goomba will stop in place

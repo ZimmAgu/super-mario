@@ -17,7 +17,7 @@ class AbleToDie extends Trait {
     }
 
     respawn (character) {
-        character.canCollide = true;
+        character.solid.obstructEnabled = true;
         this.isDead = false;
         this.timeOfDeath = 0;
     }

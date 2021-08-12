@@ -12,7 +12,6 @@ class OnScreenObject {
         this.size = new Vector();
 
         this.hitbox = new Hitbox(this.position, this.size);
-        this.canCollide = true;
 
         this.lifetime = 0;
         this.traits = []; // Each on screen object will have an array where all of their traits are stored                

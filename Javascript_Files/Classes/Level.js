@@ -15,6 +15,7 @@ class Level {
         
         this.characterCollisions = new CharacterCollisions(this.objects);
         this.blockCollisions = null;
+
     }
 
     setCollisionGrid (matrix) {
@@ -27,26 +28,22 @@ class Level {
 
             object.position.x += (object.velocity.x * refreshRate);
 
-            if (object.canCollide) {
-                this.blockCollisions.checkForX(object);
-            }
+            this.blockCollisions.checkForX(object);
             
 
             object.position.y += (object.velocity.y * refreshRate);
 
-            if (object.canCollide) {
-                this.blockCollisions.checkForY(object);
-            }
+            this.blockCollisions.checkForY(object);
             
 
 
             object.velocity.y += (this.gravity * refreshRate);
         })
 
+      
+
         this.objects.forEach(object => {
-            if (object.canCollide) {
-                this.characterCollisions.checkForCharacter(object); // All of the character collisions need to be updated at the same time so this was moved to a seperate loop
-            }
+            this.characterCollisions.checkForCharacter(object); // All of the character collisions need to be updated at the same time so this was moved to a seperate loop
         })
 
         this.objects.forEach(object => {

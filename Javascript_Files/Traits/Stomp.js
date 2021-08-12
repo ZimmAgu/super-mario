@@ -20,6 +20,10 @@ class Stomp extends Trait {
             return;
         }
 
+        if (mario.solid.obstructEnabled == false) {
+            return;
+        }
+
         if (mario.velocity.y > otherCharacter.velocity.y) {
             this.score += 100;
             this.bounceUpward(mario, otherCharacter);   

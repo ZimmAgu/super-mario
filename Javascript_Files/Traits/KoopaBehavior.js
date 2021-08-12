@@ -24,7 +24,13 @@ class KoopaBehavior extends Trait {
             return;    // If the koopa is already dead then mario can not bounce on it anymore
         }
 
+      
+
         if (otherCharacter.stomp) {                     // Mario is the only character with a trait named stomp so the goomba will only react to a collision with mario. Not any other characters
+            if (otherCharacter.solid.obstructEnabled == false) {
+                return;
+            }
+             
             if (otherCharacter.velocity.y > koopa.velocity.y) {
                 this.handleDeath(koopa, otherCharacter)
             } else {
@@ -57,7 +63,7 @@ class KoopaBehavior extends Trait {
             this.hideKoopa(koopa);
         } else if (this.state === KOOPATSTATE.HIDING) { // If mario jumps on Koopa while Koopa is in his shell Koopa dies
             koopa.velocity.setVector(200, -200);
-            koopa.canCollide = false;
+            koopa.solid.obstructEnabled = false;
             koopa.ableToDie.dies();                
         } else if (this.state === KOOPATSTATE.PANIC) {  // If mario jumps on Koopas shell while hes in panic mode, Koopa goes back into regular hiding mode
             this.hideKoopa(koopa);

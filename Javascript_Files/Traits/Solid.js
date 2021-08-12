@@ -6,9 +6,15 @@ import Trait from "./Traits.js";
 class Solid extends Trait { 
     constructor () {
         super("solid")
+
+        this.obstructEnabled = true;
     }
 
     obstruct (onScreenObject, side, match) {
+        if (!this.obstructEnabled) {
+            return;
+        }
+
         if (side === 'bottom') {    // When mario is touching the ground then he is given the ability to jump
             onScreenObject.hitbox.bottom = match.y1;
             onScreenObject.velocity.y = 0;
