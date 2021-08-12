@@ -148,7 +148,7 @@
         "castle" : [
             {
                 "name" : "castle top 1",
-                "xPosition" : 320,
+                "xPosition" : 176,
                 "yPosition" : 0,
                 "onScreenWidth" : 32,
                 "onScreenHeight" : 32
@@ -156,15 +156,15 @@
 
             {
                 "name" : "castle window 1",
-                "xPosition" : 336,
+                "xPosition" : 192,
                 "yPosition" : 0,
                 "onScreenWidth" : 32,
                 "onScreenHeight" : 32
             },
 
             {
-                "name" : "solid castle brick",
-                "xPosition" : 352,
+                "name" : "solid castle window brick",
+                "xPosition" : 208,
                 "yPosition" : 0,
                 "onScreenWidth" : 32,
                 "onScreenHeight" : 32
@@ -172,7 +172,7 @@
 
             {
                 "name" : "castle window 2",
-                "xPosition" : 368,
+                "xPosition" : 224,
                 "yPosition" : 0,
                 "onScreenWidth" : 32,
                 "onScreenHeight" : 32
@@ -180,7 +180,7 @@
 
             {
                 "name" : "castle top 2",
-                "xPosition" : 320,
+                "xPosition" : 176,
                 "yPosition" : 16,
                 "onScreenWidth" : 32,
                 "onScreenHeight" : 32
@@ -188,16 +188,24 @@
 
             {
                 "name" : "castle door arch",
-                "xPosition" : 336,
+                "xPosition" : 192,
                 "yPosition" : 16,
                 "onScreenWidth" : 32,
                 "onScreenHeight" : 32 
             },
 
             {
-                "name" : "black castle square",
-                "xPosition" : 352,
+                "name" : "black square",
+                "xPosition" : 208,
                 "yPosition" : 16,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32 
+            },
+
+            {
+                "name" : "square castle brick",
+                "xPosition" : 32,
+                "yPosition" : 0,
                 "onScreenWidth" : 32,
                 "onScreenHeight" : 32 
             }

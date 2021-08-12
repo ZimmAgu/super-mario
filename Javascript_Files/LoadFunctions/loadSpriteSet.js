@@ -109,7 +109,6 @@ function loadPatterns (spriteSheetInfo, sprites) {
         })
 
         spriteSheetInfo.patterns.castle.forEach(piece => {
-            console.log(piece);
             sprites.saveTheSprite(
                 piece.name,
                 piece.xPosition,

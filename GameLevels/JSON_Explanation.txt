@@ -1,6 +1,6 @@
 Level 1-1 JSON File explanation:
 
-The dimensions are formatted as shown below
+The dimensions are formatted as shown below:
 [columnStart, columnLength, rowStart, RowLength]
 
 The columns go from left to right

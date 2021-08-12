@@ -74,11 +74,20 @@
                     "dimensions" : [
                         [1, 1, 1, 1]
                     ]
-                } 
+                },
+                
+                {
+                    "pattern" : "castle",
+                    "dimensions" : [
+                        [20, 1, 0, 1]
+                    ]
+                }
             ]
         }
     ],
     
+
+
 
 
 
@@ -221,6 +230,98 @@
                     "name" : "lower right regular cloud",
                     "dimensions" : [
                         [2, 1, 1, 1]
+                    ]
+                }
+            ]
+        },
+
+        "castle" : {
+            "pieces" : [
+                {
+                    "name" : "castle top 1",
+                    "dimensions" : [
+                        [2, 4, 0, 1]
+                    ]
+                },
+
+
+
+
+
+
+                {
+                    "name" : "castle window 1",
+                    "dimensions" : [
+                        [2, 1, 1, 1]
+                    ]
+                },
+
+                {
+                    "name" : "solid castle window brick",
+                    "dimensions" : [
+                        [3, 1, 1, 1]
+                    ]
+                },
+
+                {
+                    "name" : "castle window 2",
+                    "dimensions" : [
+                        [4, 2, 1, 1]
+                    ]
+                },
+
+
+
+
+
+                {
+                    "name" : "castle top 1",
+                    "dimensions" : [
+                        [0, 2, 2, 1]
+                    ]
+                },
+
+                {
+                    "name" : "castle top 2",
+                    "dimensions" : [
+                        [2, 4, 2, 1]
+                    ]
+                },
+
+                {
+                    "name" : "castle top 1",
+                    "dimensions" : [
+                        [6, 2, 2, 1]
+                    ]
+                },
+
+
+
+                {
+                    "name" : "square castle brick",
+                    "dimensions" : [
+                        [0, 3, 3, 3]
+                    ]
+                },
+
+                {
+                    "name" : "castle door arch",
+                    "dimensions" : [
+                        [3, 2, 3, 1]
+                    ]
+                },
+
+                {
+                    "name" : "black square",
+                    "dimensions" : [
+                        [3, 2, 4, 2]
+                    ]
+                },
+
+                {
+                    "name" : "square castle brick",
+                    "dimensions" : [
+                        [5, 3, 3, 3]
                     ]
                 }
             ]
