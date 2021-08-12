@@ -28,7 +28,9 @@ class PlayerControl extends Trait {
             if (this.countdown > 1) {
                 this.countdown -= (elapsedTime * 2);    // If there is still time to count down then count down
             } else {
+                this.player.velocity.y = -800;
                 this.player.ableToDie.dies();           // If the countdwon gets to 0 then mario dies;
+                this.player.solid.obstructEnabled = false;
             }
             
         }
