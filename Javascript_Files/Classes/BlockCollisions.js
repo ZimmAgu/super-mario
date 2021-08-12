@@ -36,17 +36,11 @@ class BlockCollisions {
             }
             if (onScreenObject.velocity.x > 0) {    // Triggered when a character hits the right side of a block
                 if (onScreenObject.hitbox.right > match.x1) { 
-                    onScreenObject.hitbox.right = match.x1;
-                    onScreenObject.velocity.x = 0;
-
-                    onScreenObject.obstruct(BLOCKSIDES.LEFT); // If you hit the right of the block you want to obstruct the character from the left
+                    onScreenObject.obstruct(BLOCKSIDES.LEFT, match); // If you hit the right of the block you want to obstruct the character from the left
                 }
             } else if (onScreenObject.velocity.x < 0) { // Triggered when a character hits the left side of a block
                 if (onScreenObject.hitbox.left < match.x2) { 
-                    onScreenObject.hitbox.left = match.x2;
-                    onScreenObject.velocity.x = 0;
-
-                    onScreenObject.obstruct(BLOCKSIDES.RIGHT); // If you hit the left of the block you want to obstruct the character from the right
+                    onScreenObject.obstruct(BLOCKSIDES.RIGHT, match); // If you hit the left of the block you want to obstruct the character from the right
                 }
             }
         })
@@ -75,17 +69,11 @@ class BlockCollisions {
 
             if (onScreenObject.velocity.y > 0) {    // Triggered when a character hits the top side of a block
                 if (onScreenObject.hitbox.bottom > match.y1) { 
-                    onScreenObject.hitbox.bottom = match.y1;
-                    onScreenObject.velocity.y = 0;
-
-                    onScreenObject.obstruct(BLOCKSIDES.BOTTOM); // If you hit the top of the block you want to obstruct the character from the bottom
+                    onScreenObject.obstruct(BLOCKSIDES.BOTTOM, match); // If you hit the top of the block you want to obstruct the character from the bottom
                 }
             } else if (onScreenObject.velocity.y < 0) { // Triggered when a character hits the bottom side of a block
                 if (onScreenObject.hitbox.top < match.y2) { 
-                    onScreenObject.hitbox.top = match.y2;
-                    onScreenObject.velocity.y = 0;
-
-                    onScreenObject.obstruct(BLOCKSIDES.TOP);    // If you hit the bottom of the block you want to obstruct the character from the top
+                    onScreenObject.obstruct(BLOCKSIDES.TOP, match);    // If you hit the bottom of the block you want to obstruct the character from the top
                 }
             }
         })

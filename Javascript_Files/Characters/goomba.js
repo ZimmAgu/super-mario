@@ -10,6 +10,8 @@ import { routeGoombaFrame } from "../Animations/goombaAnimations.js"
 import AbleToDie from "../Traits/AbleToDie.js";
 import GoombaBehavior from "../Traits/GoombaBehavior.js";
 import PendelumWalk from "../Traits/PendelumWalk.js";
+import Solid from "../Traits/Solid.js";
+
 
 
 function loadGoomba () {
@@ -25,7 +27,7 @@ function createGoomba(sprite) {
     
     goomba.size.setVector(32, 42.6);
     
-    
+    goomba.addTrait(new Solid());
     goomba.addTrait(new PendelumWalk());
     goomba.addTrait(new GoombaBehavior());
     goomba.addTrait(new AbleToDie());

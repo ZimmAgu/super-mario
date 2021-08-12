@@ -15,6 +15,7 @@ import loadSoundBoard from "../LoadFunctions/loadSoundBoard.js";
 import Jump from "../Traits/Jump.js";
 import MarioBehavior from "../Traits/MarioBehavior.js";
 import Move from "../Traits/Move.js";
+import Solid from "../Traits/Solid.js";
 import Stomp from "../Traits/Stomp.js";
 
 const FASTDRAG = 1/10000;
@@ -38,6 +39,7 @@ function createMario (sprite, audio) {
 
     mario.size.setVector(32, 42.6);      // Sets the on screen size of marion
 
+    mario.addTrait(new Solid());
     mario.addTrait(new MarioBehavior());
     mario.addTrait(new Move());
     mario.addTrait(new Jump());  

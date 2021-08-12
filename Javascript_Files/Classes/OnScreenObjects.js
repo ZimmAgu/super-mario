@@ -24,9 +24,9 @@ class OnScreenObject {
         })
     }
 
-    obstruct (side) {
+    obstruct (side, match) {
         this.traits.forEach(trait => {
-            trait.obstruct(this, side)    // Each trait class will have a function named update trait
+            trait.obstruct(this, side, match)    // Each trait class will have a function named update trait
         })
     }
 
