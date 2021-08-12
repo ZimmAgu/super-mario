@@ -232,6 +232,11 @@
             "name": "goomba",
             "position" : [190, 100]
         },
+        
+        {
+            "name": "goomba1",
+            "position" : [650, 100]
+        },
 
         {
             "name" : "koopa",

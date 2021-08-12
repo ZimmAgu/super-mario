@@ -17,6 +17,7 @@ function loadCharacters (audioContext) {
     return Promise.all([
         loadMario(audioContext).then(addCharacter('mario')),
         loadGoomba(audioContext).then(addCharacter('goomba')),
+        loadGoomba(audioContext).then(addCharacter('goomba1')),
         loadKoopa(audioContext).then(addCharacter('koopa'))
     ])
     .then(() => characterSpawner)
