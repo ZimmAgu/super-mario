@@ -143,6 +143,64 @@
                 "onScreenWidth" : 32,
                 "onScreenHeight" : 32
             }
+        ],
+
+        "castle" : [
+            {
+                "name" : "castle top 1",
+                "xPosition" : 320,
+                "yPosition" : 0,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+
+            {
+                "name" : "castle window 1",
+                "xPosition" : 336,
+                "yPosition" : 0,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+
+            {
+                "name" : "solid castle brick",
+                "xPosition" : 352,
+                "yPosition" : 0,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+
+            {
+                "name" : "castle window 2",
+                "xPosition" : 368,
+                "yPosition" : 0,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+
+            {
+                "name" : "castle top 2",
+                "xPosition" : 320,
+                "yPosition" : 16,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+
+            {
+                "name" : "castle door arch",
+                "xPosition" : 336,
+                "yPosition" : 16,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32 
+            },
+
+            {
+                "name" : "black castle square",
+                "xPosition" : 352,
+                "yPosition" : 16,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32 
+            }
         ]
     },
 

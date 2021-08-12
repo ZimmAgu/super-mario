@@ -107,6 +107,17 @@ function loadPatterns (spriteSheetInfo, sprites) {
                 piece.onScreenHeight
             );
         })
+
+        spriteSheetInfo.patterns.castle.forEach(piece => {
+            console.log(piece);
+            sprites.saveTheSprite(
+                piece.name,
+                piece.xPosition,
+                piece.yPosition,
+                piece.onScreenWidth,
+                piece.onScreenHeight
+            );
+        })
     }
 }
 
