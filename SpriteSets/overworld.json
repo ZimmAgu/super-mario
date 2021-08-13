@@ -33,13 +33,7 @@
             "onScreenHeight" : 32
         },
 
-        {
-            "name" : "chance",
-            "xPosition" : 384,
-            "yPosition" : 0,
-            "onScreenWidth" : 32,
-            "onScreenHeight" : 32
-        },
+        
 
         {
             "name" : "chance1",
@@ -59,6 +53,33 @@
             "name" : "chance3",
             "xPosition" : 416,
             "yPosition" : 0,
+            "onScreenWidth" : 32,
+            "onScreenHeight" : 32
+        },
+
+
+
+        
+        {
+            "name" : "coin1",
+            "xPosition" : 384,
+            "yPosition" : 16,
+            "onScreenWidth" : 32,
+            "onScreenHeight" : 32
+        },
+
+        {
+            "name" : "coin2",
+            "xPosition" : 400,
+            "yPosition" : 16,
+            "onScreenWidth" : 32,
+            "onScreenHeight" : 32
+        },
+
+        {
+            "name" : "coin3",
+            "xPosition" : 416,
+            "yPosition" : 16,
             "onScreenWidth" : 32,
             "onScreenHeight" : 32
         }
@@ -223,6 +244,19 @@
                 "chance2",
                 "chance3",
                 "chance2"
+            ]
+        },
+
+        {
+            "name" : "coin",
+            "frameLength" : 0.12,
+            "frames" : [
+                "coin1",
+                "coin1",
+                "coin1",
+                "coin2",
+                "coin3",
+                "coin2"
             ]
         }
     ]

@@ -20,6 +20,7 @@
                         [0, 4000, 11, 2]
                     ]
                 },
+                
 
                 { 
                     "name" : "sky",
@@ -59,6 +60,14 @@
                     "type" : "solid",
                     "dimensions" : [
                         [6, 1, 7, 1]
+                    ]
+                },
+
+                {
+                    "name" : "coin",
+                    "type" : "coin",
+                    "dimensions" : [
+                        [5, 1, 9, 1]
                     ]
                 },
 
