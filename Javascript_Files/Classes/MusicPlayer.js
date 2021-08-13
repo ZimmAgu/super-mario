@@ -11,6 +11,12 @@ class MusicPlayer {
         audio.src = url;
         this.tracks.set(name, audio);
     }
+
+    playTrack (name) {
+        const audio = this.tracks.get(name);
+
+        audio.play()
+    }
 }
 
 export default MusicPlayer;

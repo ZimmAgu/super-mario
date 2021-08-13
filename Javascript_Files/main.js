@@ -59,7 +59,7 @@ async function main () {
     const input = userInput(mario); // These are the keyboard controls that the user will use to control mario
     input.keyboardEventListener(window);
 
-    mouseControl(canvas, mario, camera);
+    // mouseControl(canvas, mario, camera); 
 
     
 
@@ -79,6 +79,7 @@ async function main () {
     }
 
     marioTimer.startTimer();
+    level.music.player.playTrack('main');
 }
 
 main();

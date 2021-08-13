@@ -21,10 +21,10 @@ function loadLevel (levelName, characterSpawner) {    // Loads the current level
         loadSpriteSet(levelSpecification.spriteSetName),
         loadMusicSet(levelSpecification.musicSetName)
     ]))
-    .then(([levelSpecifications, backgroundSprites, music]) => {
+    .then(([levelSpecifications, backgroundSprites, musicPlayer]) => {
         const currentLevel = new Level();
 
-        console.log(music);
+        currentLevel.music.setPlayer(musicPlayer);
 
         loadCollisionGrid(currentLevel, levelSpecifications);
         loadLevelBackground(currentLevel, levelSpecifications, backgroundSprites);
