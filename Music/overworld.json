@@ -1,5 +1,9 @@
 { 
     "main" : {
         "url" : "Music/overworldMusic.ogg"
+    }, 
+
+    "marioDeath" : {
+        "url" : "Music/marioDeathMusic.ogg"
     }
 }

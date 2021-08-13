@@ -10,7 +10,6 @@ import drawCollisionLayer from "./DrawTheLayers/drawCollisionLayer.js"
 import drawDashboardLayer from "./DrawTheLayers/drawDashboardLayer.js";
 
 // Load Function Imports
-import loadAudio from "./LoadFunctions/loadAudio.js";
 import loadCharacters from "./LoadFunctions/loadCharacters.js";
 import loadLevel from "./LoadFunctions/loadLevel.js"
 import loadFont from "./LoadFunctions/loadFont.js";
@@ -76,13 +75,23 @@ async function main () {
                         );
 
         camera.position.x = Math.max(0, mario.position.x - 100);
+
+        if (mario.ableToDie.isDead) {
+            level.music.player.pauseTrack('main');
+            level.music.player.playTrack('marioDeath');
+        } else {
+            level.music.player.pauseTrack('marioDeath');
+            level.music.player.playTrack('main');
+        }
     }
 
     marioTimer.startTimer();
     level.music.player.playTrack('main');
 }
 
+
 main();
+
 
 
 

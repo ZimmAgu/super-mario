@@ -1,5 +1,8 @@
 "use strict";
 
+// Class Imports
+import MusicPlayer from "../Classes/MusicPlayer.js";
+
 // Trait Imports
 import Trait from "./Traits.js";
 
@@ -13,7 +16,7 @@ class MarioBehavior extends Trait {
     collides (mario, otherCharacter) {
 
         if (mario.solid.obstructEnabled == false) {
-            return
+            return;
         }
 
         if (mario.ableToDie.isDead) {
@@ -23,6 +26,8 @@ class MarioBehavior extends Trait {
 
 
     handleDeath (mario, otherCharacter) {
+        const music = new MusicPlayer();
+
         mario.velocity.y = -800;
         mario.solid.obstructEnabled = false;
     }

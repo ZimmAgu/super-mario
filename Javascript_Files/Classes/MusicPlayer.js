@@ -17,6 +17,13 @@ class MusicPlayer {
 
         audio.play()
     }
+
+    pauseTrack (name) {
+        const audio = this.tracks.get(name);
+
+        audio.pause()
+        audio.currentTime = 0;
+    }
 }
 
 export default MusicPlayer;
