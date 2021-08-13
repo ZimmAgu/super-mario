@@ -38,6 +38,7 @@ function createMario (sprite, audio) {
     mario.audio = audio; // Attach the mario soundboard the the "audio" property
 
     mario.size.setVector(32, 42.6);      // Sets the on screen size of marion
+    mario.score = 0;
 
     mario.addTrait(new Solid());
     mario.addTrait(new MarioBehavior());

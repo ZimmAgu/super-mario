@@ -5,8 +5,7 @@ const DASHBOARDLINES = {
     LINE2: 32
 }
 
-const SCORE = 96;
-const scoreBoard = SCORE.toString().padStart(6, '0');
+
 
 
 

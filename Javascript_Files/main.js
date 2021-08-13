@@ -71,7 +71,7 @@ async function main () {
                             font, 
                             context, 
                             spawnPoint.playerControl.countdown,
-                            mario.stomp.score
+                            mario.score
                         );
 
         camera.position.x = Math.max(0, mario.position.x - 100);
