@@ -90,7 +90,12 @@ async function main () {
 }
 
 
-main();
+const start = () => {
+    window.removeEventListener('click', start);
+    main();
+};
+
+window.addEventListener('click', start);
 
 
 

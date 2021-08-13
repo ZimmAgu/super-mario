@@ -9,7 +9,7 @@ class AbleToDie extends Trait {
         this.isDead = false;
         
         this.timeOfDeath = 0;
-        this.timeOfRemoval = 2;
+        this.timeOfRemoval = 2.5;
     }
 
     dies () {
