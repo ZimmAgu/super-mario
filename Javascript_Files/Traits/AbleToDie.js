@@ -17,6 +17,8 @@ class AbleToDie extends Trait {
     }
 
     respawn (character) {
+        character.lives -= 1;
+        console.log(character.lives);
         character.score = 0;
         character.solid.obstructEnabled = true;
         this.isDead = false;

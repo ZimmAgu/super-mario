@@ -80,7 +80,7 @@ async function main () {
                             level.name
                         );
 
-        drawStatusScreen(font, context, level.name);
+        drawStatusScreen(font, context, level.name, mario);
 
         camera.position.x = Math.max(0, mario.position.x - 100);
 
