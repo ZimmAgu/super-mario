@@ -41,7 +41,7 @@ async function main () {
         loadSoundBoard('marioSoundEffects', audioContext)
     ]);
 
-    const level = await loadLevel('1-2', characterSpawner); // Loads the current level that the user will be playing in
+    const level = await loadLevel('1-1', characterSpawner); // Loads the current level that the user will be playing in
 
     const mario = characterSpawner.mario;   // Adds mario to the level
     level.objects.add(mario);
@@ -55,8 +55,8 @@ async function main () {
         drawCameraLayer(camera)
     );
 
-    const input = userInput(mario); // These are the keyboard controls that the user will use to control mario
-    input.keyboardEventListener(window);
+    const input = userInput(window); // These are the keyboard controls that the user will use to control mario
+    input.addReceiver(mario);
 
     // mouseControl(canvas, mario, camera); 
 

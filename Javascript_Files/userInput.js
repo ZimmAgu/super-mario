@@ -1,29 +1,33 @@
 "use strict";
 
+// Class Imports
+import InputRouter from "./Classes/InputRouter.js";
 import KeyboardEvent from "./Classes/keyboardEvents.js";
 
-function userInput (onScreenObject) {
+function userInput (window) {
     const keyboard = new KeyboardEvent();
+    const router = new InputRouter();
 
-    const SPACEBAR = 32;
+    keyboard.keyboardEventListener(window);
+
     keyboard.addKeyMap('Space', keystate => { // Jump
         if (keystate) {
-            onScreenObject.jump.startJump();
+            router.route(onScreenObject => onScreenObject.jump.startJump());
         } else {
-            onScreenObject.jump.cancelJump();
+            router.route(onScreenObject => onScreenObject.jump.cancelJump());
         }
     });
     keyboard.addKeyMap('KeyD', keystate => { // Move Right
-        onScreenObject.move.movementDirection += keystate ? 1 : -1; // These ternary operaters ensure that the keystate is always either 1 or -1. This avoids a glitch in which mario comes to a stop when auser tries to go in the opposite direction
+        router.route(onScreenObject => onScreenObject.move.movementDirection += keystate ? 1 : -1); // These ternary operaters ensure that the keystate is always either 1 or -1. This avoids a glitch in which mario comes to a stop when auser tries to go in the opposite direction
     });
     keyboard.addKeyMap('KeyA', keystate => { // Move left
-        onScreenObject.move.movementDirection += keystate ? -1 : 1;
+        router.route(onScreenObject => onScreenObject.move.movementDirection += keystate ? -1 : 1);
     });
     keyboard.addKeyMap('KeyO', keystate => { 
-        onScreenObject.turbo(keystate);
+        router.route(onScreenObject => onScreenObject.turbo(keystate))
     });
 
-    return keyboard;
+    return router;
 }
 
 export {userInput};
