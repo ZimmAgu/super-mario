@@ -27,7 +27,7 @@
         },
         {
             "name" : "brick",
-            "xPosition" : 16,
+            "xPosition" : 32,
             "yPosition" : 0,
             "onScreenWidth" : 32,
             "onScreenHeight" : 32
@@ -219,8 +219,8 @@
                 "name" : "black square",
                 "xPosition" : 208,
                 "yPosition" : 16,
-                "onScreenWidth" : 32,
-                "onScreenHeight" : 32 
+                "onScreenWidth" : 34,
+                "onScreenHeight" : 34 
             },
 
             {

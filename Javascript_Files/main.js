@@ -41,7 +41,7 @@ async function main () {
         loadSoundBoard('marioSoundEffects', audioContext)
     ]);
 
-    const level = await loadLevel('1-1', characterSpawner); // Loads the current level that the user will be playing in
+    const level = await loadLevel('1-2', characterSpawner); // Loads the current level that the user will be playing in
 
     const mario = characterSpawner.mario;   // Adds mario to the level
     level.objects.add(mario);

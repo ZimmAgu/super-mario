@@ -1,0 +1,280 @@
+{
+    "spriteSetName" : "underworld",
+    "musicSetName" : "underworld",
+    
+    "layers" : [
+        {
+           "blocks" : [
+                {
+                    "name" : "sky",
+                    "type" : "sky",
+                    "dimensions": [
+                        [0, 4000, 0, 13]
+                    ]
+                }, 
+
+                {
+                    "name" : "ground",
+                    "type" : "solid",
+                    "dimensions": [
+                        [0, 4000, 11, 2]
+                    ]
+                }
+           ]
+        }
+    ],
+    
+
+
+    "characters" : [
+       
+    ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "patterns" : {
+        "vertical pipe cap" : {
+            "pieces" : [
+                {
+                    "name" : "upper left vert pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [1, 1, 1, 1]
+                    ]
+                },
+                {
+                    "name" : "upper right vert pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [2, 1, 1, 1]
+                    ]
+                }
+            ]
+        },
+
+        "vertical pipe section" : {
+            "pieces" : [ 
+                {
+                    "name" : "lower left vert pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [1, 1, 2, 1]
+                    ]
+                },
+                {
+                    "name" : "lower right vert pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [2, 1, 2, 1]
+                    ]
+                }
+            ]
+        },
+
+
+        
+        "pipe1h" : {
+            "pieces" : [
+                { 
+                    "pattern" : "vertical pipe cap",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 0, 1]
+                    ]
+                },
+                { 
+                    "pattern" : "vertical pipe section",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 0, 1]
+                    ]
+                }
+            ]
+        },
+
+        "pipe2h" : {
+            "pieces" : [
+                { 
+                    "pattern" : "vertical pipe cap",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 0, 1]
+                    ]
+                },
+                { 
+                    "pattern" : "vertical pipe section",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 0, 1],
+                        [0, 1, 1, 1]
+                    ]
+                }
+            ]
+        },
+
+        "pipe3h" : {
+            "pieces" : [
+                { 
+                    "pattern" : "vertical pipe cap",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 0, 1]
+                    ]
+                },
+                { 
+                    "pattern" : "vertical pipe section",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 0, 1],
+                        [0, 1, 1, 1],
+                        [0, 1, 2, 1]
+                    ]
+                }
+            ]
+        },
+
+        "regular cloud" : {
+            "pieces" : [
+                { 
+                    "name" : "upper left regular cloud",
+                    "dimensions" : [
+                        [0, 1, 0, 1]
+                    ]
+                },
+                {
+                    "name" : "upper middle regular cloud",
+                    "dimensions" : [
+                        [1, 1, 0, 1]
+                    ]
+                },
+                {
+                    "name" : "upper right regular cloud",
+                    "dimensions" : [
+                        [2, 1, 0, 1]
+                    ]
+                },
+
+                {
+                    "name" : "lower left regular cloud",
+                    "dimensions" : [
+                        [0, 1, 1, 1]
+                    ]
+                },
+                {
+                    "name" : "lower middle regular cloud",
+                    "dimensions" : [
+                        [1, 1, 1, 1]
+                    ]
+                },
+                {
+                    "name" : "lower right regular cloud",
+                    "dimensions" : [
+                        [2, 1, 1, 1]
+                    ]
+                }
+            ]
+        },
+
+        "castle" : {
+            "pieces" : [
+                {
+                    "name" : "castle top 1",
+                    "dimensions" : [
+                        [2, 4, 0, 1]
+                    ]
+                },
+
+
+
+
+
+
+                {
+                    "name" : "castle window 1",
+                    "dimensions" : [
+                        [2, 1, 1, 1]
+                    ]
+                },
+
+                {
+                    "name" : "solid castle window brick",
+                    "dimensions" : [
+                        [3, 1, 1, 1]
+                    ]
+                },
+
+                {
+                    "name" : "castle window 2",
+                    "dimensions" : [
+                        [4, 2, 1, 1]
+                    ]
+                },
+
+
+
+
+
+                {
+                    "name" : "castle top 1",
+                    "dimensions" : [
+                        [0, 2, 2, 1]
+                    ]
+                },
+
+                {
+                    "name" : "castle top 2",
+                    "dimensions" : [
+                        [2, 4, 2, 1]
+                    ]
+                },
+
+                {
+                    "name" : "castle top 1",
+                    "dimensions" : [
+                        [6, 2, 2, 1]
+                    ]
+                },
+
+
+
+                {
+                    "name" : "square castle brick",
+                    "dimensions" : [
+                        [0, 3, 3, 3]
+                    ]
+                },
+
+                {
+                    "name" : "castle door arch",
+                    "dimensions" : [
+                        [3, 2, 3, 1]
+                    ]
+                },
+
+                {
+                    "name" : "black square",
+                    "dimensions" : [
+                        [3, 2, 4, 2]
+                    ]
+                },
+
+                {
+                    "name" : "square castle brick",
+                    "dimensions" : [
+                        [5, 3, 3, 3]
+                    ]
+                }
+            ]
+        }
+    }
+}

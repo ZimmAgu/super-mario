@@ -1,0 +1,92 @@
+{
+    "imageURL" : "/Spritesheet_Images/world.png",
+    "spriteWidth": "16",
+    "spriteHeight": "16",
+
+    "blocks" : [
+        {
+            "name" : "ground",
+            "xPosition" : 0,
+            "yPosition" : 32,
+            "onScreenWidth" : 32,
+            "onScreenHeight" : 32
+        },
+        {
+            "name" : "sky",
+            "xPosition" : 209,
+            "yPosition" : 48,
+            "onScreenWidth" : 36,
+            "onScreenHeight" : 36
+        },
+        {
+            "name" : "chocolate",
+            "xPosition" : 0,
+            "yPosition" : 48,
+            "onScreenWidth" : 32,
+            "onScreenHeight" : 32
+        },
+        {
+            "name" : "brick",
+            "xPosition" : 32,
+            "yPosition" : 32,
+            "onScreenWidth" : 32,
+            "onScreenHeight" : 32
+        },
+
+        
+
+        {
+            "name" : "chance1",
+            "xPosition" : 384,
+            "yPosition" : 32,
+            "onScreenWidth" : 32,
+            "onScreenHeight" : 32
+        },
+        {
+            "name" : "chance2",
+            "xPosition" : 400,
+            "yPosition" : 32,
+            "onScreenWidth" : 32,
+            "onScreenHeight" : 32
+        },
+        {
+            "name" : "chance3",
+            "xPosition" : 416,
+            "yPosition" : 32,
+            "onScreenWidth" : 32,
+            "onScreenHeight" : 32
+        }
+
+
+    ],
+
+
+
+    "animations" : [
+        {
+            "name" : "chance",
+            "frameLength" : 0.12,
+            "frames" : [
+                "chance1",
+                "chance1",
+                "chance1",
+                "chance2",
+                "chance3",
+                "chance2"
+            ]
+        },
+
+        {
+            "name" : "coin",
+            "frameLength" : 0.12,
+            "frames" : [
+                "coin1",
+                "coin1",
+                "coin1",
+                "coin2",
+                "coin3",
+                "coin2"
+            ]
+        }
+    ]
+}
