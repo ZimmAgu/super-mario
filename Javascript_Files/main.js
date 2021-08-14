@@ -8,6 +8,7 @@ import Timer from "./Classes/timer.js";
 import drawCameraLayer from "./DrawTheLayers/drawCameraLayer.js"
 import drawCollisionLayer from "./DrawTheLayers/drawCollisionLayer.js"
 import drawDashboardLayer from "./DrawTheLayers/drawDashboardLayer.js";
+import drawStatusScreen from "./DrawTheLayers/drawStatusScreen.js";
 
 // Load Function Imports
 import loadCharacters from "./LoadFunctions/loadCharacters.js";
@@ -42,7 +43,10 @@ async function main () {
     ]);
 
 
-    const level = await loadLevel('1-2', characterSpawner); // Loads the current level that the user will be playing in
+    const level = await loadLevel('1-1', characterSpawner); // Loads the current level that the user will be playing in
+    
+    
+    
     const mario = characterSpawner.mario;   // Adds mario to the level
     level.objects.add(mario);
 
@@ -53,6 +57,7 @@ async function main () {
     level.layer.imageLayers.push(  
         drawCollisionLayer(level),
         drawCameraLayer(camera)
+        
     );
 
     const input = userInput(window); // These are the keyboard controls that the user will use to control mario
@@ -74,6 +79,8 @@ async function main () {
                             mario.score,
                             level.name
                         );
+
+        drawStatusScreen(font, context, level.name);
 
         camera.position.x = Math.max(0, mario.position.x - 100);
 

@@ -3,13 +3,13 @@
 class FontOrganizer {
     constructor (sprites) {
         this.sprites = sprites;
-        this.fontSize = 16
+        this.size = 16
     }
 
     printWord (text, context, x, y) {
         [...text].forEach((character, position) => {
 
-            const LOCATION = position * this.fontSize;
+            const LOCATION = position * this.size;
 
             this.sprites.drawTheSprite(
                                         character, 
