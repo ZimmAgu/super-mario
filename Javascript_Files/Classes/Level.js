@@ -8,6 +8,7 @@ import MusicController from "./MusicController.js";
 
 class Level {
     constructor () {
+        this.name = '';
         this.gravity = 1500;
         this.totalTime = 0;
 

@@ -23,6 +23,7 @@ function loadLevel (levelName, characterSpawner) {    // Loads the current level
     ]))
     .then(([levelSpecifications, backgroundSprites, musicPlayer]) => {
         const currentLevel = new Level();
+        currentLevel.name = levelName.toString();
 
         currentLevel.music.setPlayer(musicPlayer);
 

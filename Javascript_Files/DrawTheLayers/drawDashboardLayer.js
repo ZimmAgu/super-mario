@@ -9,7 +9,7 @@ const DASHBOARDLINES = {
 
 
 
-function drawDashboardLayer (font, context, countDown, score) {
+function drawDashboardLayer (font, context, countDown, score, levelName) {
     const scoreBoard = score.toString().padStart(6, '0');
     
     const time = Math.floor(countDown);
@@ -24,7 +24,7 @@ function drawDashboardLayer (font, context, countDown, score) {
 
 
     font.printWord("WORLD", context, 256, DASHBOARDLINES.LINE1);
-    font.printWord("1-1", context, 256, DASHBOARDLINES.LINE2);
+    font.printWord(levelName, context, 256, DASHBOARDLINES.LINE2);
 
 
     font.printWord("TIME", context, 384, DASHBOARDLINES.LINE1);
