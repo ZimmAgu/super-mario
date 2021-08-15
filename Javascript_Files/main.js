@@ -97,26 +97,28 @@ async function main () {
                                     spawnPoint.playerControl.countdown,
                                     mario.score,
                                     level.name
-                                ); 
+                                );
+                                
+                if (mario.ableToDie.isDead) {
+                    level.music.player.pauseTrack('main');
+                    level.music.player.playTrack('marioDeath');
+                } else {
+                    level.music.player.pauseTrack('marioDeath');
+                    level.music.player.playTrack('main');
+                }    
             }
 
             camera.position.x = Math.max(0, mario.position.x - 100);
 
-            if (mario.ableToDie.isDead) {
-                level.music.player.pauseTrack('main');
-                level.music.player.playTrack('marioDeath');
-            } else {
-                level.music.player.pauseTrack('marioDeath');
-                level.music.player.playTrack('main');
-            }
+            
         }
 
         marioTimer.startTimer();
         
     }
 
-    // runLevel("1-1")
-    window.runLevel = runLevel;
+    runLevel("1-1");
+    //  window.runLevel = runLevel;
 }
 
 

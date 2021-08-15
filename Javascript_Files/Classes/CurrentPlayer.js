@@ -1,0 +1,6 @@
+
+class CurrentPlayer {
+    constructor () {
+        
+    }
+}
