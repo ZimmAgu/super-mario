@@ -19,7 +19,7 @@ import loadSoundBoard from "./LoadFunctions/loadSoundBoard.js";
 
 //Javascript File imports
 import { userInput } from "./userInput.js";
-import createSpawnPoint from "./spawnPoint.js";
+import {createSpawnPoint, defineEnemies} from "./spawnPoint.js";
 import mouseControl from "./mouseDebugger.js";
 
 
@@ -42,6 +42,11 @@ async function main () {
         loadSoundBoard('marioSoundEffects', audioContext)
     ]);
 
+    const enemies = [
+                        characterSpawner.goomba1, 
+                        characterSpawner.goomba2, 
+                        characterSpawner.koopa1
+                    ]
 
     
 
@@ -49,12 +54,13 @@ async function main () {
         const level = await loadLevel(name, characterSpawner); // Loads the current level that the user will be playing in
         
         
-        
         const mario = characterSpawner.mario;   // Adds mario to the level
         level.objects.add(mario);
 
         const spawnPoint = createSpawnPoint(mario); // Adds the spawn point of mario to the level as an object
         level.objects.add(spawnPoint);
+        spawnPoint.playerControl.setEnemies(enemies);
+        
 
 
         level.layer.imageLayers.push(  
@@ -101,10 +107,10 @@ async function main () {
                                 
                 if (mario.ableToDie.isDead) {
                     level.music.player.pauseTrack('main');
-                    level.music.player.playTrack('marioDeath');
+                    level.music.playDeathSong();
                 } else {
                     level.music.player.pauseTrack('marioDeath');
-                    level.music.player.playTrack('main');
+                    level.music.playMainTheme();
                 }    
             }
 

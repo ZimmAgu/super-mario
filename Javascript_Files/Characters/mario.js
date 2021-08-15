@@ -50,7 +50,6 @@ function createMario (sprite, audio) {
     mario.addTrait(new Stomp());
     mario.addTrait(new AbleToDie());
 
-
     
     mario.move.drag = SLOWDRAG;
 

@@ -38,7 +38,7 @@ function createKoopa (sprite) {
         sprite.drawTheSprite(routeKoopaFrame(koopa), context, 0, 0);
     }
 
-    return koopa
+    return koopa;
 }
 
 

@@ -32,6 +32,13 @@
             "onScreenWidth" : 32,
             "onScreenHeight" : 32
         },
+        {
+            "name" : "transparent",
+            "xPosition" : 406,
+            "yPosition" : 384,
+            "onScreenWidth" : 32,
+            "onScreenHeight" : 32
+        },
 
         
 

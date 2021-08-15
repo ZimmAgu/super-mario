@@ -66,14 +66,14 @@ function drawCharacters (level, levelSpecs, characterSpawner) {
     levelSpecs.characters.forEach(character => {
         const name = character.name;            // Assigns the name property of the character to the name of the character 
         const position = character.position;    // Assings the position property of the character to the position array given in the json file
-        const [x, y] = position                 // Destructures the position array inter individual x, y values
+        const [x, y] = position;                // Destructures the position array inter individual x, y values
 
 
-        const newCharacter = characterSpawner[name]
+        const newCharacter = characterSpawner[name];
 
         newCharacter.position.setVector(x, y);
 
-        level.objects.add(newCharacter)
+        level.objects.add(newCharacter);
     })
 
     const characterDrawings = drawSpriteLayer(level.objects); // Draws mario to the screen

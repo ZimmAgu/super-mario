@@ -34,6 +34,16 @@ class AbleToDie extends Trait {
         this.timeOfDeath = 0;
     }
 
+    respawnEnemies (enemies) {
+        enemies.forEach(enemy => {
+            console.log(enemy.position.x)
+            enemy.solid.obstructEnabled = true;
+            enemy.ableToDie.isDead = false;
+            enemy.timeOfDeath = 0;
+            enemy.pendelumWalk.walkSpeed = -30;
+        })
+    }
+
     updateTrait (object, elapsedTime, level) {
         if (this.isDead) {
             this.timeOfDeath += elapsedTime

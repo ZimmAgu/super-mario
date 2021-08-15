@@ -23,4 +23,10 @@ function createSpawnPoint (player) {
     return spawnPoint;
 }
 
-export default createSpawnPoint;
+
+function defineEnemies (enemies) {
+    const playerControl = new PlayerControl();
+    playerControl.setEnemies(enemies);
+}
+
+export {createSpawnPoint, defineEnemies};

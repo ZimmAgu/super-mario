@@ -10,7 +10,6 @@ class MarioBehavior extends Trait {
     constructor () {
         super("behavior")
 
-        this.state = 'alive'
     }
 
     collides (mario, otherCharacter) {
@@ -30,6 +29,13 @@ class MarioBehavior extends Trait {
 
         mario.velocity.y = -800;
         mario.solid.obstructEnabled = false;
+    }
+
+
+    updateTrait (object, elapsedTime, level) {
+        if (object.position.y > 450) {
+            object.ableToDie.dies();
+        }
     }
 }
 

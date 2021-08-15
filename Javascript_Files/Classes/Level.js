@@ -60,6 +60,7 @@ class Level {
 
         this.totalTime += refreshRate;
     }
+
 }
 
 export default Level;
