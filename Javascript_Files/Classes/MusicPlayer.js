@@ -26,6 +26,12 @@ class MusicPlayer {
         audio.pause()
         audio.currentTime = 0;
     }
+
+    pauseAll() {
+        for (const audio of this.tracks.values()) {
+            audio.pause();
+        }
+    }
 }
 
 export default MusicPlayer;

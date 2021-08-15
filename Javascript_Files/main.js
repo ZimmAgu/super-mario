@@ -45,77 +45,78 @@ async function main () {
 
     
 
-    
-    const level = await loadLevel("1-1", characterSpawner); // Loads the current level that the user will be playing in
-    
-    
-    
-    const mario = characterSpawner.mario;   // Adds mario to the level
-    level.objects.add(mario);
-
-    const spawnPoint = createSpawnPoint(mario); // Adds the spawn point of mario to the level as an object
-    level.objects.add(spawnPoint);
-
-
-    level.layer.imageLayers.push(  
-        drawCollisionLayer(level),
-        drawCameraLayer(camera)
+    async function runLevel (name) {
+        const level = await loadLevel(name, characterSpawner); // Loads the current level that the user will be playing in
         
-    );
+        
+        
+        const mario = characterSpawner.mario;   // Adds mario to the level
+        level.objects.add(mario);
 
-    const input = userInput(window); // These are the keyboard controls that the user will use to control mario
-    input.addReceiver(mario);
+        const spawnPoint = createSpawnPoint(mario); // Adds the spawn point of mario to the level as an object
+        level.objects.add(spawnPoint);
 
-    // mouseControl(canvas, mario, camera); 
 
-    
+        level.layer.imageLayers.push(  
+            drawCollisionLayer(level),
+            drawCameraLayer(camera)
+            
+        );
 
-    
-    marioTimer.updateMario = (refreshRate) => {
+        const input = userInput(window); // These are the keyboard controls that the user will use to control mario
+        input.addReceiver(mario);
 
-        level.updateLevel(refreshRate);     // Constantly updates the level
+        // mouseControl(canvas, mario, camera); 
 
-        if (level.levelCountdown > 0) {
-            context.fillStyle = "black";
-            context.fillRect(0, 0, canvas.width, canvas.height);
-            drawDashboardLayer(
-                font, 
-                context, 
-                spawnPoint.playerControl.countdown,
-                mario.score,
-                level.name
-            ); 
-            drawStatusScreen(font, context, level.name, mario); 
-        } else {
-            level.layer.drawTheLayer(context, camera);
+        
 
-           drawDashboardLayer(
-                            font, 
-                            context, 
-                            spawnPoint.playerControl.countdown,
-                            mario.score,
-                            level.name
-                        ); 
+        
+        marioTimer.updateMario = (refreshRate) => {
+
+            level.updateLevel(refreshRate);     // Constantly updates the level
+
+            if (level.levelCountdown > 0) {
+                context.fillStyle = "black";
+                context.fillRect(0, 0, canvas.width, canvas.height);
+                
+                drawDashboardLayer(
+                    font, 
+                    context, 
+                    spawnPoint.playerControl.countdown,
+                    mario.score,
+                    level.name
+                ); 
+
+                drawStatusScreen(font, context, level.name, mario); 
+            } else {
+                level.layer.drawTheLayer(context, camera);
+
+                drawDashboardLayer(
+                                    font, 
+                                    context, 
+                                    spawnPoint.playerControl.countdown,
+                                    mario.score,
+                                    level.name
+                                ); 
+            }
+
+            camera.position.x = Math.max(0, mario.position.x - 100);
+
+            if (mario.ableToDie.isDead) {
+                level.music.player.pauseTrack('main');
+                level.music.player.playTrack('marioDeath');
+            } else {
+                level.music.player.pauseTrack('marioDeath');
+                level.music.player.playTrack('main');
+            }
         }
-        
-        
-        
 
+        marioTimer.startTimer();
         
-        
-
-        camera.position.x = Math.max(0, mario.position.x - 100);
-
-        if (mario.ableToDie.isDead) {
-            level.music.player.pauseTrack('main');
-            level.music.player.playTrack('marioDeath');
-        } else {
-            level.music.player.pauseTrack('marioDeath');
-            level.music.player.playTrack('main');
-        }
     }
 
-    marioTimer.startTimer();
+    // runLevel("1-1")
+    window.runLevel = runLevel;
 }
 
 
