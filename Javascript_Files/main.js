@@ -43,7 +43,10 @@ async function main () {
     ]);
 
 
-    const level = await loadLevel('1-1', characterSpawner); // Loads the current level that the user will be playing in
+    
+
+    
+    const level = await loadLevel("1-1", characterSpawner); // Loads the current level that the user will be playing in
     
     
     
@@ -67,20 +70,39 @@ async function main () {
 
     
 
-
+    
     marioTimer.updateMario = (refreshRate) => {
-        level.updateLevel(refreshRate);     // Constantly updates the level
-        level.layer.drawTheLayer(context, camera);
 
-        drawDashboardLayer(
+        level.updateLevel(refreshRate);     // Constantly updates the level
+
+        if (level.levelCountdown > 0) {
+            context.fillStyle = "black";
+            context.fillRect(0, 0, canvas.width, canvas.height);
+            drawDashboardLayer(
+                font, 
+                context, 
+                spawnPoint.playerControl.countdown,
+                mario.score,
+                level.name
+            ); 
+            drawStatusScreen(font, context, level.name, mario); 
+        } else {
+            level.layer.drawTheLayer(context, camera);
+
+           drawDashboardLayer(
                             font, 
                             context, 
                             spawnPoint.playerControl.countdown,
                             mario.score,
                             level.name
-                        );
+                        ); 
+        }
+        
+        
+        
 
-        drawStatusScreen(font, context, level.name, mario);
+        
+        
 
         camera.position.x = Math.max(0, mario.position.x - 100);
 
@@ -94,7 +116,6 @@ async function main () {
     }
 
     marioTimer.startTimer();
-    level.music.player.playTrack('main');
 }
 
 

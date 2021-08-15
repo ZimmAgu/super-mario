@@ -16,14 +16,14 @@ function drawStatusScreen (font, context, levelName, player) {
     font.printWord("x", context, font.size * 15, font.size * 12);
     font.printWord(lives, context, font.size * 18, font.size * 12);
 
-
+   
     spriteBufferContext.clearRect(  
                                     0, 
                                     0,
                                     spriteBuffer.width, 
                                     spriteBuffer.height
                                 );
-
+    
     player.drawObject(spriteBufferContext);
     context.drawImage(spriteBuffer, font.size * 11, font.size * 11);
 }

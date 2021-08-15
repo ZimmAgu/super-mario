@@ -20,6 +20,10 @@ class PlayerControl extends Trait {
     }
 
     updateTrait (object, elapsedTime, level) { 
+        if (level.levelCountdown > 0) {
+            return;
+        }
+
         if (!level.objects.has(this.player)) {      // If the level no longer has a player
             this.player.ableToDie.respawn(this.player);        // then the player is brought back to life 
             this.player.position.setVector(this.checkPoint.x, this.checkPoint.y);
@@ -32,7 +36,6 @@ class PlayerControl extends Trait {
                 this.player.ableToDie.dies();           // If the countdwon gets to 0 then mario dies;
                 this.player.solid.obstructEnabled = false;
             }
-            
         }
     }
 

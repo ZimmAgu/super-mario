@@ -11,6 +11,7 @@ class Level {
         this.name = '';
         this.gravity = 1500;
         this.totalTime = 0;
+        this.levelCountdown = 4;
 
         this.music = new MusicController();
 
@@ -27,6 +28,7 @@ class Level {
     }
 
     updateLevel (refreshRate) {
+        this.levelCountdown -= refreshRate;
         this.objects.forEach(object => {
             object.updateTrait(refreshRate, this);
 
