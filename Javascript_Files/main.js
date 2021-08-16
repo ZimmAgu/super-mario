@@ -142,8 +142,8 @@ const start = () => {
 
 context.fillStyle = "white";
 context.font = "32px Arial";
-context.fillText("Super Mario", 25, 50);
-context.fillText("Click To Start", 240, 200);
+context.fillText("Super Mario", 150, 50);
+context.fillText("Click To Start", 150, 200);
 
 window.addEventListener('click', start);
 
