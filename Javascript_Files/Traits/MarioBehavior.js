@@ -1,4 +1,5 @@
 "use strict";
+import { userInput } from "../userInput.js";
 
 // Class Imports
 import MusicPlayer from "../Classes/MusicPlayer.js";
@@ -9,7 +10,6 @@ import Trait from "./Traits.js";
 class MarioBehavior extends Trait { 
     constructor () {
         super("behavior")
-
     }
 
     collides (mario, otherCharacter) {
@@ -26,7 +26,6 @@ class MarioBehavior extends Trait {
 
     handleDeath (mario, otherCharacter) {
         const music = new MusicPlayer();
-
         mario.velocity.y = -800;
         mario.solid.obstructEnabled = false;
     }

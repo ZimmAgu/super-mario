@@ -19,7 +19,7 @@ import loadSoundBoard from "./LoadFunctions/loadSoundBoard.js";
 
 //Javascript File imports
 import { userInput } from "./userInput.js";
-import {createSpawnPoint, defineEnemies} from "./spawnPoint.js";
+import {createSpawnPoint} from "./spawnPoint.js";
 import mouseControl from "./mouseDebugger.js";
 
 
@@ -45,7 +45,14 @@ async function main () {
     const enemies = [
                         characterSpawner.goomba1, 
                         characterSpawner.goomba2, 
-                        characterSpawner.koopa1
+                        characterSpawner.goomba3, 
+                        characterSpawner.goomba4,
+                        characterSpawner.goomba5, 
+                        characterSpawner.goomba6,
+                        characterSpawner.koopa1,
+                        characterSpawner.koopa2,
+                        characterSpawner.koopa3,
+                        characterSpawner.koopa4,
                     ]
 
     

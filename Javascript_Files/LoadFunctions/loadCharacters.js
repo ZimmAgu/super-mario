@@ -18,7 +18,14 @@ function loadCharacters (audioContext) {
         loadMario(audioContext).then(addCharacter('mario')),
         loadGoomba(audioContext).then(addCharacter('goomba1')),
         loadGoomba(audioContext).then(addCharacter('goomba2')),
-        loadKoopa(audioContext).then(addCharacter('koopa1'))
+        loadGoomba(audioContext).then(addCharacter('goomba3')),
+        loadGoomba(audioContext).then(addCharacter('goomba4')),
+        loadGoomba(audioContext).then(addCharacter('goomba5')),
+        loadGoomba(audioContext).then(addCharacter('goomba6')),
+        loadKoopa(audioContext).then(addCharacter('koopa1')),
+        loadKoopa(audioContext).then(addCharacter('koopa2')),
+        loadKoopa(audioContext).then(addCharacter('koopa3')),
+        loadKoopa(audioContext).then(addCharacter('koopa4')),
     ])
     .then(() => characterSpawner)
 }

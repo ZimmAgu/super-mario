@@ -42,10 +42,9 @@ class PlayerControl extends Trait {
             level.objects.add(this.player); 
 
             this.enemies.forEach(enemy => {
-                const randomX = Math.floor(Math.random() * 2000) + 1000;
+                const randomX = Math.floor(Math.random() * 6000) + 1000;
                 enemy.position.setVector(randomX, 0);
                 level.objects.add(enemy); 
-                console.log(enemy.position)
             })
         } else {
             if (this.countdown > 1) {
