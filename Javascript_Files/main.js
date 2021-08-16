@@ -1,6 +1,7 @@
 "use strict";
 // Class Imports
 import Camera from "./Classes/Camera.js";
+import SceneRunner from "./Scenes/SceneRunner.js"
 import SoundBoard from "./Classes/SoundBoard.js";
 import Timer from "./Classes/timer.js";
 
@@ -19,7 +20,7 @@ import loadSoundBoard from "./LoadFunctions/loadSoundBoard.js";
 
 //Javascript File imports
 import { userInput } from "./userInput.js";
-import {createSpawnPoint} from "./spawnPoint.js";
+import {createSpawnPoint, createCurrentPlayer} from "./playerSpawn.js";
 import mouseControl from "./mouseDebugger.js";
 
 
@@ -36,116 +37,88 @@ const marioTimer = new Timer(1/60);         // Class that deals with real time
 
 
 async function main () {
-    const [characterSpawner, font] = await Promise.all([ 
-        loadCharacters(audioContext),
-        loadFont(),
-        loadSoundBoard('marioSoundEffects', audioContext)
-    ]);
+        const [characterSpawner, font] = await Promise.all([ 
+            loadCharacters(audioContext),
+            loadFont(),
+            loadSoundBoard('marioSoundEffects', audioContext)
+        ]);
 
-    const enemies = [
-                        characterSpawner.goomba1, 
-                        characterSpawner.goomba2, 
-                        characterSpawner.goomba3, 
-                        characterSpawner.goomba4,
-                        characterSpawner.goomba5, 
-                        characterSpawner.goomba6,
-                        characterSpawner.koopa1,
-                        characterSpawner.koopa2,
-                        characterSpawner.koopa3,
-                        characterSpawner.koopa4,
-                    ]
+
+        // const enemies = [
+        //     characterSpawner.goomba1, 
+        //     characterSpawner.goomba2, 
+        //     characterSpawner.goomba3, 
+        //     characterSpawner.goomba4,
+        //     characterSpawner.goomba5, 
+        //     characterSpawner.goomba6,
+        //     characterSpawner.koopa1,
+        //     characterSpawner.koopa2,
+        //     characterSpawner.koopa3,
+        //     characterSpawner.koopa4,
+        // ]
 
     
 
-    async function runLevel (name) {
-        const level = await loadLevel(name, characterSpawner); // Loads the current level that the user will be playing in
+        const level = await loadLevel("1-1", characterSpawner); // Loads the current level that the user will be playing in
+        const sceneRunner = new SceneRunner();
         
-        
-        const mario = characterSpawner.mario;   // Adds mario to the level
+        const mario = createCurrentPlayer(characterSpawner.mario);   // Adds mario to the level
+        mario.player.name = "Mario";
         level.objects.add(mario);
 
         const spawnPoint = createSpawnPoint(mario); // Adds the spawn point of mario to the level as an object
         level.objects.add(spawnPoint);
-        spawnPoint.playerControl.setEnemies(enemies);
+        // spawnPoint.playerControl.setEnemies(enemies);
         
 
-
-        level.layer.imageLayers.push(  
+        sceneRunner.addScene(level);
+        level.layeredImages.imageLayers.push(  
             drawCollisionLayer(level),
-            drawCameraLayer(camera)
-            
+            drawCameraLayer(camera),
+            drawDashboardLayer(font, level),
         );
 
         const input = userInput(window); // These are the keyboard controls that the user will use to control mario
         input.addReceiver(mario);
 
         // mouseControl(canvas, mario, camera); 
+    
 
-        
+    
+        const gameContext = {
+            audioContext,
+            context,
+            characterSpawner,
+            refreshRate: null,
+        };
 
-        
+
         marioTimer.updateMario = (refreshRate) => {
+            gameContext.refreshRate = refreshRate
+            sceneRunner.updateScene(gameContext);
 
-            level.updateLevel(refreshRate);     // Constantly updates the level
-
-            if (level.levelCountdown > 0) {
-                context.fillStyle = "black";
-                context.fillRect(0, 0, canvas.width, canvas.height);
-                
-                drawDashboardLayer(
-                    font, 
-                    context, 
-                    spawnPoint.playerControl.countdown,
-                    mario.score,
-                    level.name
-                ); 
-
-                drawStatusScreen(font, context, level.name, mario); 
-            } else {
-                level.layer.drawTheLayer(context, camera);
-
-                drawDashboardLayer(
-                                    font, 
-                                    context, 
-                                    spawnPoint.playerControl.countdown,
-                                    mario.score,
-                                    level.name
-                                );
-                                
-                if (mario.ableToDie.isDead) {
-                    level.music.player.pauseTrack('main');
-                    level.music.playDeathSong();
-                } else {
-                    level.music.player.pauseTrack('marioDeath');
-                    level.music.playMainTheme();
-                }    
-            }
+            // drawStatusScreen(font, context, level.name, mario); 
 
             camera.position.x = Math.max(0, mario.position.x - 100);
-
-            
         }
 
         marioTimer.startTimer();
-        
-    }
-
-    runLevel("1-1");
-    //  window.runLevel = runLevel;
+        sceneRunner.runNext();
+        //  window.runLevel = runLevel;
 }
 
+main();
+// const start = () => {
+//     window.removeEventListener('click', start);
+    
+// };
 
-const start = () => {
-    window.removeEventListener('click', start);
-    main();
-};
+// context.fillStyle = "white";
+// context.font = "32px Arial";
+// context.fillText("Super Mario", 150, 50);
+// context.fillText("Click To Start", 150, 200);
 
-context.fillStyle = "white";
-context.font = "32px Arial";
-context.fillText("Super Mario", 150, 50);
-context.fillText("Click To Start", 150, 200);
-
-window.addEventListener('click', start);
+// window.addEventListener('click', start);
 
 
 

@@ -4,6 +4,7 @@
 import OnScreenObject from "./Classes/OnScreenObjects.js"
 
 // Trait Imports
+import CurrentPlayer from "./Traits/CurrentPlayer.js";
 import PlayerControl from "./Traits/PlayerControl.js"
 
 function createSpawnPoint (player) {
@@ -24,9 +25,17 @@ function createSpawnPoint (player) {
 }
 
 
-function defineEnemies (enemies) {
-    const playerControl = new PlayerControl();
-    playerControl.setEnemies(enemies);
+function createCurrentPlayer (character) {
+    character.addTrait(new CurrentPlayer());
+    return character
 }
 
-export {createSpawnPoint, defineEnemies};
+function* findPlayers (level) {
+    for (const character of level.objects) {
+        if (character.player) {
+            yield character;
+        }
+    }
+}
+
+export {createSpawnPoint, createCurrentPlayer, findPlayers};

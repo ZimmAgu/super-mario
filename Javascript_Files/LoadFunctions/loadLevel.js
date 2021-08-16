@@ -54,7 +54,7 @@ function loadLevelBackground (level, levelSpecs, sprites) {
     levelSpecs.layers.forEach(layer => {
         const backgroundGrid = createBackgroundGrid(layer.blocks, levelSpecs.patterns);
         const backgroundLayer = drawBackground(level, backgroundGrid, sprites);
-        level.layer.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
+        level.layeredImages.imageLayers.push(backgroundLayer);    // Adds the background image to the array of layers
     })
 }
 
@@ -77,7 +77,7 @@ function drawCharacters (level, levelSpecs, characterSpawner) {
     })
 
     const characterDrawings = drawSpriteLayer(level.objects); // Draws mario to the screen
-    level.layer.imageLayers.push(characterDrawings);  // Adds mario to the array of layers
+    level.layeredImages.imageLayers.push(characterDrawings);  // Adds mario to the array of layers
 }
 
 export default loadLevel;

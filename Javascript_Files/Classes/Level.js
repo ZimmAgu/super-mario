@@ -2,6 +2,7 @@
 
 // Class Imports
 import BlockCollisions from "./BlockCollisions.js";
+import Camera from "./Camera.js";
 import CharacterCollisions from "./CharacterCollisions.js";
 import LayeredImages from "./LayerTheImages.js";
 import MusicController from "./MusicController.js";
@@ -11,11 +12,11 @@ class Level {
         this.name = '';
         this.gravity = 1500;
         this.totalTime = 0;
-        this.levelCountdown = 4;
-
+        this.countdown = 400;
+        this.camera = new Camera();
         this.music = new MusicController();
 
-        this.layer = new LayeredImages();
+        this.layeredImages = new LayeredImages();
         this.objects = new Set(); // Sets are like maps but they don't allow duplicates to be added to it
         
         this.characterCollisions = new CharacterCollisions(this.objects);
@@ -27,23 +28,26 @@ class Level {
         this.blockCollisions = new BlockCollisions(matrix)
     }
 
-    updateLevel (refreshRate) {
-        this.levelCountdown -= refreshRate;
-        this.objects.forEach(object => {
-            object.updateTrait(refreshRate, this);
+    drawLevel (gameContext) {
+        this.layeredImages.drawTheLayers(gameContext.context, this.camera);
+    }
 
-            object.position.x += (object.velocity.x * refreshRate);
+    updateLevel (gameContext) {
+        this.objects.forEach(object => {
+            object.updateTrait(gameContext.refreshRate, this);
+
+            object.position.x += (object.velocity.x * gameContext.refreshRate);
 
             this.blockCollisions.checkForX(object);
             
 
-            object.position.y += (object.velocity.y * refreshRate);
+            object.position.y += (object.velocity.y * gameContext.refreshRate);
 
             this.blockCollisions.checkForY(object);
             
 
 
-            object.velocity.y += (this.gravity * refreshRate);
+            object.velocity.y += (this.gravity * gameContext.refreshRate);
         })
 
       
@@ -58,7 +62,7 @@ class Level {
 
 
 
-        this.totalTime += refreshRate;
+        this.totalTime += gameContext.refreshRate;
     }
 
 }

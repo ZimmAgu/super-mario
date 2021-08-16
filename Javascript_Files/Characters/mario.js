@@ -39,8 +39,6 @@ function createMario (sprite, audio) {
 
     mario.position.setVector(64, 64)
     mario.size.setVector(32, 42.6);      // Sets the on screen size of marion
-    mario.score = 0;
-    mario.lives = 3;
     
 
     mario.addTrait(new Solid());
