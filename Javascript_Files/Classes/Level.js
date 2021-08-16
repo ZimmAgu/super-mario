@@ -1,5 +1,6 @@
 "use strict";
 
+import { findPlayers } from "../playerSpawn.js";
 // Class Imports
 import BlockCollisions from "./BlockCollisions.js";
 import Camera from "./Camera.js";
@@ -60,11 +61,19 @@ class Level {
             object.finalize();  // All of the task it the Traits queue are ran at this moment
         })
 
-
+        focusCameraOnPlayer(this);
 
         this.totalTime += gameContext.refreshRate;
     }
 
+}
+
+
+
+function focusCameraOnPlayer (level) {
+    for (const player of findPlayers(level)) {
+        level.camera.position.x = Math.max(0, player.position.x - 100);
+    }
 }
 
 export default Level;
