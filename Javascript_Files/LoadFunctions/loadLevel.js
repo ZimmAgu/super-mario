@@ -100,7 +100,7 @@ function setupTriggers (level, levelSpecs) {
         });
         
         
-        object.size.setVector(32, 32);
+        object.size.setVector(100, 300);
         object.position.setVector(triggerSpecs.position[0], triggerSpecs.position[1]);
         level.objects.add(object);
     }

@@ -134,7 +134,7 @@ async function main () {
         }
 
         marioTimer.startTimer();
-        runLevel("testLevel");
+        runLevel("1-1");
         // window.runLevel = runLevel;
 }
 

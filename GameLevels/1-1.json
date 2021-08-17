@@ -414,54 +414,14 @@
     },
 
     "characters" : [
-        {
-            "name": "goomba1",
-            "position" : [1000, 100]
-        },
-        
-        {
-            "name": "goomba2",
-            "position" : [1500, 100]
-        },
+     
+    ],
 
+    "triggers" : [
         {
-            "name": "goomba3",
-            "position" : [1600, 100]
-        },
-
-        {
-            "name": "goomba4",
-            "position" : [1900, 100]
-        },
-
-        {
-            "name": "goomba5",
-            "position" : [3000, 100]
-        },
-
-        {
-            "name": "goomba6",
-            "position" : [3500, 100]
-        },
-
-        {
-            "name" : "koopa1",
-            "position" : [1800, 100]
-        },
-
-        {
-            "name" : "koopa2",
-            "position" : [4500, 100]
-        },
-
-        {
-            "name" : "koopa3",
-            "position" : [5000, 100]
-        },
-
-        {
-            "name" : "koopa4",
-            "position" : [5700, 100]
+            "type" : "goto",
+            "name" : "1-2",
+            "position" : [6715, 32]
         }
     ]
 }
