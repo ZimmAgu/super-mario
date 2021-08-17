@@ -1,11 +1,29 @@
 "use strict";
+
+import CurrentPlayer from "./CurrentPlayer.js";
+// Class Imports
+import Level from "../Classes/Level.js"
+
+// Javascript File Imports
+import {findPlayers} from "../playerSpawn.js"
+
+// Trait Imports
 import Trait from "./Traits.js";
+
+
+
+function getCurrentPlayer (level) {
+    for (const object of findPlayers(level)) {
+        return object.player;
+    }
+}
+
+
 
 class Stomp extends Trait {
     constructor () {
         super('stomp');
         this.bounceSpeed = 1000;
-
         this.enemyStomped = false;
     }
 
@@ -24,7 +42,7 @@ class Stomp extends Trait {
         }
 
         if (mario.velocity.y > otherCharacter.velocity.y) {
-            mario.score += 100;
+            mario.player.score += 100;
             this.bounceUpward(mario, otherCharacter);   
             this.enemyStomped = true;
         }

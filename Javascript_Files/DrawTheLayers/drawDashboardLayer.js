@@ -19,8 +19,8 @@ function createDashboardLayer (font, level) {
     return function drawDashboardLayer (context) {
         const currentPlayer = getCurrentPlayer(level)
 
-        const scoreBoard = currentPlayer.score.toString().padStart(6, '0');
-    
+        const scoreBoard = currentPlayer ? currentPlayer.score.toString().padStart(6, '0') : "0"; // If the level has a current player the current score is the score of the player. If the level does not have a player, then the current score it 0
+        
         const time = Math.floor(level.countdown);
         const timeDisplay = time.toString().padStart(3, '0')
 

@@ -414,7 +414,10 @@
     },
 
     "characters" : [
-     
+        {
+            "name" : "goomba1",
+            "position" : [700, 64]
+        }
     ],
 
     "triggers" : [
