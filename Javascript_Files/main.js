@@ -37,7 +37,6 @@ const camera = new Camera();                // Class that deals with showing wha
 const audioContext = new AudioContext();    // high-level JavaScript API for processing and synthesizing audio in web applications 
 const marioTimer = new Timer(1/60);         // Class that deals with real time
 const sceneRunner = new SceneRunner();
-const introScreen = new IntroScene();
 
 
 
@@ -63,41 +62,46 @@ async function main () {
         //     characterSpawner.koopa4,
         // ]
 
-        
+        const mario = createCurrentPlayer(characterSpawner.mario);   // Adds mario to the level
+            mario.player.name = "Mario";
+            const spawnPoint = createSpawnPoint(mario); // Adds the spawn point of mario to the level as an object
 
         // mouseControl(canvas, mario, camera); 
 
+        async function runLevel (name) {
+            const level = await loadLevel(name, characterSpawner); // Loads the current level that the user will be playing in
+                    
+            
+            level.objects.add(mario);
 
-        const level = await loadLevel("1-1", characterSpawner); // Loads the current level that the user will be playing in
-        
-        const mario = createCurrentPlayer(characterSpawner.mario);   // Adds mario to the level
-        mario.player.name = "Mario";
-        level.objects.add(mario);
+            level.objects.add(spawnPoint);
+            // spawnPoint.playerControl.setEnemies(enemies);
+            
 
-        const spawnPoint = createSpawnPoint(mario); // Adds the spawn point of mario to the level as an object
-        level.objects.add(spawnPoint);
-        // spawnPoint.playerControl.setEnemies(enemies);
-        
+            const input = userInput(window); // These are the keyboard controls that the user will use to control mario
+            input.addReceiver(mario);
+            
+            const introScreen = new IntroScene();
+            introScreen.layeredImages.imageLayers.push(
+                createColorLayer('#000'),
+                createStatusScreen(font, level),
+                createDashboardLayer(font, level)
+            )
+            sceneRunner.addScene(introScreen);
 
-        const input = userInput(window); // These are the keyboard controls that the user will use to control mario
-        input.addReceiver(mario);
+            
+            level.layeredImages.imageLayers.push(  
+                drawCollisionLayer(level),
+                drawCameraLayer(camera),
+                createDashboardLayer(font, level)
+            );
+            
+            sceneRunner.addScene(level);
         
-        introScreen.layeredImages.imageLayers.push(
-            createColorLayer('#000'),
-            createStatusScreen(font, level),
-            createDashboardLayer(font, level)
-        )
-        
+            sceneRunner.runNext();
+        }
 
-        
-        level.layeredImages.imageLayers.push(  
-            drawCollisionLayer(level),
-            drawCameraLayer(camera),
-            createDashboardLayer(font, level)
-        );
-        sceneRunner.addScene(introScreen);
-        sceneRunner.addScene(level);
-    
+
         const gameContext = {
             audioContext,
             context,
@@ -113,8 +117,7 @@ async function main () {
         }
 
         marioTimer.startTimer();
-        sceneRunner.runNext();
-        //  window.runLevel = runLevel;
+        window.runLevel = runLevel;
 }
 
 
