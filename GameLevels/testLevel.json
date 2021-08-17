@@ -1,0 +1,40 @@
+{
+    "spriteSetName" : "overworld",
+    "musicSetName" : "overworld",
+    
+    "layers" : [
+        {
+           "blocks" : [
+                
+                {
+                    "name" : "sky",
+                    "type" : "sky",
+                    "dimensions": [
+                        [0, 4000, 0, 13]
+                    ]
+                }, 
+
+                {
+                    "name" : "ground",
+                    "type" : "solid",
+                    "dimensions": [
+                        [0, 4000, 11, 2]
+                    ]
+                }
+                
+           ]
+        }
+    ],
+
+
+    "characters" : [
+    ],
+
+    "triggers" : [
+        {
+            "type" : "goto",
+            "name" : "1-1",
+            "position" : [200, 32]
+        }
+    ]
+}

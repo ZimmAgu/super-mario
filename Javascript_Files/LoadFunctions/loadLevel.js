@@ -2,6 +2,7 @@
 
 // Class Imports
 import Level from "../Classes/Level.js";
+import OnScreenObject from "../Classes/OnScreenObjects.js";
 
 // Draw the Layers Function
 import  drawBackground  from "../DrawTheLayers/drawBackground.js";
@@ -12,6 +13,10 @@ import {createCollisionGrid, createBackgroundGrid} from "./createGrids.js"
 import loadJSON from "./loadJSON.js";
 import loadMusicSet from "./loadMusicSet.js";
 import loadSpriteSet from "./loadSpriteSet.js";
+
+// Trait Imports
+import Solid from "../Traits/Solid.js";
+import Trigger from "../Traits/Trigger.js";
 
 
 function loadLevel (levelName, characterSpawner) {    // Loads the current levels from the requested JSON file in the GameLevels folder. The level is determined the parameter
@@ -29,6 +34,7 @@ function loadLevel (levelName, characterSpawner) {    // Loads the current level
         loadCollisionGrid(currentLevel, levelSpecifications);
         loadLevelBackground(currentLevel, levelSpecifications, backgroundSprites);
         drawCharacters(currentLevel, levelSpecifications, characterSpawner);
+        setupTriggers (currentLevel, levelSpecifications);
         currentLevel.music.playMainTheme()
 
         return currentLevel;
@@ -78,6 +84,33 @@ function drawCharacters (level, levelSpecs, characterSpawner) {
 
     const characterDrawings = drawSpriteLayer(level.objects); // Draws mario to the screen
     level.layeredImages.imageLayers.push(characterDrawings);  // Adds mario to the array of layers
+}
+
+
+function setupTriggers (level, levelSpecs) {
+    if (!levelSpecs.triggers) {
+        return;
+    }
+    
+    for (const triggerSpecs of levelSpecs.triggers) {
+        const object = createTrigger()
+        
+        object.trigger.conditions.push((object, touches, gc, level) => {
+            level.events.emit(Level.EVENT_TRIGGER, triggerSpecs, object, touches);
+        });
+        
+        
+        object.size.setVector(32, 32);
+        object.position.setVector(triggerSpecs.position[0], triggerSpecs.position[1]);
+        level.objects.add(object);
+    }
+}
+
+function createTrigger() {
+    const object = new OnScreenObject();
+    object.addTrait(new Trigger());
+    object.addTrait(new Solid());
+    return object;
 }
 
 export default loadLevel;

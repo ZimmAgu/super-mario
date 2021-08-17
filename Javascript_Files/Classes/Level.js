@@ -12,6 +12,8 @@ import MusicController from "./MusicController.js";
 import Scene from "../Scenes/Scene.js";
 
 class Level extends Scene {
+    static EVENT_TRIGGER = Symbol('trigger');
+
     constructor () {
         super();
         this.name = '';

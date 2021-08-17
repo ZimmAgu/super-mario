@@ -1,6 +1,7 @@
 "use strict";
 // Class Imports
 import Camera from "./Classes/Camera.js";
+import Level from "./Classes/Level.js";
 import SoundBoard from "./Classes/SoundBoard.js";
 import Timer from "./Classes/timer.js";
 
@@ -63,23 +64,39 @@ async function main () {
         // ]
 
         const mario = createCurrentPlayer(characterSpawner.mario);   // Adds mario to the level
-            mario.player.name = "Mario";
-            const spawnPoint = createSpawnPoint(mario); // Adds the spawn point of mario to the level as an object
-
+        mario.player.name = "Mario";
+        const spawnPoint = createSpawnPoint(mario); // Adds the spawn point of mario to the level as an object
+        
+        const input = userInput(window); // These are the keyboard controls that the user will use to control mario
+        input.addReceiver(mario);
         // mouseControl(canvas, mario, camera); 
 
         async function runLevel (name) {
             const level = await loadLevel(name, characterSpawner); // Loads the current level that the user will be playing in
-                    
-            
+            let executed = false; 
+
+
+            level.events.listen(Level.EVENT_TRIGGER, (spec, trigger, touches) => {
+                if (spec.type === "goto") {
+                    for (const object of touches) {
+                        if (object.player) {
+                            if (executed == false){
+                                runLevel(spec.name);
+                            }
+                            executed = true;
+                            return;
+                        }
+                    }
+                }    
+            });
+
             level.objects.add(mario);
 
             level.objects.add(spawnPoint);
             // spawnPoint.playerControl.setEnemies(enemies);
             
 
-            const input = userInput(window); // These are the keyboard controls that the user will use to control mario
-            input.addReceiver(mario);
+            
             
             const introScreen = new IntroScene();
             introScreen.layeredImages.imageLayers.push(
@@ -117,7 +134,8 @@ async function main () {
         }
 
         marioTimer.startTimer();
-        window.runLevel = runLevel;
+        runLevel("testLevel");
+        // window.runLevel = runLevel;
 }
 
 
