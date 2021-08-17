@@ -69,6 +69,10 @@ class Level extends Scene {
         this.totalTime += gameContext.refreshRate;
     }
 
+    pauseMusic () {
+        this.music.pauseAllMusic()
+    }
+
 }
 
 

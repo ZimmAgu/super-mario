@@ -14,10 +14,10 @@ class SceneRunner {
     }
 
     runNext() {
-        // const currentScene = this.scenes[this.sceneIndex];
-        // if (currentScene) {
-        //     currentScene.pause();
-        // }
+        const currentScene = this.scenes[this.sceneIndex];
+        if (currentScene) {
+            currentScene.pauseMusic();
+        }
         this.sceneIndex++;
     }
 

@@ -13,6 +13,9 @@ class IntroScene extends Scene {
             this.events.emit(Scene.EVENT_COMPLETE);
         }
     }
+
+    pauseMusic() {
+    }
 }
 
 export default IntroScene
