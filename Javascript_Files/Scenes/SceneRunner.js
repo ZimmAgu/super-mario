@@ -7,9 +7,9 @@ class SceneRunner {
     }
 
     addScene(scene) {
-        // scene.events.listen(Scene.EVENT_COMPLETE, () => {
-        //     this.runNext();
-        // });
+        scene.events.listen(Scene.EVENT_COMPLETE, () => {
+            this.runNext();
+        });
         this.scenes.push(scene);
     }
 

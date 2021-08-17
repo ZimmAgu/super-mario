@@ -8,8 +8,12 @@ import CharacterCollisions from "./CharacterCollisions.js";
 import LayeredImages from "./LayerTheImages.js";
 import MusicController from "./MusicController.js";
 
-class Level {
+// Scene Imports
+import Scene from "../Scenes/Scene.js";
+
+class Level extends Scene {
     constructor () {
+        super();
         this.name = '';
         this.gravity = 1500;
         this.totalTime = 0;
@@ -17,7 +21,6 @@ class Level {
         this.camera = new Camera();
         this.music = new MusicController();
 
-        this.layeredImages = new LayeredImages();
         this.objects = new Set(); // Sets are like maps but they don't allow duplicates to be added to it
         
         this.characterCollisions = new CharacterCollisions(this.objects);
