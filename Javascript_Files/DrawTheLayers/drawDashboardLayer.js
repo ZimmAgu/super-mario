@@ -21,7 +21,7 @@ function createDashboardLayer (font, level) {
 
         const scoreBoard = currentPlayer.score.toString().padStart(6, '0');
     
-        const time = Math.floor(level.countDown);
+        const time = Math.floor(level.countdown);
         const timeDisplay = time.toString().padStart(3, '0')
 
         font.printWord("MARIO", context, 32, DASHBOARDLINES.LINE1);

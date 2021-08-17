@@ -24,12 +24,12 @@ function loadLevel (levelName, characterSpawner) {    // Loads the current level
     .then(([levelSpecifications, backgroundSprites, musicPlayer]) => {
         const currentLevel = new Level();
         currentLevel.name = levelName.toString();
-
         currentLevel.music.setPlayer(musicPlayer);
 
         loadCollisionGrid(currentLevel, levelSpecifications);
         loadLevelBackground(currentLevel, levelSpecifications, backgroundSprites);
         drawCharacters(currentLevel, levelSpecifications, characterSpawner);
+        currentLevel.music.playMainTheme()
 
         return currentLevel;
     })

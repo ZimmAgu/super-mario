@@ -18,6 +18,10 @@ class MusicController {
 
         audio.loop = false;
     }
+
+    pauseAllMusic () {
+        this.player.pauseAll();
+    }
 }
 
 export default MusicController;

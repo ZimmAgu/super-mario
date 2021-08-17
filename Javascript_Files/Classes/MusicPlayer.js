@@ -13,7 +13,7 @@ class MusicPlayer {
     }
 
     playTrack (name) {
-        this.pauseTrack;
+        this.pauseAll;
         
         const audio = this.tracks.get(name);
 

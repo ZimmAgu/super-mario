@@ -8,7 +8,7 @@ import Timer from "./Classes/timer.js";
 // Draw The Layers Imports
 import drawCameraLayer from "./DrawTheLayers/drawCameraLayer.js"
 import drawCollisionLayer from "./DrawTheLayers/drawCollisionLayer.js"
-import drawDashboardLayer from "./DrawTheLayers/drawDashboardLayer.js";
+import createDashboardLayer from "./DrawTheLayers/drawDashboardLayer.js";
 import drawStatusScreen from "./DrawTheLayers/drawStatusScreen.js";
 
 // Load Function Imports
@@ -75,7 +75,8 @@ async function main () {
         level.layeredImages.imageLayers.push(  
             drawCollisionLayer(level),
             drawCameraLayer(camera),
-            drawDashboardLayer(font, level),
+            createDashboardLayer(font, level),
+            drawStatusScreen(font, level)
         );
 
         const input = userInput(window); // These are the keyboard controls that the user will use to control mario
@@ -97,9 +98,6 @@ async function main () {
             gameContext.refreshRate = refreshRate
             sceneRunner.updateScene(gameContext);
 
-            // drawStatusScreen(font, context, level.name, mario); 
-
-            camera.position.x = Math.max(0, mario.position.x - 100);
         }
 
         marioTimer.startTimer();
@@ -107,18 +105,18 @@ async function main () {
         //  window.runLevel = runLevel;
 }
 
-main();
-// const start = () => {
-//     window.removeEventListener('click', start);
-    
-// };
 
-// context.fillStyle = "white";
-// context.font = "32px Arial";
-// context.fillText("Super Mario", 150, 50);
-// context.fillText("Click To Start", 150, 200);
+const start = () => {
+    window.removeEventListener('click', start);
+    main();
+};
 
-// window.addEventListener('click', start);
+context.fillStyle = "white";
+context.font = "32px Arial";
+context.fillText("Super Mario", 150, 50);
+context.fillText("Click To Start", 150, 200);
+
+window.addEventListener('click', start);
 
 
 
