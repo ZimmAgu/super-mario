@@ -74,7 +74,8 @@
                         [102, 8, 6, 2],
                         [144, 2, 8, 3],
                         [172, 8, 7, 1],
-                        [188, 12, 7, 4]
+                        [188, 12, 7, 4],
+                        [200, 10, 0, 11]
                     ]
                 },
 
@@ -126,6 +127,20 @@
                     "dimensions" : [
                         [127, 1, 6, 1]
                     ]
+                },
+
+                {
+                    "pattern" : "horizontal pipe",
+                    "dimensions" : [
+                        [196, 1, 5, 1]
+                    ]
+                },
+
+                {
+                    "pattern" : "vertical pipe section",
+                    "dimensions" : [
+                        [197, 1, 0, 5]
+                    ]
                 }
 
            ]
@@ -135,11 +150,65 @@
 
 
     "characters" : [
-       
+        {
+            "name": "goomba1",
+            "position" : [1000, 100]
+        },
+        
+        {
+            "name": "goomba2",
+            "position" : [1500, 100]
+        },
+
+        {
+            "name": "goomba3",
+            "position" : [1600, 100]
+        },
+
+        {
+            "name": "goomba4",
+            "position" : [1900, 100]
+        },
+
+        {
+            "name": "goomba5",
+            "position" : [3000, 100]
+        },
+
+        {
+            "name": "goomba6",
+            "position" : [3500, 100]
+        },
+
+        {
+            "name" : "koopa1",
+            "position" : [1800, 100]
+        },
+
+        {
+            "name" : "koopa2",
+            "position" : [4500, 100]
+        },
+
+        {
+            "name" : "koopa3",
+            "position" : [5000, 100]
+        },
+
+        {
+            "name" : "koopa4",
+            "position" : [5700, 100]
+        }
     ],
 
 
-
+    "triggers" : [
+        {
+            "type" : "goto",
+            "name" : "1-1",
+            "position" : [6225, 32]
+        }
+    ],
 
 
 
@@ -247,6 +316,58 @@
             ]
         },
 
+        "horizontal pipe" : {
+            "pieces" : [
+                { 
+                    "name" : "upper left horizontal pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 0, 1]
+                    ]
+                },
+
+                { 
+                    "name" : "upper middle horizontal pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [1, 1, 0, 1]
+                    ]
+                },
+
+                { 
+                    "name" : "upper right horizontal pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [2, 1, 0, 1]
+                    ]
+                },
+
+                { 
+                    "name" : "lower left horizontal pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 1, 1]
+                    ]
+                },
+
+                { 
+                    "name" : "lower middle horizontal pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [1, 1, 1, 1]
+                    ]
+                },
+
+                { 
+                    "name" : "lower right horizontal pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [2, 1, 1, 1]
+                    ]
+                }
+            ]
+        },
+
         "regular cloud" : {
             "pieces" : [
                 { 
@@ -297,9 +418,6 @@
                         [2, 4, 0, 1]
                     ]
                 },
-
-
-
 
 
 

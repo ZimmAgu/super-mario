@@ -92,7 +92,55 @@
             }
         ],
 
+        "horizontalPipe" : [
+            {
+                "name" : "upper left horizontal pipe",
+                "xPosition" : 32,
+                "yPosition" : 128,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
 
+            {
+                "name" : "upper middle horizontal pipe",
+                "xPosition" : 48,
+                "yPosition" : 128,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+
+            {
+                "name" : "upper right horizontal pipe",
+                "xPosition" : 64,
+                "yPosition" : 128,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+
+            {
+                "name" : "lower left horizontal pipe",
+                "xPosition" : 32,
+                "yPosition" : 144,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+
+            {
+                "name" : "lower middle horizontal pipe",
+                "xPosition" : 48,
+                "yPosition" : 144,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+            
+            {
+                "name" : "lower right horizontal pipe",
+                "xPosition" : 64,
+                "yPosition" : 144,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            }
+        ],
 
         "regularCloud" : [
 

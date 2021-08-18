@@ -278,6 +278,58 @@
             ]
         },
 
+        "horizontal pipe" : {
+            "pieces" : [
+                { 
+                    "pattern" : "upper left horizontal pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 0, 1]
+                    ]
+                },
+
+                { 
+                    "pattern" : "upper middle horizontal pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [1, 1, 0, 1]
+                    ]
+                },
+
+                { 
+                    "pattern" : "upper right horizontal pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [2, 1, 0, 1]
+                    ]
+                },
+
+                { 
+                    "pattern" : "lower left horizontal pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [0, 1, 1, 1]
+                    ]
+                },
+
+                { 
+                    "pattern" : "lower middle horizontal pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [1, 1, 1, 1]
+                    ]
+                },
+
+                { 
+                    "pattern" : "lower right horizontal pipe",
+                    "type" : "solid",
+                    "dimensions" : [
+                        [2, 1, 1, 1]
+                    ]
+                }
+            ]
+        },
+
         "regular cloud" : {
             "pieces" : [
                 { 
@@ -415,13 +467,53 @@
 
     "characters" : [
         {
-            "name" : "goomba1",
-            "position" : [700, 64]
+            "name": "goomba1",
+            "position" : [1000, 100]
+        },
+        
+        {
+            "name": "goomba2",
+            "position" : [1500, 100]
         },
 
         {
-            "name" : "goomba2",
-            "position" : [1000, 64]
+            "name": "goomba3",
+            "position" : [1600, 100]
+        },
+
+        {
+            "name": "goomba4",
+            "position" : [1900, 100]
+        },
+
+        {
+            "name": "goomba5",
+            "position" : [3000, 100]
+        },
+
+        {
+            "name": "goomba6",
+            "position" : [3500, 100]
+        },
+
+        {
+            "name" : "koopa1",
+            "position" : [1800, 100]
+        },
+
+        {
+            "name" : "koopa2",
+            "position" : [4500, 100]
+        },
+
+        {
+            "name" : "koopa3",
+            "position" : [5000, 100]
+        },
+
+        {
+            "name" : "koopa4",
+            "position" : [5700, 100]
         }
     ],
 

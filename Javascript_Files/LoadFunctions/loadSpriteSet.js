@@ -97,6 +97,17 @@ function loadPatterns (spriteSheetInfo, sprites) {
             );
         });
 
+        spriteSheetInfo.patterns.horizontalPipe.forEach(piece => { // The vertical pipe pattern
+            sprites.saveTheSprite(
+                piece.name,
+                piece.xPosition,
+                piece.yPosition,
+                piece.onScreenWidth,
+                piece.onScreenHeight
+            );
+        });
+
+
 
         spriteSheetInfo.patterns.regularCloud.forEach(piece => {
             sprites.saveTheSprite(

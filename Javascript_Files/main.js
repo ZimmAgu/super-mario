@@ -136,7 +136,7 @@ async function main () {
         }
 
         marioTimer.startTimer();
-        runLevel("1-2");
+        runLevel("1-1");
         // window.runLevel = runLevel;
 }
 
@@ -146,10 +146,10 @@ const start = () => {
     main();
 };
 
-// context.fillStyle = "white";
-// context.font = "32px Arial";
-// context.fillText("Super Mario", 150, 50);
-// context.fillText("Click To Start", 150, 200);
+context.fillStyle = "white";
+context.font = "32px Arial";
+context.fillText("Super Mario", 150, 50);
+context.fillText("Click To Start", 150, 200);
 
 window.addEventListener('click', start);
 

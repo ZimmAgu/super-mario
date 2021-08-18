@@ -18,32 +18,32 @@ function drawCollisionLayer (level) {
     
    
     return (context, camera) => {   // Draws the outline of the hitbox
-        context.strokeStyle = 'blue';
+        // context.strokeStyle = 'blue';
 
-        resolvedBlocks.forEach((value, x, y) => {
-            context.beginPath();
-            context.rect(
-                x * blockSize - camera.position.x, 
-                y * blockSize - camera.position.y, 
-                blockSize, 
-                blockSize);
-            context.stroke();
-        });
-        resolvedBlocks.clear();
+        // resolvedBlocks.forEach((value, x, y) => {
+        //     context.beginPath();
+        //     context.rect(
+        //         x * blockSize - camera.position.x, 
+        //         y * blockSize - camera.position.y, 
+        //         blockSize, 
+        //         blockSize);
+        //     context.stroke();
+        // });
+        // resolvedBlocks.clear();
 
-        level.objects.forEach(onScreenObject => {
-            context.strokeStyle = 'green';
-            context.beginPath();
+        // level.objects.forEach(onScreenObject => {
+        //     context.strokeStyle = 'green';
+        //     context.beginPath();
 
-            context.rect(
-                        onScreenObject.position.x - camera.position.x, 
-                        onScreenObject.position.y - camera.position.y, 
-                        onScreenObject.size.x,
-                        onScreenObject.size.y
-                    );
+        //     context.rect(
+        //                 onScreenObject.position.x - camera.position.x, 
+        //                 onScreenObject.position.y - camera.position.y, 
+        //                 onScreenObject.size.x,
+        //                 onScreenObject.size.y
+        //             );
 
-            context.stroke();
-        })
+        //     context.stroke();
+        // })
     };
 }
 
