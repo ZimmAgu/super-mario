@@ -28,7 +28,7 @@ class AbleToDie extends Trait {
             character.lives = 3;
         }
 
-        character.score = 0;
+        character.player.score = 0;
         character.solid.obstructEnabled = true;
         this.isDead = false;
         this.timeOfDeath = 0;
@@ -36,7 +36,6 @@ class AbleToDie extends Trait {
 
     respawnEnemies (enemies) {
         enemies.forEach(enemy => {
-            console.log(enemy.position.x)
             enemy.solid.obstructEnabled = true;
             enemy.ableToDie.isDead = false;
             enemy.timeOfDeath = 0;

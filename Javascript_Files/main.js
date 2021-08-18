@@ -50,18 +50,18 @@ async function main () {
         ]);
 
 
-        // const enemies = [
-        //     characterSpawner.goomba1, 
-        //     characterSpawner.goomba2, 
-        //     characterSpawner.goomba3, 
-        //     characterSpawner.goomba4,
-        //     characterSpawner.goomba5, 
-        //     characterSpawner.goomba6,
-        //     characterSpawner.koopa1,
-        //     characterSpawner.koopa2,
-        //     characterSpawner.koopa3,
-        //     characterSpawner.koopa4,
-        // ]
+        const enemies = [
+            characterSpawner.goomba1, 
+            characterSpawner.goomba2, 
+            characterSpawner.goomba3, 
+            characterSpawner.goomba4,
+            characterSpawner.goomba5, 
+            characterSpawner.goomba6,
+            characterSpawner.koopa1,
+            characterSpawner.koopa2,
+            characterSpawner.koopa3,
+            characterSpawner.koopa4,
+        ]
 
         const mario = createCurrentPlayer(characterSpawner.mario);   // Adds mario to the level
         mario.player.name = "Mario";
@@ -81,7 +81,9 @@ async function main () {
                     for (const object of touches) {
                         if (object.player) {
                             if (executed == false){
+                                console.log(object)
                                 runLevel(spec.name);
+                                object.position.setVector(32, 32);
                             }
                             executed = true;
                             return;
@@ -93,7 +95,7 @@ async function main () {
             level.objects.add(mario);
 
             level.objects.add(spawnPoint);
-            // spawnPoint.playerControl.setEnemies(enemies);
+            spawnPoint.playerControl.setEnemies(enemies);
             
 
             
@@ -134,7 +136,7 @@ async function main () {
         }
 
         marioTimer.startTimer();
-        runLevel("1-1");
+        runLevel("1-2");
         // window.runLevel = runLevel;
 }
 

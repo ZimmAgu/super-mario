@@ -3,7 +3,7 @@ import Scene from './Scene.js';
 class IntroScene extends Scene {
     constructor() {
         super();
-        this.levelStartCountdown = 4;
+        this.levelStartCountdown = 0;
     }
 
     updateLevel (gameContext) {

@@ -417,6 +417,11 @@
         {
             "name" : "goomba1",
             "position" : [700, 64]
+        },
+
+        {
+            "name" : "goomba2",
+            "position" : [1000, 64]
         }
     ],
 

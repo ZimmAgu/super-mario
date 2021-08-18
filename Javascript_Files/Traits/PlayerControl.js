@@ -36,7 +36,7 @@ class PlayerControl extends Trait {
 
             this.enemies.forEach(enemy => {
                 const randomX = Math.floor(Math.random() * 6000) + 1000;
-                enemy.position.setVector(randomX, 0);
+                enemy.position.setVector(randomX, 20);
                 level.objects.add(enemy); 
             })
         } else {

@@ -60,7 +60,153 @@
 
     ],
 
+    "patterns" : {
+        "verticalPipe" : [
+            {
+                "name" : "upper left vert pipe",
+                "xPosition" : 0,
+                "yPosition" : 128,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+            {
+                "name" : "upper right vert pipe",
+                "xPosition" : 16,
+                "yPosition" : 128,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+            {
+                "name" : "lower left vert pipe",
+                "xPosition" : 0,
+                "yPosition" : 144,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+            {
+                "name" : "lower right vert pipe",
+                "xPosition" : 16,
+                "yPosition" : 144,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            }
+        ],
 
+
+
+        "regularCloud" : [
+
+            {
+                "name" : "upper left regular cloud",
+                "xPosition" : 0,
+                "yPosition" : 320.5,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+            {
+                "name" : "upper middle regular cloud",
+                "xPosition" : 16,
+                "yPosition" : 320.4,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+            {
+                "name" : "upper right regular cloud",
+                "xPosition" : 31.8,
+                "yPosition" : 320.5,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+
+            {
+                "name" : "lower left regular cloud",
+                "xPosition" : 0,
+                "yPosition" : 336,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+            {
+                "name" : "lower middle regular cloud",
+                "xPosition" : 16,
+                "yPosition" : 335,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+            {
+                "name" : "lower right regular cloud",
+                "xPosition" : 32,
+                "yPosition" : 336,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            }
+        ],
+
+        "castle" : [
+            {
+                "name" : "castle top 1",
+                "xPosition" : 176,
+                "yPosition" : 0,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+
+            {
+                "name" : "castle window 1",
+                "xPosition" : 192,
+                "yPosition" : 0,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+
+            {
+                "name" : "solid castle window brick",
+                "xPosition" : 208,
+                "yPosition" : 0,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+
+            {
+                "name" : "castle window 2",
+                "xPosition" : 224,
+                "yPosition" : 0,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+
+            {
+                "name" : "castle top 2",
+                "xPosition" : 176,
+                "yPosition" : 16,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32
+            },
+
+            {
+                "name" : "castle door arch",
+                "xPosition" : 192,
+                "yPosition" : 16,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32 
+            },
+
+            {
+                "name" : "black square",
+                "xPosition" : 208,
+                "yPosition" : 16,
+                "onScreenWidth" : 34,
+                "onScreenHeight" : 34 
+            },
+
+            {
+                "name" : "square castle brick",
+                "xPosition" : 32,
+                "yPosition" : 0,
+                "onScreenWidth" : 32,
+                "onScreenHeight" : 32 
+            }
+        ]
+    },
 
     "animations" : [
         {
